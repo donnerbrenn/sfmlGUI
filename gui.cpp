@@ -77,6 +77,10 @@ int main()
     sf::String buttonImage="bitmaps/button.png";
     sf::String pressedImage="bitmaps/pressed_button.png";
 
+    // id=elements.add(new frame(0,0,WIDTH,HEIGHT,"bitmaps/back.png"));
+    
+
+
     label="Ball";
     id=elements.add(new button(20,10,128,32,buttonImage, pressedImage, label));
     elements.getPtrbyIDX(id)->setClickActionPtr(setBall);
