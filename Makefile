@@ -11,8 +11,10 @@ SYNTH=
 GUI=$(OBJ)/collection.o $(OBJ)/element.o $(OBJ)/button.o $(OBJ)/frame.o $(OBJ)/knob.o $(OBJ)/vu.o
 TARGETS=$(MAIN) $(GUI) $(SYNTH)
 
+%/:
+	mkdir -p $@
 
-$(OBJ)/%.o: $(SRC)/%.cpp
+$(OBJ)/%.o: $(SRC)/%.cpp $(OBJ)/
 	$(CXX) -c $(CXXFLAGS) $< -o $@
 
 gui: $(TARGETS)
@@ -21,7 +23,6 @@ gui: $(TARGETS)
 	sstrip -z $@
 	chmod +x $@
 	wc -c $@
-
 
 gui.lzma: gui
 	./opt_lzma.py $< -o $@
@@ -37,4 +38,4 @@ all:gui.sh gui.vdh
 	wc -c $^
 
 clean:
-	-rm gui gui.sh gui.vdh $(OBJ)/*.o *.lzma
+	-rm -rf gui gui.sh gui.vdh $(OBJ)/ *.lzma
