@@ -81,7 +81,7 @@ int main()
     
 
 
-    label="Ball";
+    label="Football";
     id=elements.add(new button(20,10,128,32,buttonImage, pressedImage, label));
     elements.getPtrbyIDX(id)->setClickActionPtr(setBall);
 
