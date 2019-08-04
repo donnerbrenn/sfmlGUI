@@ -58,14 +58,16 @@ void slider::moveAction(float delta, sf::RenderWindow *window)
     sf::Vector2i movement;
     if(isPressed)
     {
-        sf::Vector2i newPos=sf::Mouse::getPosition(*window);
-        movement=newPos-lastPos;
-        float divider=(texture.getSize().x-36)/getRange();
-        lastPos=newPos;
-        float relX=newPos.x-20-posX;
+        float xScale=float(WIDTH)/window->getSize().x;
+        float newPosX=sf::Mouse::getPosition(*window).x;
+        newPosX*=xScale;
+        float divider=(texture.getSize().x-36)/getRange()*xScale;
+        float relX=newPosX-20-posX;
+        
         float value=relX/divider;
-        setValue(value);
+        setValue(value+minimum);
         performAction(moveActionPtr,value);
+        std::cout << this->value << "\n";
     }
 }
 

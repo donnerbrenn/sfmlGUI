@@ -1,6 +1,7 @@
 #ifndef SLIDER
 #define SLIDER
 #include "element.h"
+#include "vector2f.h"
 
 
 class slider : public element
