@@ -8,6 +8,7 @@ Pretty simple (and rather unfinished) GUI to use with SFML and C++.
 ### Sliders
 ### Knobs
 ### Rendercanvas
+### LED VU-Meter
 
 ## Todo:
 Write proper documentation
