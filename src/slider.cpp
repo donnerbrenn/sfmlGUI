@@ -67,7 +67,6 @@ void slider::moveAction(float delta, sf::RenderWindow *window)
         float value=relX/divider;
         setValue(value+minimum);
         performAction(moveActionPtr,value);
-        std::cout << this->value << "\n";
     }
 }
 
