@@ -34,7 +34,7 @@ void slider::update()
 {
     float divider=(texture.getSize().x-36)/getRange();
     float newX=(value-minimum)*divider+4;
-    knob_sprite.setPosition(newX+posX,posY+2);
+    knob_sprite.setPosition(newX+posX,posY+4);
     // display.setString(ftoa(value));
     // initDisplay(0,68);
 }

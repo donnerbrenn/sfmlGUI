@@ -7,7 +7,7 @@ class slider : public element
 {
 public:
     slider():element(){}
-    slider(int x, int y, sf::String label="Slider", int w=256, int h=32):element(x,y,w,h,"bitmaps/slider.png",slider_type)
+    slider(int x, int y, sf::String label="Slider", int w=256, int h=36):element(x,y,w,h,"bitmaps/slider.png",slider_type)
     {
         setValue(value);
         knob_texture.loadFromFile("bitmaps/slider_knob.png");
