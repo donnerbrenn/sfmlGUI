@@ -123,7 +123,6 @@ int collection::triggerReleasedElement(sf::RenderWindow *window)
     for(int i=0;i<elements.size();i++)
     {
             elements[i]->releaseAction();
-            // return i;
     }
     return -1;
 }

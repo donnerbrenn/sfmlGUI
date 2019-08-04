@@ -86,6 +86,7 @@ void element::initLabel(int x, int y, sf::String label)
 void element::initImage(int x, int y)
 {
     texture.loadFromFile(imageFileName);
+    texture.setSmooth(true);
     image.setTexture(texture);
     float scaleX=width/texture.getSize().x;
     float scaleY=height/texture.getSize().y;

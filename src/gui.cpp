@@ -115,6 +115,9 @@ int main()
     
     int yVALid=elements.add(new vu(400,1025,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,19*50+32));
 
+    id = elements.add(new slider (700,1005));
+    elements.getPtrbyID(id)->setValue(0);
+
     while(running)
     {
         window.clear(sf::Color(128,128,128,255));

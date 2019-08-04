@@ -6,6 +6,7 @@
 #include "frame.h"
 #include "knob.h"
 #include "vu.h"
+#include "slider.h"
 #include "element.h"
 #include "vector2f.h"
 #include "defines.h"
@@ -33,8 +34,6 @@ private:
     int triggerReleasedElement(sf::RenderWindow *window);
     void triggerMoveElement(sf::RenderWindow *window, float delta);
     vector2f transformMousePos(vector2f mousePos, sf::RenderWindow *window);
-    
-
 
     float lastTick;
     float currentTick;
