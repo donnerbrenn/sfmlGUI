@@ -93,29 +93,29 @@ int main()
     id=elements.add(new button(20,110,128,32,buttonImage, pressedImage,label));
     elements.getPtrbyIDX(id)->setClickActionPtr(setBasketball);
 
-    id=elements.add(new knob(180,1005,"Speed"));
+    id=elements.add(new knob(180,480,"Speed"));
     elements.getPtrbyIDX(id)->setValue(6.6);
     elements.getPtrbyIDX(id)->setMax(20.0);
     elements.getPtrbyIDX(id)->setMin(1.0);
     speed(0,6.6);
     elements.getPtrbyIDX(id)->setMoveActionPtr(speed);
 
-    id=elements.add(new knob(290,1005,"Rotation"));
+    id=elements.add(new knob(290,480,"Rotation"));
     rotation(0,10.1);
     elements.getPtrbyIDX(id)->setMin(-20);
     elements.getPtrbyIDX(id)->setMax(20);
     elements.getPtrbyIDX(id)->setValue(rot);
     elements.getPtrbyIDX(id)->setMoveActionPtr(rotation);
 
-    id=elements.add(new frame(170,10,1800,19*50+32));
+    id=elements.add(new frame(170,10,610,450));
     canvas=elements.getPtrbyID(id)->getCanvas();
 
 
-    int xVALid=elements.add(new vu(400,1005,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,1800));
+    int xVALid=elements.add(new vu(400,480,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,1800));
     
-    int yVALid=elements.add(new vu(400,1025,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,19*50+32));
+    int yVALid=elements.add(new vu(400,500,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,19*50+32));
 
-    id = elements.add(new slider (700,1005));
+    id = elements.add(new slider (400,530));
     elements.getPtrbyID(id)->setValue(0);
 
     while(running)

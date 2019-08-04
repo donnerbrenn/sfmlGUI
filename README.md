@@ -12,3 +12,4 @@ Pretty simple (and rather unfinished) GUI to use with SFML and C++.
 
 ## Todo:
 Write proper documentation
+Add more GUI-Elements

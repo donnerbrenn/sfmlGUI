@@ -6,8 +6,8 @@
 #define DEBUG
 
 //GUI
-#define WIDTH 1980
-#define HEIGHT 1120
+#define WIDTH 800
+#define HEIGHT 600
 
 enum type{element_type,button_type,frame_type,knob_type,vu_type, slider_type};
 #endif
