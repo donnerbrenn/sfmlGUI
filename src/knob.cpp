@@ -44,7 +44,7 @@ void knob::releaseAction()
     performAction(releaseActionPtr);
 }
 
-void knob::moveAction(float delta)
+void knob::moveAction(float delta, sf::RenderWindow *window)
 {
     sf::Vector2i movement;
     if(isPressed)

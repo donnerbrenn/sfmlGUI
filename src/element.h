@@ -25,7 +25,7 @@ public:
     virtual void update(){}
     virtual void pressAction();
     virtual void releaseAction();
-    virtual void moveAction(float delta);
+    virtual void moveAction(float delta, sf::RenderWindow *window);
     virtual void draw(sf::RenderWindow *window){}
     virtual void setMax(float value){}
     virtual void setMin(float value){}

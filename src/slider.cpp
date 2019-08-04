@@ -53,15 +53,18 @@ void slider::releaseAction()
     performAction(releaseActionPtr);
 }
 
-void slider::moveAction(float delta)
+void slider::moveAction(float delta, sf::RenderWindow *window)
 {
     sf::Vector2i movement;
     if(isPressed)
     {
-        sf::Vector2i newPos=sf::Mouse::getPosition();
+        sf::Vector2i newPos=sf::Mouse::getPosition(*window);
         movement=newPos-lastPos;
+        float divider=(texture.getSize().x-36)/getRange();
         lastPos=newPos;
-        setValue(getValue()+movement.x*(delta*10));
+        float relX=newPos.x-20-posX;
+        float value=relX/divider;
+        setValue(value);
         performAction(moveActionPtr,value);
     }
 }

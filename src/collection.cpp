@@ -131,7 +131,7 @@ void collection::triggerMoveElement(sf::RenderWindow *window, float delta)
 {
     for(int i=0;i<elements.size();i++)
     {
-        elements[i]->moveAction(delta);
+        elements[i]->moveAction(delta,window);
     }
 }
 

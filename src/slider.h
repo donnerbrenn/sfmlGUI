@@ -24,7 +24,7 @@ public:
     void update();
     void pressAction();
     void releaseAction();
-    void moveAction(float delta);
+    void moveAction(float delta, sf::RenderWindow *window);
     float getMin();
     float getMax();
 

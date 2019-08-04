@@ -65,7 +65,7 @@ void element::releaseAction()
 {
     performAction(releaseActionPtr);
 }
-void element::moveAction(float delta)
+void element::moveAction(float delta, sf::RenderWindow *window)
 {
     performAction(moveActionPtr);
 }
