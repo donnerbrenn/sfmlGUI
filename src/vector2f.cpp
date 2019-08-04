@@ -12,6 +12,19 @@ vector2f::vector2f(float x, float y)
     this->y=y;
 }
 
+vector2f::vector2f(sf::Vector2u value)
+{
+    this->x=float(value.x);
+    this->y=float(value.y);
+}
+
+vector2f::vector2f(sf::Vector2i value)
+{
+    this->x=float(value.x);
+    this->y=float(value.y);
+}
+
+
 float vector2f::length()
 {
     return(sqrt(x*x+y*y));
@@ -168,4 +181,17 @@ vector2f vector2f::operator/=(float value)
     {
         x=other.x;
         y=other.y;
+    }
+
+    void vector2f::operator*=(sf::Vector2f other)
+    {
+        this->x*=other.x;
+        this->y*=other.y;
+    }
+
+
+    void vector2f::operator/=(sf::Vector2f other)
+    {
+        this->x/=other.x;
+        this->y/=other.y;
     }

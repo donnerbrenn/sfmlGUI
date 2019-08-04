@@ -7,6 +7,8 @@
 #include "knob.h"
 #include "vu.h"
 #include "element.h"
+#include "vector2f.h"
+#include "defines.h"
 
 class collection
 {
@@ -30,6 +32,10 @@ private:
     int triggerClickedElement(sf::RenderWindow *window);
     int triggerReleasedElement(sf::RenderWindow *window);
     void triggerMoveElement(sf::RenderWindow *window, float delta);
+    vector2f transformMousePos(vector2f mousePos, sf::RenderWindow *window);
+    
+
+
     float lastTick;
     float currentTick;
     float delta;

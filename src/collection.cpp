@@ -92,9 +92,11 @@ element *collection::getPtrbyID(int id)
 int collection::triggerClickedElement(sf::RenderWindow *window)
 {
     sf::Vector2i mousePos=sf::Mouse::getPosition(*window);
-    #ifdef DEBUG
-    std::cout << mousePos.x << ":" << mousePos.y << "\n";
-    #endif
+    vector2f transformedMousePos(mousePos);
+    transformedMousePos=transformMousePos(transformedMousePos,window);
+    mousePos.x=transformedMousePos.x;
+    mousePos.y=transformedMousePos.y;
+
     for(int i=0;i<elements.size();i++)
     {
         if(elements[i]->isUnderPos(mousePos))
@@ -109,6 +111,12 @@ int collection::triggerClickedElement(sf::RenderWindow *window)
 int collection::triggerReleasedElement(sf::RenderWindow *window)
 {
     sf::Vector2i mousePos=sf::Mouse::getPosition(*window);
+    vector2f transformedMousePos(mousePos);
+    transformedMousePos=transformMousePos(transformedMousePos,window);
+    mousePos.x=transformedMousePos.x;
+    mousePos.y=transformedMousePos.y;
+
+
     #ifdef DEBUG
     std::cout << mousePos.x << ":" << mousePos.y << "\n";
     #endif
@@ -147,4 +155,18 @@ void collection::triggerEvents(sf::RenderWindow *window, sf::Event event)
     {
         triggerMoveElement(window, delta);
     }
+}
+
+vector2f collection::transformMousePos(vector2f mousePos, sf::RenderWindow *window)
+{
+    vector2f mul;
+    vector2f size=window->getSize();
+    mul.x=size.x/WIDTH;
+    mul.y=size.y/HEIGHT;
+    mousePos/=mul;
+
+    #ifdef DEBUG
+    std::cout << mul.x << " " << mul.y << "\n";
+    #endif
+    return mousePos;    
 }

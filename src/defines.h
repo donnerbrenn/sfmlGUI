@@ -3,7 +3,7 @@
 #include <string>
 
 //define
-// #define DEBUG
+#define DEBUG
 
 //GUI
 #define WIDTH 1980
