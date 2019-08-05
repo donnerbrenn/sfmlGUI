@@ -111,9 +111,9 @@ int main()
     canvas=elements.getPtrbyID(id)->getCanvas();
 
 
-    int xVALid=elements.add(new vu(400,480,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,1800));
+    int xVALid=elements.add(new vu(400,480,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,610));
     
-    int yVALid=elements.add(new vu(400,500,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,19*50+32));
+    int yVALid=elements.add(new vu(400,500,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,450));
 
     id = elements.add(new slider (400,530));
     elements.getPtrbyID(id)->setValue(0);

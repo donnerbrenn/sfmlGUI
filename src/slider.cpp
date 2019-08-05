@@ -61,7 +61,7 @@ void slider::moveAction(float delta, sf::RenderWindow *window)
         float xScale=float(WIDTH)/window->getSize().x;
         float newPosX=sf::Mouse::getPosition(*window).x;
         newPosX*=xScale;
-        float divider=(texture.getSize().x-36)/getRange()*xScale;
+        float divider=(texture.getSize().x-36)/getRange();
         float relX=newPosX-20-posX;
         
         float value=relX/divider;
