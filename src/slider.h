@@ -14,6 +14,8 @@ public:
         knob_texture.loadFromFile("bitmaps/slider_knob.png");
         knob_sprite.setTexture(knob_texture);
         initImage(x,y);
+        initLabel(0,32,label + ": ");
+        update();
     }
     
     void draw(sf::RenderWindow *window);

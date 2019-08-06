@@ -52,7 +52,7 @@ void knob::moveAction(float delta, sf::RenderWindow *window)
         sf::Vector2i newPos=sf::Mouse::getPosition();
         movement=newPos-lastPos;
         lastPos=newPos;
-        setValue(getValue()+movement.x*(delta*10));
+        setValue(getValue()+movement.x*delta);
         performAction(moveActionPtr,value);
     }
     

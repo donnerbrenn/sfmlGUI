@@ -4,6 +4,7 @@ void slider::draw(sf::RenderWindow *window)
 {
     window->draw(image);
     window->draw(knob_sprite);
+    window->draw(text);
 }
 
 
@@ -35,8 +36,7 @@ void slider::update()
     float divider=(texture.getSize().x-36)/getRange();
     float newX=(value-minimum)*divider+4;
     knob_sprite.setPosition(newX+posX,posY+4);
-    // display.setString(ftoa(value));
-    // initDisplay(0,68);
+    text.setString(label + ftoa(value));
 }
 
 void slider::pressAction()
