@@ -7,7 +7,7 @@ OBJ=obj
 
 MAIN=$(OBJ)/gui.o $(OBJ)/vector2f.o
 SYNTH=
-GUI=$(OBJ)/collection.o $(OBJ)/element.o $(OBJ)/button.o $(OBJ)/frame.o $(OBJ)/knob.o $(OBJ)/vu.o $(OBJ)/slider.o
+GUI=$(OBJ)/collection.o $(OBJ)/element.o $(OBJ)/button.o $(OBJ)/frame.o $(OBJ)/knob.o $(OBJ)/vu.o $(OBJ)/slider.o $(OBJ)/label.o
 TARGETS=$(MAIN) $(GUI) $(SYNTH)
 
 %/:

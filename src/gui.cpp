@@ -72,7 +72,7 @@ int main()
     int clicked=-1;
     collection elements;
 
-    sf::String label;
+    sf::String labelTXT;
     int id;
     sf::String buttonImage="bitmaps/button.png";
     sf::String pressedImage="bitmaps/pressed_button.png";
@@ -81,16 +81,16 @@ int main()
     
 
 
-    label="Football";
-    id=elements.add(new button(20,10,128,32,buttonImage, pressedImage, label));
+    labelTXT="Football";
+    id=elements.add(new button(20,10,128,32,buttonImage, pressedImage, labelTXT));
     elements.getPtrbyIDX(id)->setClickActionPtr(setBall);
 
-    label="8 Ball";
-    id=elements.add(new button(20,60,128,32,buttonImage, pressedImage,label));
+    labelTXT="8 Ball";
+    id=elements.add(new button(20,60,128,32,buttonImage, pressedImage,labelTXT));
     elements.getPtrbyIDX(id)->setClickActionPtr(set8Ball);
 
-    label="Basketball";
-    id=elements.add(new button(20,110,128,32,buttonImage, pressedImage,label));
+    labelTXT="Basketball";
+    id=elements.add(new button(20,110,128,32,buttonImage, pressedImage,labelTXT));
     elements.getPtrbyIDX(id)->setClickActionPtr(setBasketball);
 
     id=elements.add(new knob(180,480,"Speed"));
@@ -109,6 +109,8 @@ int main()
 
     id=elements.add(new frame(170,10,610,450));
     canvas=elements.getPtrbyID(id)->getCanvas();
+
+    elements.add(new label(20,400,"Label works <3"));
 
 
     int xVALid=elements.add(new vu(400,480,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,610));
