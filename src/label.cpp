@@ -26,3 +26,28 @@ void label::initLabel(int x, int y, sf::String text)
     }
     
 }
+
+void label::setText(sf::String text)
+{
+    // this->label=text;
+    this->text.setString(text);
+}
+
+void label::setInt(int value)
+{
+    this->text.setString(itoa(value));
+    
+}
+
+void label::setFloat(float value)
+{
+    this->text.setString(ftoa(value));
+}
+
+
+void label::init(int x, int y, sf::String text,bool centered)
+{
+        this->centered=centered;
+        font.loadFromFile("bitmaps/arial.ttf");
+        initLabel(x,y,text);    
+}

@@ -165,3 +165,10 @@ sf::String element::ftoa(float i)
     sprintf(buffer,"%-.1f",i);
     return sf::String(buffer);
 }
+
+sf::String element::itoa(int i)
+{
+    char buffer[20];
+    sprintf(buffer,"%d",i);
+    return sf::String(buffer);
+}

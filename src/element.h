@@ -66,6 +66,7 @@ protected:
     void (*moveActionPtr)(int id, float value)=nullptr;
 
     sf::String ftoa(float i);
+    sf::String itoa(int i);
 
     int id=0;
 
