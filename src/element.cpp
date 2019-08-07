@@ -162,7 +162,7 @@ int element::getID()
 sf::String element::ftoa(float i)
 {
     char buffer[20];
-    sprintf(buffer,"%-.1f",i);
+    sprintf(buffer,"%-.2f",i);
     return sf::String(buffer);
 }
 

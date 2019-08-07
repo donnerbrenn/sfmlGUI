@@ -127,7 +127,7 @@ int main()
         n*=.01;
     }
 
-    oscID=elements.add(new oscilloscope(170,240,610,225,&data[0],DATA,2.0));
+    oscID=elements.add(new oscilloscope(170,240,610,225,&data[0],DATA,1.0,sf::Color::Blue,sf::Color::White));
     
 
     elements.add(new label(20,400,"Label works <3"));
@@ -138,7 +138,7 @@ int main()
     int yVALid=elements.add(new vu(400,500,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,450));
 
     id = elements.add(new slider (400,530,"OSC Scale"));
-    elements.getPtrbyID(id)->setMin(.5);
+    elements.getPtrbyID(id)->setMin(.1);
     elements.getPtrbyID(id)->setMax(3.0);
     elements.getPtrbyID(id)->setValue(1.0);
     elements.getPtrbyID(id)->setMoveActionPtr(setOscScale);
