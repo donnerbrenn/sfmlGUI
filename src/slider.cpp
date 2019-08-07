@@ -66,6 +66,14 @@ void slider::moveAction(float delta, sf::RenderWindow *window)
         
         float value=relX/divider;
         setValue(value+minimum);
+        if(value<minimum)
+        {
+            value=minimum;
+        }
+        if(value>maximum)
+        {
+            value=maximum;
+        }
         performAction(moveActionPtr,value);
     }
 }
