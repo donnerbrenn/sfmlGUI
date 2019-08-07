@@ -3,6 +3,8 @@
 
 #include "frame.h"
 
+
+
 class oscilloscope : public frame
 {
 public:
@@ -13,6 +15,7 @@ public:
         this->scale=scale;
         this->data=data;
         this->size=size;
+        this->type=oscilloscope_type;
     }
 
     void draw(sf::RenderWindow *window);
