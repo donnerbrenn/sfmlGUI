@@ -8,6 +8,9 @@ sf::Texture ball;
 sf::Texture ball8;
 sf::Texture basketball;
 sf::Sprite sprite;
+collection elements;
+
+int oscID=0;
 
 sf::String cat(sf::String string, int value)
 {
@@ -50,6 +53,11 @@ void setBasketball(int id, float value)
     sprite.setTexture(basketball);
 }
 
+void setOscScale(int id, float value)
+{
+    elements.getPtrbyID(oscID)->setScale(value);
+}
+
 
 int main()
 {
@@ -70,7 +78,7 @@ int main()
     sprite.setPosition(100,100);
 
     int clicked=-1;
-    collection elements;
+    
 
     sf::String labelTXT;
     int id;
@@ -107,8 +115,20 @@ int main()
     elements.getPtrbyIDX(id)->setValue(rot);
     elements.getPtrbyIDX(id)->setMoveActionPtr(rotation);
 
-    id=elements.add(new frame(170,10,610,450));
+    id=elements.add(new frame(170,10,610,225));
     canvas=elements.getPtrbyID(id)->getCanvas();
+
+
+    #define DATA 100
+    float data[DATA];
+    for(int i=0;i<DATA;i++)
+    {
+        float n=rand()%100;
+        n*=.01;
+    }
+
+    oscID=elements.add(new oscilloscope(170,240,610,225,&data[0],DATA,2.0));
+    
 
     elements.add(new label(20,400,"Label works <3"));
 
@@ -117,11 +137,22 @@ int main()
     
     int yVALid=elements.add(new vu(400,500,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,450));
 
-    id = elements.add(new slider (400,530));
-    elements.getPtrbyID(id)->setValue(0);
+    id = elements.add(new slider (400,530,"Scale"));
+    elements.getPtrbyID(id)->setMin(.5);
+    elements.getPtrbyID(id)->setMax(3.0);
+    elements.getPtrbyID(id)->setValue(1.0);
+    elements.getPtrbyID(id)->setMoveActionPtr(setOscScale);
 
     while(running)
     {
+           for(int i=0;i<DATA;i++)
+    {
+        float n=rand()%100;
+        n*=.01;
+        n-=.5;
+        data[i]=n;
+    }
+
         window.clear(sf::Color(128,128,128,255));
         elements.drawAll(&window);
         window.display();

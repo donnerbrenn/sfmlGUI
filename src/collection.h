@@ -8,6 +8,7 @@
 #include "vu.h"
 #include "slider.h"
 #include "label.h"
+#include "oscilloscope.h"
 #include "element.h"
 #include "vector2f.h"
 #include "defines.h"

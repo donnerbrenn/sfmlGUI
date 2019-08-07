@@ -29,6 +29,7 @@ public:
     virtual void draw(sf::RenderWindow *window){}
     virtual void setMax(float value){}
     virtual void setMin(float value){}
+    virtual void setScale(float value){}
 
     void setClickActionPtr(void (*ptr)(int id, float value)=nullptr);
     void setReleaseActionPtr(void (*ptr)(int id, float value)=nullptr);

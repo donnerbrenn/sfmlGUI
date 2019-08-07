@@ -13,6 +13,6 @@ public:
     {
         initCanvas(w,h);
     }
-    void draw(sf::RenderWindow *window);
+    virtual void draw(sf::RenderWindow *window);
 };
 #endif
