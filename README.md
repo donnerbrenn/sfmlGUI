@@ -9,6 +9,9 @@ Pretty simple (and rather unfinished) GUI to use with SFML and C++.
 ### Knobs
 ### Rendercanvas
 ### LED VU-Meter
+### Label
+### Oscilloscope
+
 
 ## Todo:
 Write proper documentation
