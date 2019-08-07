@@ -13,7 +13,7 @@ void oscilloscope::draw(sf::RenderWindow *window)
 void oscilloscope::drawCurve()
 {
     canvas.clear();
-    float step=canvas.getSize().x/(size);
+    float step=canvas.getSize().x/float(size-1);
     for(int i=1;i<size;i++)
     {
         sf::Vertex line[] =
