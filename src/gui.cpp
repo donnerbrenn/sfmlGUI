@@ -1,6 +1,7 @@
 #include "defines.h"
 #include "collection.h"
 #include "vector2f.h"
+#include <math.h>
 
 
 vector2f pos;
@@ -11,6 +12,7 @@ sf::Sprite sprite;
 collection elements;
 
 int oscID=0;
+float counter=.0f;
 
 sf::String cat(sf::String string, int value)
 {
@@ -119,13 +121,8 @@ int main()
     canvas=elements.getPtrbyID(id)->getCanvas();
 
 
-    #define DATA 100
+    #define DATA 1000
     float data[DATA];
-    for(int i=0;i<DATA;i++)
-    {
-        float n=rand()%100;
-        n*=.01;
-    }
 
     oscID=elements.add(new oscilloscope(170,240,610,225,&data[0],DATA,1.0,sf::Color::Blue,sf::Color::White));
     
@@ -147,10 +144,8 @@ int main()
     {
            for(int i=0;i<DATA;i++)
     {
-        float n=rand()%100;
-        n*=.01;
-        n-=.5;
-        data[i]=n;
+        counter+=.1;
+        data[i]=sin(counter);
     }
 
         window.clear(sf::Color(128,128,128,255));
