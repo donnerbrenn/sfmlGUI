@@ -14,15 +14,12 @@ void oscilloscope::drawCurve()
 {
     canvas.clear(bgColor);
     float step=canvas.getSize().x/float(size-1);
-    for(int i=1;i<size;i++)
+    sf::VertexArray curve(sf::LinesStrip,size);
+    for(int i=0;i<size;i++)
     {
-        sf::Vertex line[] =
-        {
-            sf::Vertex(sf::Vector2f(step*(i-1),data[i-1]*scale*100+canvas.getSize().y*.5),fgColor),
-            sf::Vertex(sf::Vector2f(step*i,data[i]*scale*100+canvas.getSize().y*.5),fgColor)
-        };
-        canvas.draw(line,2,sf::Lines);
+        curve[i].position=sf::Vector2f(step*i,data[i]*scale*100+canvas.getSize().y*.5);
     }
+    canvas.draw(curve);
     canvas.display();
 }
 
