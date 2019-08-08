@@ -12,6 +12,7 @@ public:
     oscilloscope(int x, int y, int w, int h, float *data, int size, float scale=1.0, sf::Color bgColor=sf::Color::Black, sf::Color fgColor=sf::Color::White):
     frame(x,y,w,h,"")
     {
+        this->canvas.setSmooth(true);
         this->fgColor=fgColor;
         this->bgColor=bgColor;
         this->scale=scale;

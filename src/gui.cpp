@@ -12,7 +12,7 @@ sf::Sprite sprite;
 collection elements;
 
 int oscID=0;
-float counter=.0f;
+double counter=.0f;
 
 sf::String cat(sf::String string, int value)
 {
@@ -102,6 +102,11 @@ int main()
     labelTXT="Basketball";
     id=elements.add(new button(20,110,128,32,buttonImage, pressedImage,labelTXT));
     elements.getPtrbyIDX(id)->setClickActionPtr(setBasketball);
+
+    labelTXT="LOCK";
+    id=elements.add(new lockbutton(20,160,128,32,buttonImage, pressedImage,labelTXT));
+
+
 
     id=elements.add(new knob(180,480,"Speed"));
     elements.getPtrbyIDX(id)->setValue(6.6);

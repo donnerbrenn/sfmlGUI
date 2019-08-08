@@ -18,8 +18,8 @@ public:
         initLabel(0,0,label);
     }
     void draw(sf::RenderWindow *window);
-    void pressAction();
-    void releaseAction();
+    virtual void pressAction();
+    virtual void releaseAction();
 
 protected:
     sf::Texture pressedTexture;

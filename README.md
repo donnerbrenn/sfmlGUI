@@ -3,9 +3,10 @@
 Pretty simple (and rather unfinished) GUI to use with SFML and C++.
 
 ## Implemented GUI-Elements
-### Buttons
-### Sliders
-### Knobs
+### Button
+### Lockbutton
+### Slider
+### Knob
 ### Rendercanvas
 ### LED VU-Meter
 ### Label
