@@ -2,6 +2,7 @@
 #include "collection.h"
 #include "vector2f.h"
 #include <math.h>
+#include "synth.h"
 
 
 vector2f pos;
@@ -63,6 +64,11 @@ void setOscScale(int id, float value)
 
 int main()
 {
+    // mixer synth{3,1024,44100};
+    synth synthesizer{1,1024,44100};
+    // synthesizer.play();
+
+
     bool running=true;
     sf::Event event;
     sf::RenderWindow window{sf::VideoMode(WIDTH,HEIGHT),"GUI"};
