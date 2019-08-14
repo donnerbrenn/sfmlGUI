@@ -19,3 +19,8 @@ synth::synth(int channels,int buffersize,int samplerate)
     mixer newMixer{channels,buffersize,samplerate};
     mix=newMixer;
 }
+
+short *synth::getBufferPtr()
+{
+    return mix.getBufferPtr();
+}

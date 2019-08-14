@@ -66,7 +66,7 @@ int main()
 {
     // mixer synth{3,1024,44100};
     synth synthesizer{1,1024,44100};
-    // synthesizer.play();
+    synthesizer.play();
 
 
     bool running=true;
@@ -132,7 +132,7 @@ int main()
     canvas=elements.getPtrbyID(id)->getCanvas();
 
 
-    #define DATA 1000
+    #define DATA 1024
     float data[DATA];
 
     oscID=elements.add(new oscilloscope(170,240,610,225,&data[0],DATA,1.0,sf::Color::Blue,sf::Color::White));
@@ -153,11 +153,12 @@ int main()
 
     while(running)
     {
-           for(int i=0;i<DATA;i++)
-    {
-        counter+=.1;
-        data[i]=sin(counter);
-    }
+        for(int i=0;i<DATA;i++)
+        {
+            // counter+=.1;
+            // data[i]=sin(counter);
+            data[i]=synthesizer.getBufferPtr()[i]/1024.0;
+        }
 
         window.clear(sf::Color(128,128,128,255));
         elements.drawAll(&window);
@@ -166,6 +167,7 @@ int main()
         {
             if(event.type==sf::Event::Closed)
             {
+                synthesizer.stop();
                 running=false;                
             }
             elements.triggerEvents(&window,event);        

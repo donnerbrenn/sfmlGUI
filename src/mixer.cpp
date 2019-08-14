@@ -44,6 +44,10 @@ int mixer::getWaveform(int channel)
 
 void mixer::run()
 {
+    for(int i=0;i<buffersize;i++)
+    {
+        buffer[i]=0;
+    }
     for(int i=0;i<channels.size();i++)
     {
         channels[i].run();

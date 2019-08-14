@@ -24,9 +24,9 @@ public:
     short *getBufferPtr();
 
 private:
-    float time;
-    float step;
-    float volume=1024;
+    double time;
+    double step;
+    double volume=1024;
     int waveform;
     int bufferSize;
     short *buffer;

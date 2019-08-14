@@ -3,7 +3,7 @@
 
 channel::channel(int waveform, int buffersize,  int samplerate)
 {
-
+    init(waveform,buffersize,samplerate);
 }
 
 void channel::init(int waveform, int buffersize, int samplerate)
@@ -45,12 +45,12 @@ int channel::getWaveform()
 
 void channel::run()
 {
-    float phase;
-    float hertz=440;
+    double phase;
+    double hertz=440;
     for(int i=0;i<bufferSize;i++)
     {
-        phase=sin(hertz*M_PI*2*(step));
-        buffer[i]=phase*volume;
+        phase=sin(hertz*M_PI*2*time);
+        buffer[i]=short(phase*volume);
         time+=step;
     }    
 }

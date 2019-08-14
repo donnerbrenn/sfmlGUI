@@ -1,5 +1,5 @@
 CXXFLAGS=-O3 -s
-CXXFLAGS=-Os -s -flto -fno-stack-limit -ffast-math -fno-stack-protector -fno-stack-check -fno-asynchronous-unwind-tables -fno-exceptions  -funsafe-math-optimizations -fomit-frame-pointer -ffunction-sections -fdata-sections -fno-math-errno -fno-unroll-loops -fmerge-all-constants -fno-ident -mfpmath=387 -mfancy-math-387 -Bmydir -falign-functions=1 -falign-jumps=1 -falign-loops=1 -fomit-frame-pointer -fsingle-precision-constant
+# CXXFLAGS=-Os -s -flto -fno-stack-limit -ffast-math -fno-stack-protector -fno-stack-check -fno-asynchronous-unwind-tables -fno-exceptions  -funsafe-math-optimizations -fomit-frame-pointer -ffunction-sections -fdata-sections -fno-math-errno -fno-unroll-loops -fmerge-all-constants -fno-ident -mfpmath=387 -mfancy-math-387 -Bmydir -falign-functions=1 -falign-jumps=1 -falign-loops=1 -fomit-frame-pointer -fsingle-precision-constant
 LDFLAGS=-lsfml-system -lsfml-window -lsfml-graphics -lsfml-audio -Wl,--build-id=none -Wl,--hash-style=gnu -Wl,-z,norelro -fuse-ld=gold
 
 SRC=src
@@ -18,8 +18,8 @@ $(OBJ)/%.o: $(SRC)/%.cpp $(OBJ)/
 
 gui: $(TARGETS)
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ -o $@
-	strip $@ -S --strip-unneeded -R .eh_frame -R .eh_frame_hdr -R .gnu.version -R .note.ABI-tag -R .note.gnu.gold-version  -R .comment -s
-	sstrip -z $@
+	# strip $@ -S --strip-unneeded -R .eh_frame -R .eh_frame_hdr -R .gnu.version -R .note.ABI-tag -R .note.gnu.gold-version  -R .comment -s
+	# sstrip -z $@
 	chmod +x $@
 	wc -c $@
 
