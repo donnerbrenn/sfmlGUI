@@ -6,7 +6,7 @@ SRC=src
 OBJ=obj
 
 MAIN=$(OBJ)/gui.o $(OBJ)/vector2f.o
-SYNTH=$(OBJ)/channel.o $(OBJ)/mixer.o $(OBJ)/synth.o
+SYNTH=$(OBJ)/channel.o $(OBJ)/mixer.o $(OBJ)/synth.o $(OBJ)/decode.o
 GUI=$(OBJ)/lockbutton.o $(OBJ)/collection.o $(OBJ)/element.o $(OBJ)/button.o $(OBJ)/frame.o $(OBJ)/knob.o $(OBJ)/vu.o $(OBJ)/slider.o $(OBJ)/label.o $(OBJ)/oscilloscope.o
 TARGETS=$(MAIN) $(GUI) $(SYNTH)
 

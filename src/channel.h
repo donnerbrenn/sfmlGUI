@@ -7,6 +7,7 @@ enum waveform
 {
     sine,
     triangle,
+    square,
     saw,
     rsaw,
     noise
@@ -22,6 +23,11 @@ public:
     int getWaveform();
     void run();
     short *getBufferPtr();
+    double getSquare(double value);
+    double getTriangle(double value);
+    double getSaw(double value);
+    double getRsaw(double value);
+    double getNoise();
 
 private:
     double time;
