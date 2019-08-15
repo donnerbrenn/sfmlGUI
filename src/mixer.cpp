@@ -61,7 +61,7 @@ void mixer::mix(short *a, short *b, int size)
     {
         a[i]+=b[i]*this->volume;
     }
-    std::cout << volume << "\n";
+    // std::cout << volume << "\n";
 }
 
 void mixer::clear()
@@ -84,5 +84,5 @@ int mixer::getBufferSize()
 
 void mixer::setVolume(double value)
 {
-    std::cout << volume << "\n";
+    this->volume=value;
 }
