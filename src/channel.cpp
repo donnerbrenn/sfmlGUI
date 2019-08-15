@@ -53,11 +53,11 @@ void channel::run()
         switch (waveform)
         {
         case sine:
-            /* code */
+            phase=getSine(hertz);
             break;
 
         case square:
-            phase=getSquare(phase);
+            phase=getSquare(hertz);
             break;
 
         case noise:
@@ -65,7 +65,7 @@ void channel::run()
             break;
 
         case triangle:
-            phase=getTriangle(phase);
+            phase=getTriangle(hertz);
             break;
 
         case saw:
@@ -91,12 +91,12 @@ short *channel::getBufferPtr()
 
 double channel::getSquare(double value)
 {
-    return(value>0?1.0:-1.0);
+    return(getSine(value)>0?1.0:-1.0);
 }
 
 double channel::getTriangle(double value)
 {
-    return asin(value);
+    return asin(getSine(value));
 }
 
 double channel::getSaw(double value)
@@ -112,4 +112,9 @@ double channel::getRsaw(double value)
 double channel::getNoise()
 {
     return((rand()%2000)*.001-1.0);
+}
+
+double channel::getSine(double hertz)
+{
+    return sin(hertz*M_PI*2*time);
 }

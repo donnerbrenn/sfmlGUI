@@ -7,7 +7,7 @@ mixer::mixer(int channelCnt, int buffersize, int samplerate)
     this->buffersize=buffersize;
     for(int i=0;i<channelCnt;i++)
     {
-        channels.emplace_back(*new channel(rsaw,buffersize,samplerate));
+        channels.emplace_back(*new channel(triangle,buffersize,samplerate));
     }
     buffer = new short[buffersize];
 }

@@ -28,6 +28,7 @@ public:
     double getSaw(double value);
     double getRsaw(double value);
     double getNoise();
+    double getSine(double hertz);
 
 private:
     double time;
