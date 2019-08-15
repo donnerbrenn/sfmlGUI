@@ -11,6 +11,7 @@ sf::Texture ball8;
 sf::Texture basketball;
 sf::Sprite sprite;
 collection elements;
+synth synthesizer{1,1024,44100};
 
 int oscID=0;
 double counter=.0f;
@@ -61,14 +62,16 @@ void setOscScale(int id, float value)
     elements.getPtrbyID(oscID)->setScale(value);
 }
 
+void setVolume(int id, float value)
+{
+    synthesizer.setVolume(value);
+}
+
+
 
 int main()
 {
-    // mixer synth{3,1024,44100};
-    synth synthesizer{1,1024,44100};
     synthesizer.play();
-
-
     bool running=true;
     sf::Event event;
     sf::RenderWindow window{sf::VideoMode(WIDTH,HEIGHT),"GUI"};
@@ -150,6 +153,13 @@ int main()
     elements.getPtrbyID(id)->setMax(3.0);
     elements.getPtrbyID(id)->setValue(1.0);
     elements.getPtrbyID(id)->setMoveActionPtr(setOscScale);
+
+    id = elements.add(new knob(10,480,"Volume"));
+    elements.getPtrbyID(id)->setMin(0);
+    elements.getPtrbyID(id)->setMax(1.0);
+    elements.getPtrbyID(id)->setValue(1.0);
+    elements.getPtrbyID(id)->setMoveActionPtr(setVolume);
+
 
     while(running)
     {

@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "channel.h"
+#include "iostream"
 
 class mixer
 {
@@ -12,6 +13,7 @@ public:
     short *getBufferPtr();
     int getBufferSize();
     void run();
+    void setVolume(double value);
 private:
     std::vector<channel> channels;
     short *buffer;
@@ -22,6 +24,7 @@ private:
     
     void mix(short *a, short *b, int size);
     void clear();
+    double volume;
 };
 
 #endif // MIXER

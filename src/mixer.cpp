@@ -7,8 +7,7 @@ mixer::mixer(int channelCnt, int buffersize, int samplerate)
     this->buffersize=buffersize;
     for(int i=0;i<channelCnt;i++)
     {
-        channel newChannel{sine,buffersize,samplerate};
-        channels.emplace_back(newChannel);
+        channels.emplace_back(*new channel(sine,buffersize,samplerate));
     }
     buffer = new short[buffersize];
 }
@@ -44,10 +43,7 @@ int mixer::getWaveform(int channel)
 
 void mixer::run()
 {
-    for(int i=0;i<buffersize;i++)
-    {
-        buffer[i]=0;
-    }
+    clear();
     for(int i=0;i<channels.size();i++)
     {
         channels[i].run();
@@ -63,8 +59,9 @@ void mixer::mix(short *a, short *b, int size)
     }
     for(int i=0;i<size;i++)
     {
-        a[i]+=b[i];
+        a[i]+=b[i]*this->volume;
     }
+    std::cout << volume << "\n";
 }
 
 void mixer::clear()
@@ -83,4 +80,9 @@ short *mixer::getBufferPtr()
 int mixer::getBufferSize()
 {
     return buffersize;
+}
+
+void mixer::setVolume(double value)
+{
+    std::cout << volume << "\n";
 }
