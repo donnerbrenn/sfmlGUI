@@ -100,20 +100,20 @@ int main()
     
 
 
-    labelTXT="Football";
-    id=elements.add(new button(20,10,128,32,buttonImage, pressedImage, labelTXT));
-    elements.getPtrbyIDX(id)->setClickActionPtr(setBall);
+    // labelTXT="Football";
+    // id=elements.add(new button(20,10,128,32,buttonImage, pressedImage, labelTXT));
+    // elements.getPtrbyIDX(id)->setClickActionPtr(setBall);
 
-    labelTXT="8 Ball";
-    id=elements.add(new button(20,60,128,32,buttonImage, pressedImage,labelTXT));
-    elements.getPtrbyIDX(id)->setClickActionPtr(set8Ball);
+    // labelTXT="8 Ball";
+    // id=elements.add(new button(20,60,128,32,buttonImage, pressedImage,labelTXT));
+    // elements.getPtrbyIDX(id)->setClickActionPtr(set8Ball);
 
-    labelTXT="Basketball";
-    id=elements.add(new button(20,110,128,32,buttonImage, pressedImage,labelTXT));
-    elements.getPtrbyIDX(id)->setClickActionPtr(setBasketball);
+    // labelTXT="Basketball";
+    // id=elements.add(new button(20,110,128,32,buttonImage, pressedImage,labelTXT));
+    // elements.getPtrbyIDX(id)->setClickActionPtr(setBasketball);
 
-    labelTXT="LOCK";
-    id=elements.add(new lockbutton(20,160,128,32,buttonImage, pressedImage,labelTXT));
+    // labelTXT="LOCK";
+    // id=elements.add(new lockbutton(20,160,128,32,buttonImage, pressedImage,labelTXT));
 
 
 
@@ -138,7 +138,7 @@ int main()
     #define DATA 1024
     float data[DATA];
 
-    oscID=elements.add(new oscilloscope(170,240,610,225,&data[0],DATA,1.0,sf::Color::Blue,sf::Color::White));
+    oscID=elements.add(new oscilloscope(10,10,610+160,450,&data[0],DATA,1.0,sf::Color::Blue,sf::Color::White));
     
 
     elements.add(new label(20,400,"Label works <3"));

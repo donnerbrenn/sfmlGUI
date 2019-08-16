@@ -1,13 +1,14 @@
 #include "mixer.h"
 
 
-mixer::mixer(int channelCnt, int buffersize, int samplerate)
+mixer::mixer( int buffersize, int samplerate)
 {
+    this->currentTime=0;
     this->samplerate=samplerate;
     this->buffersize=buffersize;
-    for(int i=0;i<channelCnt;i++)
+    for(int i=0;i<song.getChannelCnt();i++)
     {
-        channels.emplace_back(*new channel(triangle,buffersize,samplerate));
+        channels.emplace_back(*new channel(song.getWaveForm(i),buffersize,samplerate));
     }
     buffer = new short[buffersize];
 }
@@ -46,9 +47,11 @@ void mixer::run()
     clear();
     for(int i=0;i<channels.size();i++)
     {
-        channels[i].run();
+        double freq=song.run(currentTime,i);
+        channels[i].run(freq);
         mix(buffer,channels[i].getBufferPtr(),buffersize);
     }
+    currentTime+=1.0/samplerate;
 }
 
 void mixer::mix(short *a, short *b, int size)

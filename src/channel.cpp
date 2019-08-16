@@ -43,10 +43,9 @@ int channel::getWaveform()
     return waveform;
 }
 
-void channel::run()
+void channel::run(double hertz)
 {
     double phase;
-    double hertz=440;
     for(int i=0;i<bufferSize;i++)
     {
         phase=sin(hertz*M_PI*2*time);
@@ -79,7 +78,19 @@ void channel::run()
         default:
             break;
         }
-        buffer[i]=short(phase*volume);
+
+        if(hertz!=lastHz)
+        {
+            currentVol=volume;
+            time=0;
+        }
+        else
+        {
+            currentVol*=.9999;
+        }
+        lastHz=hertz;
+        
+        buffer[i]=short(phase*currentVol);
         time+=step;
     }    
 }

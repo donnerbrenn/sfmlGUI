@@ -4,11 +4,12 @@
 #include <vector>
 #include "channel.h"
 #include "iostream"
+#include "decode.h"
 
 class mixer
 {
 public:
-    mixer(int channelCnt=1, int buffersize=1024, int samplerate=44100);
+    mixer(int buffersize=1024, int samplerate=44100);
     ~mixer();
     short *getBufferPtr();
     int getBufferSize();
@@ -25,6 +26,8 @@ private:
     void mix(short *a, short *b, int size);
     void clear();
     double volume;
+    decode song;
+    double currentTime;
 };
 
 #endif // MIXER

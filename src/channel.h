@@ -21,7 +21,7 @@ public:
     ~channel();
     bool setWaveform(int waveform);
     int getWaveform();
-    void run();
+    void run(double hertz);
     short *getBufferPtr();
     double getSquare(double value);
     double getTriangle(double value);
@@ -38,6 +38,8 @@ private:
     int bufferSize;
     short *buffer;
     int samplerate;
+    double lastHz=0;
+    double currentVol;
 
 };
 
