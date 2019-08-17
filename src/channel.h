@@ -16,7 +16,7 @@ enum waveform
 class channel
 {
 public:
-    channel(int waveform=sine, int buffersize=1024, int samplerate=44100);
+    channel(double volume, int waveform=sine, int buffersize=1024, int samplerate=44100);
     void init(int waveform, int buffersize, int samplerate);
     ~channel();
     bool setWaveform(int waveform);
@@ -33,14 +33,13 @@ public:
 private:
     double time;
     double step;
-    double volume=1024;
+    double volume;
     int waveform;
     int bufferSize;
     short *buffer;
     int samplerate;
     double lastHz=0;
     double currentVol;
-
 };
 
 #endif //CHANNEL

@@ -131,8 +131,8 @@ int main()
     elements.getPtrbyIDX(id)->setValue(rot);
     elements.getPtrbyIDX(id)->setMoveActionPtr(rotation);
 
-    id=elements.add(new frame(170,10,610,225));
-    canvas=elements.getPtrbyID(id)->getCanvas();
+    // id=elements.add(new frame(170,10,610,225));
+    // canvas=elements.getPtrbyID(id)->getCanvas();
 
 
     #define DATA 1024
@@ -141,7 +141,7 @@ int main()
     oscID=elements.add(new oscilloscope(10,10,610+160,450,&data[0],DATA,1.0,sf::Color::Blue,sf::Color::White));
     
 
-    elements.add(new label(20,400,"Label works <3"));
+    elements.add(new label(20,400,"Tetris - Tune A"));
 
 
     int xVALid=elements.add(new vu(400,480,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,610));
@@ -149,9 +149,10 @@ int main()
     int yVALid=elements.add(new vu(400,500,256,16,"bitmaps/vu.png","bitmaps/greenVU.png","bitmaps/yellowVU.png","bitmaps/redVU.png",20,"",.0,450));
 
     id = elements.add(new slider (400,530,"OSC Scale"));
-    elements.getPtrbyID(id)->setMin(.1);
-    elements.getPtrbyID(id)->setMax(3.0);
-    elements.getPtrbyID(id)->setValue(1.0);
+    elements.getPtrbyID(id)->setMin(.01);
+    elements.getPtrbyID(id)->setMax(1.0);
+    elements.getPtrbyID(id)->setValue(.6);
+    setOscScale(0,.6);
     elements.getPtrbyID(id)->setMoveActionPtr(setOscScale);
 
     id = elements.add(new knob(10,480,"Volume"));
@@ -183,20 +184,20 @@ int main()
             elements.triggerEvents(&window,event);        
         }
         //RGBA
-        canvas->clear(sf::Color::Blue);
-        pos=sprite.getPosition();
-        pos+=vector2f(fX*dX,fY*dY);
+        // canvas->clear(sf::Color::Blue);
+        // pos=sprite.getPosition();
+        // pos+=vector2f(fX*dX,fY*dY);
 
 
-        if(pos.x<ball.getSize().x/2 || pos.x>canvas->getSize().x-ball.getSize().x/2)
-        {
-            dX*=-1;
-        }
+        // if(pos.x<ball.getSize().x/2 || pos.x>canvas->getSize().x-ball.getSize().x/2)
+        // {
+        //     dX*=-1;
+        // }
         
-        if(pos.y<ball.getSize().y/2 || pos.y>canvas->getSize().y-ball.getSize().y/2)
-        {
-            dY*=-1;
-        }
+        // if(pos.y<ball.getSize().y/2 || pos.y>canvas->getSize().y-ball.getSize().y/2)
+        // {
+        //     dY*=-1;
+        // }
 
         elements.getPtrbyID(xVALid)->setValue(pos.x);
         elements.getPtrbyID(yVALid)->setValue(pos.y);
@@ -204,7 +205,7 @@ int main()
         sprite.setPosition(pos);
         sprite.setRotation(sprite.getRotation()+rot);
 
-        canvas->draw(sprite);
-        canvas->display();
+        // canvas->draw(sprite);
+        // canvas->display();
     }
 }

@@ -8,7 +8,7 @@ mixer::mixer( int buffersize, int samplerate)
     this->buffersize=buffersize;
     for(int i=0;i<song.getChannelCnt();i++)
     {
-        channels.emplace_back(*new channel(song.getWaveForm(i),buffersize,samplerate));
+        channels.emplace_back(*new channel(song.getVolume(i)*4096,song.getWaveForm(i),buffersize,samplerate));
     }
     buffer = new short[buffersize];
 }

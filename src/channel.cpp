@@ -1,8 +1,9 @@
 #include "channel.h"
 
 
-channel::channel(int waveform, int buffersize,  int samplerate)
+channel::channel(double volume, int waveform, int buffersize,  int samplerate)
 {
+    this->volume=volume;
     init(waveform,buffersize,samplerate);
 }
 
@@ -48,7 +49,7 @@ void channel::run(double hertz)
     double phase;
     for(int i=0;i<bufferSize;i++)
     {
-        phase=sin(hertz*M_PI*2*time);
+        // phase=sin(hertz*M_PI*2*time);
         switch (waveform)
         {
         case sine:
@@ -78,6 +79,8 @@ void channel::run(double hertz)
         default:
             break;
         }
+
+        // phase+=getTriangle(hertz*2)*.4;
 
         if(hertz!=lastHz)
         {

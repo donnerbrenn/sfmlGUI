@@ -20,7 +20,7 @@ double decode::run(double time, int channel)
 
 double decode::getFrq(int note)
 {
-    double freq=16.3516f;
+    float freq=16.3516f;
     for(int i=1;i<note;++i)
     {
         freq*=1.05946;
@@ -46,4 +46,9 @@ int decode::getPatternLen()
 int decode::getWaveForm(int channel)
 {
     return waveforms[channel];
+}
+
+double decode::getVolume(int channel)
+{
+    return volumes[channel];
 }

@@ -12,6 +12,7 @@ public:
     int getPatternCnt();
     int getPatternLen();
     int getWaveForm(int channel);
+    double getVolume(int channel);
 
 private:
     double speed=1.0;
