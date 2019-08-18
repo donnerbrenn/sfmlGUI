@@ -56,7 +56,7 @@ double decode::getFreq(int channel, double time)
     previous[channel]=note;
 
     double freq=16.3516f;
-    for(int i=1;i<note;++i)
+    for(int i=1;i<note+modify[channel];++i)
     {
         freq*=1.05946;
     }

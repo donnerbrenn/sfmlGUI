@@ -44,6 +44,7 @@ void setVolume(int id, float value)
 
 int main()
 {
+    setVolume(0,.2);
     synthesizer.play();
     bool running=true;
     sf::Event event;
@@ -60,21 +61,21 @@ int main()
     sf::String pressedImage="bitmaps/pressed_button.png";
 
 
-    oscID=elements.add(new oscilloscope(10,10,610+160,450,synthesizer.getFloatBufferPtr(),buffersize,1.0,sf::Color::Blue,sf::Color::White));
-    elements.add(new label(20,400,"Tetris - Tune A"));
+    oscID=elements.add(new oscilloscope(10,10,1780,900,synthesizer.getFloatBufferPtr(),buffersize,1.0,sf::Color::Black,sf::Color::White));
+    elements.add(new label(20,870,"Tetris - Tune"));
     
 
-    id = elements.add(new slider (400,530,"OSC Scale"));
+    id = elements.add(new slider (200,920,"OSC Scale"));
     elements.getPtrbyID(id)->setMin(1.0);
-    elements.getPtrbyID(id)->setMax(10.0);
+    elements.getPtrbyID(id)->setMax(50.0);
     elements.getPtrbyID(id)->setValue(1.0);
     setOscScale(0,1.0);
     elements.getPtrbyID(id)->setMoveActionPtr(setOscScale);
 
-    id = elements.add(new knob(10,480,"Volume"));
+    id = elements.add(new knob(10,920,"Volume"));
     elements.getPtrbyID(id)->setMin(0);
     elements.getPtrbyID(id)->setMax(2.0);
-    elements.getPtrbyID(id)->setValue(1.0);
+    elements.getPtrbyID(id)->setValue(synthesizer.getVolume());
     elements.getPtrbyID(id)->setMoveActionPtr(setVolume);
 
     while(running)

@@ -84,3 +84,8 @@ float *synth::getFloatBufferPtr()
 {
     return floatBuffer;
 }
+
+float synth::getVolume()
+{
+    return this->volume;
+}

@@ -14,6 +14,7 @@ public:
     short *getBufferPtr();
     float *getFloatBufferPtr();
     void setVolume(double volume);
+    float getVolume();
 
 private:
     bool onGetData(Chunk& data);
