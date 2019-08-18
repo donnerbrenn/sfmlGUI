@@ -51,16 +51,6 @@ int main()
     window.setVerticalSyncEnabled(true);
     sf::RenderTexture *canvas;
     
-    ball.loadFromFile("bitmaps/ball.png");
-    ball.setSmooth(true);
-    ball8.loadFromFile("bitmaps/8ball.png");
-    ball8.setSmooth(true);
-    basketball.loadFromFile("bitmaps/basketball.png");
-    basketball.setSmooth(true);
-    sprite.setTexture(ball);
-    sprite.setOrigin(ball.getSize().x/2,ball.getSize().y/2);
-    sprite.setPosition(100,100);
-
     int clicked=-1;
     
 
@@ -75,15 +65,15 @@ int main()
     
 
     id = elements.add(new slider (400,530,"OSC Scale"));
-    elements.getPtrbyID(id)->setMin(.01);
-    elements.getPtrbyID(id)->setMax(2.0);
+    elements.getPtrbyID(id)->setMin(1.0);
+    elements.getPtrbyID(id)->setMax(10.0);
     elements.getPtrbyID(id)->setValue(1.0);
     setOscScale(0,1.0);
     elements.getPtrbyID(id)->setMoveActionPtr(setOscScale);
 
     id = elements.add(new knob(10,480,"Volume"));
     elements.getPtrbyID(id)->setMin(0);
-    elements.getPtrbyID(id)->setMax(1.0);
+    elements.getPtrbyID(id)->setMax(2.0);
     elements.getPtrbyID(id)->setValue(1.0);
     elements.getPtrbyID(id)->setMoveActionPtr(setVolume);
 

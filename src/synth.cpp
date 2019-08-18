@@ -10,15 +10,17 @@ synth::synth(int channels,int bufferSize,int samplerate, double volume)
     this->floatBuffer=new float[bufferSize]{0};
     channel newChan{samplerate,volume};
     chan=newChan;
-
     initialize(1,samplerate);
-    
+
+    env=new envelope{VOICES};
+
 }
 
 synth::~synth()
 {
     delete [] buffer;
     delete [] floatBuffer;
+    delete env;
 }
 
 short *synth::getBufferPtr()
@@ -41,7 +43,13 @@ bool synth::onGetData(Chunk& data)
     {
         for(int j=0;j<decoder.getChannelCnt();j++)
         {
-            buffer[i]+=chan.get(time,decoder.getWaveform(j),decoder.getFreq(j,time));
+            short wave=chan.get(time,decoder.getWaveform(j),decoder.getFreq(j,time))*decoder.getVolume(j);
+            if(decoder.isStriked(j))
+            {
+                env->trigger(j,time);
+            }
+            wave*=env->getVolume(j,time);
+            buffer[i]+=wave;
         }
         buffer[i]*=volume;
         time+=1.0/samplerate;

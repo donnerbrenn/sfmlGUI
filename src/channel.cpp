@@ -45,7 +45,7 @@ double  channel::getSine(double time, double hertz)
 
 double channel::getTriangle(double time, double hertz)
 {
-    return(asin(getSine(time,hertz)));
+    return(asin(getSine(time,hertz)))*.75;
 }
 
 double channel::getSquare(double time, double hertz)

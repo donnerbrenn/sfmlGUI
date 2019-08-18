@@ -4,6 +4,7 @@
 #include <vector>
 #include "channel.h"
 #include "decode.h"
+#include "envelope.h"
 
 class synth : public sf::SoundStream
 {
@@ -29,8 +30,7 @@ private:
     double time;
     channel chan;
     decode decoder;
-
-    
+    envelope *env;
 };
 
 
