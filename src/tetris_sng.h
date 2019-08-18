@@ -2,12 +2,12 @@
 #define PATTERN_H
 #define LENGTH 8
 #define VOICES 3
-#define SPEED .5
+#define SPEED 1.5
 #define PATTERNLENGTH 64
 
 #include "channel.h"
 
-const int waveforms[] = {saw,square,square};
+const int waveforms[] = {saw,saw,saw};
 const double volumes[] ={2.0,.5,.5};
 
 const unsigned char cpatterns[VOICES][LENGTH][PATTERNLENGTH]=

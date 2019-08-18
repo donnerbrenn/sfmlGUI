@@ -1,45 +1,28 @@
 #ifndef CHANNEL
 #define CHANNEL
-#include "envelope.h"
+
 #include <math.h>
 
-enum waveform
-{
-    sine,
-    triangle,
-    square,
-    saw,
-    rsaw,
-    noise
-};
+ enum channelType{sine,triangle,square,saw,rsaw,noise, mute};
+
 
 class channel
 {
 public:
-    channel(double volume, int waveform=sine, int buffersize=1024, int samplerate=44100);
-    void init(int waveform, int buffersize, int samplerate);
+    channel(int samplerate=44100, double volume=1.0);
     ~channel();
-    bool setWaveform(int waveform);
-    int getWaveform();
-    void run(double hertz);
-    short *getBufferPtr();
-    double getSquare(double value);
-    double getTriangle(double value);
-    double getSaw(double value);
-    double getRsaw(double value);
+    short get(double time, int waveform, double hertz);
+    double getSine(double time, double hertz);
+    double getTriangle(double time, double hertz);
+    double getSquare(double time, double hertz);
+    double getSaw(double time, double hertz);
+    double getRSaw(double time, double hertz);
     double getNoise();
-    double getSine(double hertz);
 
 private:
-    double time;
-    double step;
     double volume;
-    int waveform;
-    int bufferSize;
-    short *buffer;
     int samplerate;
-    double lastHz=0;
-    double currentVol;
 };
+
 
 #endif //CHANNEL

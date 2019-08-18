@@ -1,22 +1,23 @@
 #ifndef DECODE
 #define DECODE
+
 #include "tetris_sng.h"
 
 class decode
 {
 public:
-    decode();
-    double run(double time, int channel);
-    double getFrq(int note);
     int getChannelCnt();
-    int getPatternCnt();
-    int getPatternLen();
-    int getWaveForm(int channel);
+    int getPatternSize();
+    int getLength();
     double getVolume(int channel);
+    int getWaveform(int channel);
+    double getFreq(int channel, double time);
+    char previous[VOICES];
+    double prevTime[VOICES];
+
 
 private:
-    double speed=1.0;
-    char previous=0;
+
 };
 
-#endif // DECODE
+#endif//decode

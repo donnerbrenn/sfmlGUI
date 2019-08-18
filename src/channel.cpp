@@ -1,134 +1,70 @@
 #include "channel.h"
 
-
-channel::channel(double volume, int waveform, int buffersize,  int samplerate)
+channel::channel(int samplerate, double volume)
 {
-    this->volume=volume;
-    init(waveform,buffersize,samplerate);
-}
-
-void channel::init(int waveform, int buffersize, int samplerate)
-{
-    this->waveform=waveform;
-    this->bufferSize=buffersize;
     this->samplerate=samplerate;
-    buffer=new short[bufferSize];
-    time =.0f;
-    step=1.0f/samplerate;
+    this->volume=volume;
 }
-
 channel::~channel()
 {
-    // if(buffer!=nullptr)
-    // {
-    //     delete [] buffer;
-    // }
-    // buffer=nullptr;
 }
 
-bool channel::setWaveform(int waveform)
+short channel::get(double time, int waveform, double hertz)
 {
-    if(waveform >= 0 && waveform <4)
+    double result;
+    switch (waveform)
     {
-        this->waveform=waveform;
-        return true;
+    case sine:
+        result=getSine(time,hertz);
+        break;
+    case square:
+        result=getSquare(time,hertz);
+        break;
+    case triangle:
+        result=getTriangle(time,hertz);
+        break;
+    case saw:
+        result=getSaw(time,hertz);
+        break;
+    case rsaw:
+        result=getRSaw(time,hertz);
+        break;
+    case noise:
+        result=getNoise();
+        break;
+    default:
+        return 0;
     }
-    else
-    {
-        return false;
-    }
+    return result*8192;
 }
 
-int channel::getWaveform()
+double  channel::getSine(double time, double hertz)
 {
-    return waveform;
+    return sin(hertz*M_PI*2*time);
 }
 
-void channel::run(double hertz)
+double channel::getTriangle(double time, double hertz)
 {
-    double phase;
-    for(int i=0;i<bufferSize;i++)
-    {
-        // phase=sin(hertz*M_PI*2*time);
-        switch (waveform)
-        {
-        case sine:
-            phase=getSine(hertz);
-            break;
-
-        case square:
-            phase=getSquare(hertz);
-            break;
-
-        case noise:
-            phase=getNoise();
-            break;
-
-        case triangle:
-            phase=getTriangle(hertz);
-            break;
-
-        case saw:
-            phase=getSaw(hertz);
-            break;
-
-        case rsaw:
-            phase=getRsaw(hertz);
-            break;
-
-        default:
-            break;
-        }
-
-        // phase+=getTriangle(hertz*2)*.4;
-
-        if(hertz!=lastHz)
-        {
-            currentVol=volume;
-            time=0;
-        }
-        else
-        {
-            currentVol*=.9999;
-        }
-        lastHz=hertz;
-        
-        buffer[i]=short(phase*currentVol);
-        time+=step;
-    }    
+    return(asin(getSine(time,hertz)));
 }
 
-short *channel::getBufferPtr()
+double channel::getSquare(double time, double hertz)
 {
-    return buffer;
+    return getSine(time,hertz)>0?1.0:-1.0;
 }
 
-double channel::getSquare(double value)
+double channel::getSaw(double time, double hertz)
 {
-    return(getSine(value)>0?1.0:-1.0);
+    return(2.0/M_PI)*(hertz*M_PI*fmod(time,1.0/hertz)-(M_PI/2.0));
 }
 
-double channel::getTriangle(double value)
+double channel::getRSaw(double time, double hertz)
 {
-    return asin(getSine(value));
+    return -getSaw(time,hertz);
 }
 
-double channel::getSaw(double value)
-{
-    return(2.0/M_PI)*(value*M_PI*fmod(time,1.0/value)-(M_PI/2.0));
-}
-
-double channel::getRsaw(double value)
-{
-    return(-getSaw(value));
-}
 
 double channel::getNoise()
 {
-    return((rand()%2000)*.001-1.0);
-}
-
-double channel::getSine(double hertz)
-{
-    return sin(hertz*M_PI*2*time);
+    return (rand()%32768-(32768/2))/32768.0;
 }
