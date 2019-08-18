@@ -1,6 +1,7 @@
 #ifndef ENVELOPE
 #define ENVELOPE
 #include <iostream>
+#include "tetris_sng.h"
 
 class envelope
 {

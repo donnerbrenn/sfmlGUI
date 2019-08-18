@@ -7,9 +7,32 @@
 
 #include "channel.h"
 
-const int waveforms[] = {square,square,square,sine,triangle,triangle};
-const double volumes[] ={.7,.7,.5,.3,1.0,.50};
-const int modify[] = {0,0,0,0,-24,-12};
+struct description
+{
+    int waveform=sine;
+    double volume=1.0;
+    int modify=0;
+    double a=.0025;
+    double d=1.0;
+    double s=.25;
+    double r=.25;
+};
+
+const description descriptions[]=
+{
+    description{square,.7,0},
+    description{square,.7,0},
+    description{square,.5,0},
+    description{sine,.3,12},
+    description{sine,1.0,-12},
+    description{triangle,.5,12}
+};
+
+
+
+// const int waveforms[] = {square,square,square,sine,sine,triangle};
+// const double volumes[] ={.7,.7,.5,.3,1.0,.50};
+// const int modify[] = {0,0,0,12,-12,12};
 
 const unsigned char cpatterns[VOICES][LENGTH][PATTERNLENGTH]=
 {

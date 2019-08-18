@@ -11,11 +11,13 @@ envelope::envelope(int channels)
     for(int i=0;i<channels;i++)
     {
         start[i]=0;
-        a[i]=.0025;
-        d[i]=1.0;
-        s[i]=.025;
-        r[i]=.8;
+        a[i]=descriptions[i].a;
+        d[i]=descriptions[i].d;
+        s[i]=descriptions[i].s;
+        r[i]=descriptions[i].r;
+        
     }
+    
 }
 
 envelope::~envelope()

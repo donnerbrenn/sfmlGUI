@@ -4,7 +4,7 @@ decode::decode()
 {
     for(int i=0;i<VOICES;i++)
     {
-        volume[i]=volumes[i];
+        volume[i]=descriptions[i].volume;
     }
 }
 
@@ -30,7 +30,7 @@ double decode::getVolume(int channel)
 
 int decode::getWaveform(int channel)
 {
-    return waveforms[channel];
+    return descriptions[channel].waveform;
 }
 
 double decode::getFreq(int channel, double time)
@@ -56,7 +56,7 @@ double decode::getFreq(int channel, double time)
     previous[channel]=note;
 
     double freq=16.3516f;
-    for(int i=1;i<note+modify[channel];++i)
+    for(int i=1;i<note+descriptions[channel].modify;++i)
     {
         freq*=1.05946;
     }
