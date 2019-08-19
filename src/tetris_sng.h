@@ -16,17 +16,25 @@ struct description
     double d=1.0;
     double s=.25;
     double r=.25;
+    double timeshift=0;
 };
 
 const description descriptions[]=
 {
-    description{square,.7,0},
-    description{square,.7,0},
-    description{square,.5,0},
-    description{sine,.3,12},
-    description{sine,1.0,-12},
-    description{triangle,.5,12}
+    description{saw,.7,0},
+    description{square,.7,0,0},
+    description{sine,.5,0},
+    description{rsaw,.1,-12},
+    description{square,.125,36,.0,.4,.3,.30},
+    description{square,.1,12}
 };
+
+    // description{saw,.7,0},
+    // description{square,.7,0,0},
+    // description{saw,.5,0},
+    // description{rsaw,.1,-12},
+    // description{square,.05,24,.0,.4,.3,.25},
+    // description{rsaw,.1,-12}
 
 
 
