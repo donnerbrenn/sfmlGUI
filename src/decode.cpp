@@ -33,37 +33,55 @@ int decode::getWaveform(int channel)
     return descriptions[channel].waveform;
 }
 
-double decode::getFreq(int channel, double time)
+double decode::getFreq(int channel, double time, bool getSub)
 {
+    if(muted[channel])
+        return 0;
     int pos = time*SPEED*5;
 
     char note = cpatterns[channel][(pos>>6)&7][pos&63];
-    if (note == 0 || note==previous[channel])
+
+if(!getSub)
+{
+    strike[channel]=false;
+    if(note==0)
+    {
+        previousStrike[channel]=0;
+    }
+    else if(note!=0&&previousStrike[channel]!=note)
+    {
+        strike[channel]=true;
+        previousStrike[channel]=note;
+    }
+}
+
+    if (note == 0)
     {
         note=previous[channel];
-        strike[channel]=false;
     }
-    else if (note != previous[channel])
-    {
-        strike[channel]=true;
-    }
-    else
-    {
-        strike[channel]=true;
-    }
-    
-   
+
     previous[channel]=note;
 
     double freq=16.3516f;
-    for(int i=1;i<note+descriptions[channel].modify;++i)
+    int modify=getSub?descriptions[channel].sub_modify:descriptions[channel].modify;
+    for(int i=1;i<note+modify;++i)
     {
         freq*=1.05946;
     }
-    return freq;
+    return freq;    
 }
 
 bool decode::isStriked(int channel)
 {
     return strike[channel];
+}
+
+double decode::getSubVolume(int channel)
+{
+    return descriptions[channel].sub_volume;
+}
+
+double decode::getSubWaveform(int channel)
+{
+    return descriptions[channel].sub_waveform;
 }

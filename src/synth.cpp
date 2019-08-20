@@ -43,11 +43,14 @@ bool synth::onGetData(Chunk& data)
     {
         for(int j=0;j<decoder.getChannelCnt();j++)
         {
-            short wave=chan.get(time,decoder.getWaveform(j),decoder.getFreq(j,time))*decoder.getVolume(j);
             if(decoder.isStriked(j))
             {
                 env->trigger(j,time);
             }
+
+            short wave=chan.get(env->getCurrentTime(j,time),decoder.getWaveform(j),decoder.getFreq(j,time))*decoder.getVolume(j);
+            wave+=chan.get(env->getCurrentTime(j,time),decoder.getSubWaveform(j),decoder.getFreq(j,time,true))*decoder.getSubVolume(j);
+
             wave*=env->getVolume(j,time);
             buffer[i]+=wave;
         }
