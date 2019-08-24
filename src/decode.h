@@ -1,6 +1,4 @@
-#ifndef DECODE
-#define DECODE
-
+#pragma once
 #include "tetris_sng.h"
 #include <iostream>
 
@@ -15,6 +13,7 @@ public:
     
     int getWaveform(int channel);
     double getFreq(int channel, double time, bool getSub=false);
+    bool getIsSelfModulated(int channel);
     bool isStriked(int channel);
     
     double getSubVolume(int channel);
@@ -26,5 +25,3 @@ private:
     double volume[VOICES]{1.0};
     bool strike[VOICES]{true};
 };
-
-#endif//decode

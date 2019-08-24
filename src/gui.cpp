@@ -63,10 +63,15 @@ int main()
     int chanDisplayWidth=(WIDTH-20)/VOICES;
     std:: cout << chanDisplayWidth << "\n";
 
-    id=elements.add(new oscilloscope(10+0*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(0),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
-    id=elements.add(new oscilloscope(10+1*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(1),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
-    id=elements.add(new oscilloscope(10+2*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(2),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
-    id=elements.add(new oscilloscope(10+3*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(3),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    for(int i=0;i<VOICES;i++)
+    {
+        id=elements.add(new oscilloscope(10+i*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(i),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    }
+
+    // id=elements.add(new oscilloscope(10+0*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(0),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    // id=elements.add(new oscilloscope(10+1*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(1),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    // id=elements.add(new oscilloscope(10+2*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(2),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    // id=elements.add(new oscilloscope(10+3*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(3),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
     oscID=elements.add(new oscilloscope(10,210,WIDTH-20,700,synthesizer.getFloatBufferPtr(),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
     elements.add(new label(20,870,"Tetris - Tune"));
     
@@ -80,7 +85,7 @@ int main()
 
     id = elements.add(new knob(10,920,"Volume"));
     elements.getPtrbyID(id)->setMin(0);
-    elements.getPtrbyID(id)->setMax(2.0);
+    elements.getPtrbyID(id)->setMax(1.0);
     elements.getPtrbyID(id)->setValue(synthesizer.getVolume());
     elements.getPtrbyID(id)->setMoveActionPtr(setVolume);
 

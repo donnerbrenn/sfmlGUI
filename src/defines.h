@@ -1,5 +1,4 @@
-#ifndef DEFINES
-#define DEFINES
+#pragma once
 #include <string>
 
 //define
@@ -11,4 +10,3 @@
 #define DUALFRAMED true
 
 enum type{element_type,button_type,lockbutton_type,frame_type,knob_type,vu_type, slider_type, label_type,oscilloscope_type};
-#endif

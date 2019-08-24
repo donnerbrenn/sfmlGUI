@@ -1,5 +1,4 @@
-#ifndef CHANNEL
-#define CHANNEL
+#pragma once
 
 #include <math.h>
 
@@ -23,6 +22,3 @@ private:
     double volume;
     int samplerate;
 };
-
-
-#endif //CHANNEL

@@ -1,6 +1,4 @@
-#ifndef OSCILLOSCOPE
-#define OSCILLOSCOPE
-
+#pragma once
 #include "frame.h"
 #include "iostream"
 
@@ -43,5 +41,3 @@ protected:
     void drawCurve();
     int partition;
 };
-
-#endif // OSCILLOSCOPE

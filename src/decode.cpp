@@ -76,6 +76,11 @@ bool decode::isStriked(int channel)
     return strike[channel];
 }
 
+bool decode::getIsSelfModulated(int channel)
+{
+    return descriptions[channel].selfModulate;
+}
+
 double decode::getSubVolume(int channel)
 {
     return descriptions[channel].sub_volume;

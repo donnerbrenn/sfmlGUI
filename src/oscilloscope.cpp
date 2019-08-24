@@ -34,8 +34,8 @@ void oscilloscope::drawCurve()
             offset=size;
         }
     }
-    float step=canvas.getSize().x/float(size-1);
-    std::cout << size << "\n";
+    double step=canvas.getSize().x/double(size-1);
+    // std::cout << size << "\n";
     sf::VertexArray curve(sf::LinesStrip,size);
     for(int i=0;i<size;i++)
     {

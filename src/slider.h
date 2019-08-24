@@ -1,5 +1,4 @@
-#ifndef SLIDER
-#define SLIDER
+#pragma once
 #include "element.h"
 #include "vector2f.h"
 
@@ -44,5 +43,3 @@ protected:
     bool isPressed=false;
     sf::Vector2i lastPos;
 };
-
-#endif

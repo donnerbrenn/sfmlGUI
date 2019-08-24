@@ -1,5 +1,4 @@
-#ifndef ENVELOPE
-#define ENVELOPE
+#pragma once
 #include <iostream>
 #include "tetris_sng.h"
 
@@ -20,6 +19,3 @@ private:
     double *s;
     double *r;
 };
-
-
-#endif//ENVELOPE

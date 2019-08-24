@@ -1,5 +1,4 @@
-#ifndef SYNTH
-#define SYNTH
+#pragma once
 #include <SFML/Audio.hpp>
 #include <vector>
 #include "channel.h"
@@ -34,6 +33,3 @@ private:
     envelope *env;
     float *channelFloatBuffers[VOICES];
 };
-
-
-#endif //SYNTH

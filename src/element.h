@@ -1,5 +1,4 @@
-#ifndef ELEMENT
-#define ELEMENT
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <string>
@@ -73,5 +72,3 @@ protected:
 
 private:
 };
-
-#endif // ELEMENT

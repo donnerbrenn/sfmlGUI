@@ -1,5 +1,4 @@
-#ifndef LOCKBUTTON
-#define LOCKBUTTON
+#pragma once
 #include "button.h"
 
 class lockbutton: public button
@@ -21,5 +20,3 @@ protected:
 
 
 };
-
-#endif // LOCKBUTTON

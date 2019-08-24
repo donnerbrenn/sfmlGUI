@@ -1,5 +1,4 @@
-#ifndef BUBBLE_BOBBLE_SNG_H
-#define BUBBLE_BOBBLE_SNG_H
+#pragma once
 #define length 6
 #define speed 5000
 
@@ -86,4 +85,3 @@ const char cpatterns[3][24][128]
         {char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0),char(0)}
     }
 };
-#endif // BUBBLE_BOBBLE_SNG_H
