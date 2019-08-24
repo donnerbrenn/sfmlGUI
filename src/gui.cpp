@@ -60,10 +60,14 @@ int main()
     sf::String buttonImage="bitmaps/button.png";
     sf::String pressedImage="bitmaps/pressed_button.png";
 
-    id=elements.add(new oscilloscope(10,10,580,190,synthesizer.getChannelFloatBuffer(0),buffersize,1.0,sf::Color::Black,sf::Color::White));
-    id=elements.add(new oscilloscope(610,10,580,190,synthesizer.getChannelFloatBuffer(1),buffersize,1.0,sf::Color::Black,sf::Color::White));
-    id=elements.add(new oscilloscope(610+600,10,580,190,synthesizer.getChannelFloatBuffer(2),buffersize,1.0,sf::Color::Black,sf::Color::White));
-    oscID=elements.add(new oscilloscope(10,210,1780,700,synthesizer.getFloatBufferPtr(),buffersize,1.0,sf::Color::Black,sf::Color::White));
+    int chanDisplayWidth=(WIDTH-20)/VOICES;
+    std:: cout << chanDisplayWidth << "\n";
+
+    id=elements.add(new oscilloscope(10+0*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(0),buffersize,1.0,sf::Color::Black,sf::Color::White));
+    id=elements.add(new oscilloscope(10+1*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(1),buffersize,1.0,sf::Color::Black,sf::Color::White));
+    id=elements.add(new oscilloscope(10+2*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(2),buffersize,1.0,sf::Color::Black,sf::Color::White));
+    id=elements.add(new oscilloscope(10+3*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(3),buffersize,1.0,sf::Color::Black,sf::Color::White));
+    oscID=elements.add(new oscilloscope(10,210,WIDTH-20,700,synthesizer.getFloatBufferPtr(),buffersize,1.0,sf::Color::Black,sf::Color::White));
     elements.add(new label(20,870,"Tetris - Tune"));
     
 

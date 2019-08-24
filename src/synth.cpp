@@ -61,7 +61,7 @@ bool synth::onGetData(Chunk& data)
             wave+=chan.get(env->getCurrentTime(j,time),decoder.getSubWaveform(j),decoder.getFreq(j,time,true))*decoder.getSubVolume(j);
             wave*=env->getVolume(j,time);
 
-            channelFloatBuffers[j][i]=wave*.33;
+            channelFloatBuffers[j][i]=wave*.75;
             floatBuffer[i]+=wave*.1;
             buffer[i]+=wave*4096;
         }
