@@ -13,6 +13,10 @@ synth::synth(int channels,int bufferSize,int samplerate, double volume)
     initialize(1,samplerate);
 
     env=new envelope{VOICES};
+    for(int i=0;i<VOICES;i++)
+    {
+        channelFloatBuffers[i]=new float[bufferSize];
+    }
 
 }
 
@@ -21,6 +25,10 @@ synth::~synth()
     delete [] buffer;
     delete [] floatBuffer;
     delete env;
+    for(int i=0;i<VOICES;i++)
+    {
+        delete[] channelFloatBuffers[i];
+    }
 }
 
 short *synth::getBufferPtr()
@@ -41,24 +49,25 @@ bool synth::onGetData(Chunk& data)
 
     for(int i=0;i<bufferSize;i++)
     {
-        for(int j=0;j<decoder.getChannelCnt();j++)
+        floatBuffer[i]=0;
+        for(int j=0;j<VOICES;j++)
         {
             if(decoder.isStriked(j))
             {
                 env->trigger(j,time);
             }
 
-            short wave=chan.get(env->getCurrentTime(j,time),decoder.getWaveform(j),decoder.getFreq(j,time))*decoder.getVolume(j);
+            double wave=chan.get(env->getCurrentTime(j,time),decoder.getWaveform(j),decoder.getFreq(j,time))*decoder.getVolume(j);
             wave+=chan.get(env->getCurrentTime(j,time),decoder.getSubWaveform(j),decoder.getFreq(j,time,true))*decoder.getSubVolume(j);
-
             wave*=env->getVolume(j,time);
-            buffer[i]+=wave;
+
+            channelFloatBuffers[j][i]=wave*.33;
+            floatBuffer[i]+=wave*.1;
+            buffer[i]+=wave*4096;
         }
         buffer[i]*=volume;
         time+=1.0/samplerate;
     }
-
-    convertShortToFloatBuffer();
     return true;
 }
 
@@ -75,17 +84,21 @@ void synth::clearBuffer()
     }
 }
 
-void synth::convertShortToFloatBuffer()
-{
-    for(int i=0;i<bufferSize;i++)
-    {
-        floatBuffer[i]=float(buffer[i]/32768.0);
-    }
-}
-
 float *synth::getFloatBufferPtr()
 {
     return floatBuffer;
+}
+
+float *synth::getChannelFloatBuffer(int channel)
+{
+    if(channel<VOICES)
+    {
+        return(channelFloatBuffers[channel]);
+    }
+    else
+    {
+        return nullptr;
+    }
 }
 
 float synth::getVolume()

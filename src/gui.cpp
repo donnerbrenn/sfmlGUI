@@ -60,8 +60,10 @@ int main()
     sf::String buttonImage="bitmaps/button.png";
     sf::String pressedImage="bitmaps/pressed_button.png";
 
-
-    oscID=elements.add(new oscilloscope(10,10,1780,900,synthesizer.getFloatBufferPtr(),buffersize,1.0,sf::Color::Black,sf::Color::White));
+    id=elements.add(new oscilloscope(10,10,580,190,synthesizer.getChannelFloatBuffer(0),buffersize,1.0,sf::Color::Black,sf::Color::White));
+    id=elements.add(new oscilloscope(610,10,580,190,synthesizer.getChannelFloatBuffer(1),buffersize,1.0,sf::Color::Black,sf::Color::White));
+    id=elements.add(new oscilloscope(610+600,10,580,190,synthesizer.getChannelFloatBuffer(2),buffersize,1.0,sf::Color::Black,sf::Color::White));
+    oscID=elements.add(new oscilloscope(10,210,1780,700,synthesizer.getFloatBufferPtr(),buffersize,1.0,sf::Color::Black,sf::Color::White));
     elements.add(new label(20,870,"Tetris - Tune"));
     
 
@@ -78,9 +80,12 @@ int main()
     elements.getPtrbyID(id)->setValue(synthesizer.getVolume());
     elements.getPtrbyID(id)->setMoveActionPtr(setVolume);
 
+    // id=elements.add(new label(1000,1000,1,true));
+
+    sf::Clock runtime;
+
     while(running)
     {
-
         window.clear(sf::Color(128,128,128,255));
         elements.drawAll(&window);
         window.display();
@@ -93,7 +98,5 @@ int main()
             }
             elements.triggerEvents(&window,event);        
         }
-
-
     }
 }

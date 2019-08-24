@@ -9,7 +9,7 @@ channel::~channel()
 {
 }
 
-short channel::get(double time, int waveform, double hertz)
+double channel::get(double time, int waveform, double hertz)
 {
     double result;
     switch (waveform)
@@ -35,7 +35,7 @@ short channel::get(double time, int waveform, double hertz)
     default:
         return 0;
     }
-    return result*4096;
+    return result;
 }
 
 double  channel::getSine(double time, double hertz)
@@ -45,7 +45,7 @@ double  channel::getSine(double time, double hertz)
 
 double channel::getTriangle(double time, double hertz)
 {
-    return(asin(getSine(time,hertz)));
+    return(asin(getSine(time,hertz)))*.75;
 }
 
 double channel::getSquare(double time, double hertz)

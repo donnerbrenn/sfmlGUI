@@ -13,6 +13,7 @@ public:
     ~synth();
     short *getBufferPtr();
     float *getFloatBufferPtr();
+    float *getChannelFloatBuffer(int channel);
     void setVolume(double volume);
     float getVolume();
 
@@ -20,7 +21,6 @@ private:
     bool onGetData(Chunk& data);
     void onSeek(sf::Time timeOffset); 
     void clearBuffer();
-    void convertShortToFloatBuffer();
 
     short *buffer;
     float *floatBuffer;
@@ -32,6 +32,7 @@ private:
     channel chan;
     decode decoder;
     envelope *env;
+    float *channelFloatBuffers[VOICES];
 };
 
 

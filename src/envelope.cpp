@@ -35,24 +35,26 @@ void envelope::trigger(int channel, double time)
 }
 
 double envelope::getVolume(int channel, double time)
-{
+{    
+    double a_time=time-start[channel];
+    double s_time=a_time-a[channel];
+    double r_time=a_time-a[channel]-s[channel];
 
-    double currentTime=time-start[channel];
-    if(currentTime<=a[channel])
+    if(a_time<=a[channel])
     {
-        return currentTime/a[channel]*d[channel];
+        return a_time/a[channel]*d[channel];
     }
-    else if(currentTime>a[channel]&&currentTime<=a[channel]+s[channel])
+
+    if(s_time <= s[channel])
     {
         double overhead=d[channel]-1.0;
-        double sustainTime=currentTime-a[channel];
-        double currentOverhead=overhead*sustainTime/s[channel];
-        return 1.0+currentOverhead;
+        double currentOverhead=(overhead*s_time/s[channel]);
+        return 1.0+(overhead-currentOverhead);
     }
-    else if (currentTime>a[channel]+s[channel]&&currentTime<=(a[channel]+s[channel]+r[channel]))
+
+    if(r_time<=r[channel] && r_time >0)
     {
-        double releaseTime=currentTime-a[channel]-s[channel];
-        return 1.0-(releaseTime/r[channel]);
+        return  1.0-(r_time/r[channel]);
     }
     return 0.0;
 }

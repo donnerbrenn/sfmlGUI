@@ -15,7 +15,7 @@ struct description
     double volume=.5;
     int modify=0;
     double a=.0;
-    double d=1.0;
+    double d=.5;
     double s=.025;
     double r=.5;
 
@@ -27,10 +27,10 @@ struct description
 const description snare
 {
     .waveform=sine,
-    .volume=1.5,
-    .modify=-36,
-    .a=.1,
-    .d=3.0,
+    .volume=1.0,
+    .modify=-26,
+    .a=.05,
+    .d=2.5,
     .s=.0,
     .r=.5,
     .sub_waveform=noise,
@@ -42,33 +42,48 @@ const description bass
     .waveform=square,
     .volume=.5,
     .modify=0,
-    .a=.05,
-    .d=.75,
-    .s=.0,
+    .a=.0,
+    .d=1.0,
+    .s=0,
     .r=1.0,
-    .sub_waveform=square,
-    .sub_volume=.15,
-    .sub_modify=12
+    .sub_waveform=sine,
+    .sub_volume=.5,
+    .sub_modify=-0
 };
 
 const description lead
 {
     .waveform=square,
+    .volume=.75,
+    .modify=0,
+    .a=.05,
+    .d=1.0,
+    .s=.05,
+    .r=.25,
+    .sub_waveform=triangle,
+    .sub_volume=.15,
+    .sub_modify=0
+};
+
+const description lead2
+{
+    .waveform=triangle,
     .volume=.750,
     .modify=0,
     .a=.0,
-    .d=1.75,
-    .s=.0,
-    .sub_waveform=rsaw,
-    .sub_volume=.25,
-    .sub_modify=12
+    .d=1.2,
+    .s=.05,
+    .r=.5,
+    .sub_waveform=square,
+    .sub_volume=.5,
+    .sub_modify=0
 };
 
 const description descriptions[]=
 {
     lead,
     bass,
-    lead,
+    lead2,
     snare
 };
 
