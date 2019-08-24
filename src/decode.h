@@ -13,7 +13,7 @@ public:
     
     int getWaveform(int channel);
     double getFreq(int channel, double time, bool getSub=false);
-    bool getIsSelfModulated(int channel);
+    bool isfreqModulated(int channel);
     bool isStriked(int channel);
     
     double getSubVolume(int channel);

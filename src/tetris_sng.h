@@ -11,7 +11,7 @@ const bool muted[]={false,false,false,false,false};// true false
 
 struct description
 {
-    bool selfModulate=false;
+    bool freqModulate=false;
     int waveform=sine;
     double volume=.5;
     int modify=0;
@@ -27,14 +27,14 @@ struct description
 
 const description bassdrum
 {
-    .selfModulate=true,
+    .freqModulate=true,
     .waveform=sine,
     .volume=.75,
     .modify=12,
     .a=0,
-    .d=2.5,
+    .d=1.5,
     .s=.1,
-    .r=.1,
+    .r=.2,
     .sub_waveform=sine,
     .sub_volume=.125,
     .sub_modify=48
@@ -48,7 +48,7 @@ const description snare
     .a=.00,
     .d=6.5,
     .s=.05,
-    .r=.125,
+    .r=.25,
     .sub_waveform=sine,
     .sub_volume=.25,
     .sub_modify=-24
@@ -65,34 +65,34 @@ const description bass
     .r=.5,
     .sub_waveform=square,
     .sub_volume=.5,
-    .sub_modify=-0
+    .sub_modify=0
 };
 
 const description lead
 {
     .waveform=square,
-    .volume=.4,
+    .volume=.2,
     .modify=0,
     .a=.0,
     .d=2.0,
     .s=.1,
-    .r=.5,
+    .r=1.0,
     .sub_waveform=rsaw,
-    .sub_volume=.5,
+    .sub_volume=.15,
     .sub_modify=0
 };
 
 const description lead2
 {
     .waveform=square,
-    .volume=.350,
+    .volume=.2,
     .modify=0,
-    .a=.0,
+    .a=.05,
     .d=1.8,
     .s=.25,
-    .r=.75,
-    .sub_waveform=sine,
-    .sub_volume=.25,
+    .r=1.0,
+    .sub_waveform=triangle,
+    .sub_volume=.15,
     .sub_modify=0
 };
 
@@ -155,6 +155,6 @@ const unsigned char cpatterns[VOICES][LENGTH][PATTERNLENGTH]=
         {12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,12,0},
         {12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,12,0},
         {12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,12,0},
-        {12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,12,0,12,0,12,11}
+        {12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,0,0,12,0,12,0,12,11,12,11}
     }
 };

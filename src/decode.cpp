@@ -76,9 +76,9 @@ bool decode::isStriked(int channel)
     return strike[channel];
 }
 
-bool decode::getIsSelfModulated(int channel)
+bool decode::isfreqModulated(int channel)
 {
-    return descriptions[channel].selfModulate;
+    return descriptions[channel].freqModulate;
 }
 
 double decode::getSubVolume(int channel)

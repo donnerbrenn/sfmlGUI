@@ -57,8 +57,8 @@ bool synth::onGetData(Chunk& data)
                 env->trigger(j,time);
             }
             double freq=decoder.getFreq(j,time);
-            if(decoder.getIsSelfModulated(j))
-                freq*=env->getVolume(j,time);
+            if(decoder.isfreqModulated(j))
+                freq*=env->getVolume(j,time)*env->getVolume(j,time);
 
             double wave=chan.get(env->getCurrentTime(j,time),decoder.getWaveform(j),freq)*decoder.getVolume(j);
             wave+=chan.get(env->getCurrentTime(j,time),decoder.getSubWaveform(j),freq)*decoder.getSubVolume(j);
