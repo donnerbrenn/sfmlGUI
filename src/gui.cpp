@@ -4,7 +4,7 @@
 #include <math.h>
 #include "synth.h"
 
-int buffersize=1024;
+int buffersize=44100/(74/2);
 vector2f pos;
 sf::Texture ball;
 sf::Texture ball8;
@@ -44,7 +44,7 @@ void setVolume(int id, float value)
 
 int main()
 {
-    setVolume(0,.2);
+    setVolume(0,1.0);
     synthesizer.play();
     bool running=true;
     sf::Event event;
@@ -63,19 +63,19 @@ int main()
     int chanDisplayWidth=(WIDTH-20)/VOICES;
     std:: cout << chanDisplayWidth << "\n";
 
-    id=elements.add(new oscilloscope(10+0*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(0),buffersize,1.0,sf::Color::Black,sf::Color::White));
-    id=elements.add(new oscilloscope(10+1*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(1),buffersize,1.0,sf::Color::Black,sf::Color::White));
-    id=elements.add(new oscilloscope(10+2*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(2),buffersize,1.0,sf::Color::Black,sf::Color::White));
-    id=elements.add(new oscilloscope(10+3*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(3),buffersize,1.0,sf::Color::Black,sf::Color::White));
-    oscID=elements.add(new oscilloscope(10,210,WIDTH-20,700,synthesizer.getFloatBufferPtr(),buffersize,1.0,sf::Color::Black,sf::Color::White));
+    id=elements.add(new oscilloscope(10+0*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(0),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    id=elements.add(new oscilloscope(10+1*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(1),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    id=elements.add(new oscilloscope(10+2*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(2),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    id=elements.add(new oscilloscope(10+3*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(3),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    oscID=elements.add(new oscilloscope(10,210,WIDTH-20,700,synthesizer.getFloatBufferPtr(),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
     elements.add(new label(20,870,"Tetris - Tune"));
     
 
     id = elements.add(new slider (200,920,"OSC Scale"));
     elements.getPtrbyID(id)->setMin(1.0);
     elements.getPtrbyID(id)->setMax(50.0);
-    elements.getPtrbyID(id)->setValue(1.0);
-    setOscScale(0,1.0);
+    elements.getPtrbyID(id)->setValue(10.0);
+    setOscScale(0,10.0);
     elements.getPtrbyID(id)->setMoveActionPtr(setOscScale);
 
     id = elements.add(new knob(10,920,"Volume"));

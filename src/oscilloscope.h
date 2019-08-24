@@ -2,14 +2,15 @@
 #define OSCILLOSCOPE
 
 #include "frame.h"
+#include "iostream"
 
-
+enum partition{all,left,right};
 
 class oscilloscope : public frame
 {
 public:
     oscilloscope():frame(){}
-    oscilloscope(int x, int y, int w, int h, float *data, int size, float scale=1.0, sf::Color bgColor=sf::Color::Black, sf::Color fgColor=sf::Color::White):
+    oscilloscope(int x, int y, int w, int h, float *data, int size, bool dualBuffered, float scale=1.0, sf::Color bgColor=sf::Color::Black, sf::Color fgColor=sf::Color::White):
     frame(x,y,w,h,"")
     {
         this->canvas.setSmooth(true);
@@ -19,6 +20,7 @@ public:
         this->data=data;
         this->size=size;
         this->type=oscilloscope_type;
+        this->partition=dualBuffered;
     }
 
     void draw(sf::RenderWindow *window);
@@ -39,6 +41,7 @@ protected:
     int size;
     float scale;
     void drawCurve();
+    int partition;
 };
 
 #endif // OSCILLOSCOPE
