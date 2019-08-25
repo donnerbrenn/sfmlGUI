@@ -65,7 +65,6 @@ bool synth::onGetData(Chunk& data)
                 env->trigger(j,time);
             }
             double freq=decoder.getFreq(j,time);
-<<<<<<< HEAD
             double subFreq=decoder.getFreq(j,time,true);
             if(decoder.isfreqModulated(j))
             {
@@ -77,13 +76,6 @@ bool synth::onGetData(Chunk& data)
             double wave;
             wave=chan.get(env->getCurrentTime(j,time),decoder.getWaveform(j),freq)*decoder.getVolume(j);
             wave+=chan.get(env->getCurrentTime(j,time),decoder.getSubWaveform(j),subFreq)*decoder.getSubVolume(j);
-=======
-            if(decoder.isfreqModulated(j))
-                freq*=env->getVolume(j,time)*env->getVolume(j,time);
-
-            double wave=chan.get(env->getCurrentTime(j,time),decoder.getWaveform(j),freq)*decoder.getVolume(j);
-            wave+=chan.get(env->getCurrentTime(j,time),decoder.getSubWaveform(j),freq)*decoder.getSubVolume(j);
->>>>>>> 62af46f569aff92a021bb6157b41f5789dc6e96b
             wave*=env->getVolume(j,time);
             if(!isnan(wave))
             wave=filters[j]->getFiltered(wave*.1)*10;

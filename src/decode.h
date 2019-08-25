@@ -1,10 +1,6 @@
 #pragma once
-<<<<<<< HEAD
 #include "defines.h"
 #include SONG
-=======
-#include "tetris_sng.h"
->>>>>>> 62af46f569aff92a021bb6157b41f5789dc6e96b
 #include <iostream>
 
 class decode

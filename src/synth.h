@@ -33,8 +33,5 @@ private:
     decode decoder;
     envelope *env;
     float *channelFloatBuffers[VOICES];
-<<<<<<< HEAD
     filter *filters[VOICES];
-=======
->>>>>>> 62af46f569aff92a021bb6157b41f5789dc6e96b
 };
