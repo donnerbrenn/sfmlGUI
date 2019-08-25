@@ -17,9 +17,6 @@ struct description
     int sub_waveform=mute;
     double sub_volume=.25;
     int sub_modify=0;
-    mode filterBy=none;
-    double resonance=0;
-    double cutoff=.99;
 };
 
 const description bassdrum
@@ -49,8 +46,6 @@ const description hihat
     .sub_waveform=sine,
     .sub_volume=.25,
     .sub_modify=-24,
-    .filterBy=highpass,
-    .cutoff=.5
 };
 
 const description bass

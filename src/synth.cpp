@@ -6,8 +6,8 @@ synth::synth(int channels,int bufferSize,int samplerate, double volume)
     this->samplerate=samplerate;
     this->bufferSize=bufferSize;
     this->volume=volume;
-    this->buffer=new short[bufferSize]{0};
-    this->floatBuffer=new float[bufferSize]{0};
+    this->buffer=new short[bufferSize];
+    this->floatBuffer=new float[bufferSize];
     channel newChan{samplerate,volume};
     chan=newChan;
     initialize(1,samplerate);
@@ -16,6 +16,7 @@ synth::synth(int channels,int bufferSize,int samplerate, double volume)
     for(int i=0;i<VOICES;i++)
     {
         channelFloatBuffers[i]=new float[bufferSize];
+        filters[i]=new filter{bandpass,.05,.0};
     }
 
 }
@@ -28,6 +29,7 @@ synth::~synth()
     for(int i=0;i<VOICES;i++)
     {
         delete[] channelFloatBuffers[i];
+        delete filters[i];
     }
 }
 
@@ -45,13 +47,16 @@ bool synth::onGetData(Chunk& data)
 {
     data.samples=buffer;
     data.sampleCount=bufferSize;
-    clearBuffer();
+    // clearBuffer();
 
     for(int i=0;i<bufferSize;i++)
     {
         floatBuffer[i]=0;
+        buffer[i]=0;
+        
         for(int j=0;j<VOICES;j++)
         {
+             channelFloatBuffers[j][i]=0;
             if(decoder.isStriked(j))
             {
                 env->trigger(j,time);
@@ -65,15 +70,16 @@ bool synth::onGetData(Chunk& data)
             }
                 
 
-            double wave=chan.get(env->getCurrentTime(j,time),decoder.getWaveform(j),freq)*decoder.getVolume(j);
+            double wave;
+            wave=chan.get(env->getCurrentTime(j,time),decoder.getWaveform(j),freq)*decoder.getVolume(j);
             wave+=chan.get(env->getCurrentTime(j,time),decoder.getSubWaveform(j),subFreq)*decoder.getSubVolume(j);
             wave*=env->getVolume(j,time);
+            // wave-=filters[j]->getFiltered(wave);
 
             channelFloatBuffers[j][i]=wave*.75;
             floatBuffer[i]+=wave*.1;
-            buffer[i]+=wave*4096;
+            buffer[i]+=wave*4096*volume;
         }
-        buffer[i]*=volume;
         time+=1.0/samplerate;
     }
     return true;

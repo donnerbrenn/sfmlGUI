@@ -9,8 +9,8 @@
 
 const sf::String songName="Tetris tune";
 
-const bool muted[]={true,true,true,false,true};// true false
-// const bool muted[]={false,false,false,false,false};// true false
+// const bool muted[]={true,true,true,false,true};// true false
+const bool muted[]={false,false,false,false,false};// true false
 
 
 const description descriptions[]=

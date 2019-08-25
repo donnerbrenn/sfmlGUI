@@ -5,8 +5,7 @@ enum mode{none,highpass,lowpass,bandpass,highstop,lowstop,bandstop};
 class filter
 {
 public:
-    filter();
-    filter(mode currentMode, double cutoff=.99, double resonance=0);
+    filter(mode currentMode, double cutoff=.03, double resonance=.0);
     ~filter();
     double getFiltered(double value);
     void setResonance(double value);
@@ -16,8 +15,10 @@ public:
 
 private:
     mode currentMode;
-    double cutoff=.99;
-    double resonance=.0;
-    double buf0=.0;
-    double buf1=.0;
+    double cutoff;
+    double resonance;
+    double buf0;
+    double buf1;
+    double feedbackAmount;
+    inline void calculateFeedbackAmount() { feedbackAmount = resonance + resonance/(1.0 - cutoff); }
 };
