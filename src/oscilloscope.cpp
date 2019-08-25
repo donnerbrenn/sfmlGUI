@@ -36,12 +36,12 @@ void oscilloscope::drawCurve()
     }
     double step=canvas.getSize().x/double(size-1);
     // std::cout << size << "\n";
-    sf::VertexArray curve(sf::LinesStrip,size);
+    // sf::VertexArray curve(sf::LinesStrip,size);
     for(int i=0;i<size;i++)
     {
-        curve[i].position=sf::Vector2f(step*i,data[i+offset]*scale*100+canvas.getSize().y*.5);
+        (*curve)[i].position=sf::Vector2f(step*i,data[i+offset]*scale*100+canvas.getSize().y*.5);
     }
-    canvas.draw(curve);
+    canvas.draw(*curve);
     canvas.display();
 }
 

@@ -19,6 +19,7 @@ public:
         this->size=size;
         this->type=oscilloscope_type;
         this->partition=dualBuffered;
+        this->curve=new sf::VertexArray(sf::LinesStrip,size);
     }
 
     void draw(sf::RenderWindow *window);
@@ -40,4 +41,5 @@ protected:
     float scale;
     void drawCurve();
     int partition;
+    sf::VertexArray *curve;
 };

@@ -14,9 +14,9 @@ const bool muted[]={false,false,false,false,false};// true false
 
 const description descriptions[]=
 {
-    lead,
-    bass,
-    lead,
+    lowlead,
+    lowbass,
+    lowlead,
     hihat,
     bassdrum
 };

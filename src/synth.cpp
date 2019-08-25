@@ -66,21 +66,23 @@ bool synth::onGetData(Chunk& data)
             }
             double freq=decoder.getFreq(j,time);
             double subFreq=decoder.getFreq(j,time,true);
+            double currentEnvVolume=env->getVolume(j,time)*env->getVolume(j,time);
             if(decoder.isfreqModulated(j))
             {
-                freq*=env->getVolume(j,time)*env->getVolume(j,time);
-                subFreq*=env->getVolume(j,time)*env->getVolume(j,time);
+                freq*=currentEnvVolume;
+                subFreq*=currentEnvVolume;
             }
                 
 
             double wave;
-            wave=chan.get(env->getCurrentTime(j,time),decoder.getWaveform(j),freq)*decoder.getVolume(j);
-            wave+=chan.get(env->getCurrentTime(j,time),decoder.getSubWaveform(j),subFreq)*decoder.getSubVolume(j);
+            double currentTime=env->getCurrentTime(j,time);
+            wave=chan.get(currentTime,decoder.getWaveform(j),freq)*decoder.getVolume(j);
+            wave+=chan.get(currentTime,decoder.getSubWaveform(j),subFreq)*decoder.getSubVolume(j);
             wave*=env->getVolume(j,time);
             if(!isnan(wave))
-            wave=filters[j]->getFiltered(wave*.1)*10;
+            wave=filters[j]->getFiltered(wave);
 
-            channelFloatBuffers[j][i]=wave*.75;
+            channelFloatBuffers[j][i]=wave;
             floatBuffer[i]+=wave*.1;
             buffer[i]+=wave*4096*volume;
         }

@@ -44,7 +44,7 @@ const description bassdrum
 const description hihat
 {
     .waveform=noise,
-    .volume=.125,
+    .volume=.25,
     .modify=-6,
     .a=.00,
     .d=6.5,
@@ -75,6 +75,25 @@ const description bass
     .resonance=.8
 };
 
+
+const description lowbass
+{
+    .waveform=sine,
+    .volume=.2,
+    .modify=-0,
+    .a=.0,
+    .d=2.0,
+    .s=.025,
+    .r=.5,
+    .sub_waveform=rsaw,
+    .sub_volume=.5,
+    .sub_modify=-0,
+    .addFilter=bandstop,
+    .cutoff=.05,
+    .resonance=.5
+};
+
+
 const description lead
 {
     .waveform=square,
@@ -102,6 +121,41 @@ const description lead2
     .s=.25,
     .r=1.0,
     .sub_waveform=triangle,
+    .sub_volume=.15,
+    .sub_modify=0,
+    .addFilter=highpass,
+    .cutoff=.05,
+    .resonance=.5
+};
+
+
+const description lowlead
+{
+    .waveform=square,
+    .volume=.2,
+    .modify=-0,
+    .a=.0,
+    .d=2.0,
+    .s=.1,
+    .r=1.0,
+    .sub_waveform=mute,
+    .sub_volume=.15,
+    .sub_modify=-48,
+    .addFilter=bandstop,
+    .cutoff=.05,
+    .resonance=.5
+};
+
+const description lowlead2
+{
+    .waveform=square,
+    .volume=.2,
+    .modify=-12,
+    .a=.025,
+    .d=1.8,
+    .s=.25,
+    .r=1.0,
+    .sub_waveform=mute,
     .sub_volume=.15,
     .sub_modify=0,
     .addFilter=highpass,
