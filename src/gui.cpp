@@ -44,7 +44,10 @@ void setVolume(int id, float value)
 
 int main()
 {
+<<<<<<< HEAD
     std::cout << "Buffersize: " << buffersize << "\n";
+=======
+>>>>>>> 62af46f569aff92a021bb6157b41f5789dc6e96b
     setVolume(0,1.0);
     synthesizer.play();
     bool running=true;
@@ -65,10 +68,22 @@ int main()
 
     for(int i=0;i<VOICES;i++)
     {
+<<<<<<< HEAD
         id=elements.add(new oscilloscope(10+i*chanDisplayWidth,10,chanDisplayWidth-5,240,synthesizer.getChannelFloatBuffer(i),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
     }
     oscID=elements.add(new oscilloscope(10,260,WIDTH-20,700,synthesizer.getFloatBufferPtr(),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
     elements.add(new label(20,920,songName));
+=======
+        id=elements.add(new oscilloscope(10+i*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(i),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    }
+
+    // id=elements.add(new oscilloscope(10+0*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(0),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    // id=elements.add(new oscilloscope(10+1*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(1),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    // id=elements.add(new oscilloscope(10+2*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(2),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    // id=elements.add(new oscilloscope(10+3*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(3),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    oscID=elements.add(new oscilloscope(10,210,WIDTH-20,700,synthesizer.getFloatBufferPtr(),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    elements.add(new label(20,870,"Tetris - Tune"));
+>>>>>>> 62af46f569aff92a021bb6157b41f5789dc6e96b
     
 
     id = elements.add(new slider (200,970,"OSC Scale"));
