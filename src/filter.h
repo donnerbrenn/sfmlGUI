@@ -20,5 +20,5 @@ private:
     double buf0;
     double buf1;
     double feedbackAmount;
-    inline void calculateFeedbackAmount() { feedbackAmount = resonance + resonance/(1.0 - cutoff); }
+    void calculateFeedbackAmount();
 };

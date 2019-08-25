@@ -25,6 +25,14 @@ double filter::getFiltered(double value)
             return value - buf0;
         case bandpass:
             return buf0 - buf1;
+
+
+        case lowstop:
+            return value - buf1;
+        case highstop:
+            return value-(value-buf0);
+        case bandstop:
+            return value-(buf0-buf1);
         default:
             return value;
     }
@@ -49,4 +57,9 @@ double filter::getResonance()
 double filter::getCutoff()
 {
     return cutoff;
+}
+
+void filter::calculateFeedbackAmount() 
+{
+    feedbackAmount = resonance + resonance/(1.0 - cutoff);
 }

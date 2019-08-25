@@ -36,8 +36,8 @@ const description bassdrum
     .sub_waveform=sine,
     .sub_volume=.15,
     .sub_modify=8,
-    .addFilter=lowpass,
-    .cutoff=.04,
+    .addFilter=highstop,
+    .cutoff=.99,
     .resonance=.9
 };
 
@@ -50,29 +50,29 @@ const description hihat
     .d=6.5,
     .s=.05,
     .r=.25,
-    .sub_waveform=square,
-    .sub_volume=.05,
-    .sub_modify=-24,
-    .addFilter=highpass,
-    .cutoff=.55,
-    .resonance=.5
+    .sub_waveform=mute,
+    .sub_volume=.005,
+    .sub_modify=48,
+    .addFilter=highstop,
+    .cutoff=.45,
+    .resonance=.525
 };
 
 const description bass
 {
     .waveform=sine,
-    .volume=.3,
+    .volume=.2,
     .modify=0,
     .a=.0,
     .d=2.0,
     .s=.025,
     .r=.5,
-    .sub_waveform=square,
+    .sub_waveform=rsaw,
     .sub_volume=.5,
     .sub_modify=0,
-    .addFilter=lowpass,
-    .cutoff=.1,
-    .resonance=.4
+    .addFilter=highstop,
+    .cutoff=.3,
+    .resonance=.8
 };
 
 const description lead
@@ -94,11 +94,10 @@ const description lead
 
 const description lead2
 {
-
     .waveform=square,
     .volume=.2,
     .modify=0,
-    .a=.075,
+    .a=.025,
     .d=1.8,
     .s=.25,
     .r=1.0,

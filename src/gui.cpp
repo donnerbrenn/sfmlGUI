@@ -13,6 +13,7 @@ sf::Texture basketball;
 sf::Sprite sprite;
 collection elements;
 synth synthesizer{1,buffersize,44100};
+bool isPlaying=true;
 
 int oscID=0;
 double counter=.0f;
@@ -40,6 +41,18 @@ void setOscScale(int id, float value)
 void setVolume(int id, float value)
 {
     synthesizer.setVolume(value);
+}
+
+void stop(int id, float value)
+{
+        synthesizer.stop();
+        isPlaying=false;
+}
+
+void play(int id, float value)
+{
+        synthesizer.play();
+        isPlaying=true;
 }
 
 int main()
@@ -84,7 +97,11 @@ int main()
     elements.getPtrbyID(id)->setValue(synthesizer.getVolume());
     elements.getPtrbyID(id)->setMoveActionPtr(setVolume);
 
-    // id=elements.add(new label(1000,1000,1,true));
+    id=elements.add(new lockbutton(1600,970,128,32,buttonImage,pressedImage,"Pause"));
+    elements.getPtrbyID(id)->setClickActionPtr(stop);
+    elements.getPtrbyID(id)->setReleaseActionPtr(play);
+
+    // id=elements.add(new label(1500,1000,1,true));
 
     sf::Clock runtime;
 
