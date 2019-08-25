@@ -16,7 +16,10 @@ synth::synth(int channels,int bufferSize,int samplerate, double volume)
     for(int i=0;i<VOICES;i++)
     {
         channelFloatBuffers[i]=new float[bufferSize];
-        filters[i]=new filter{bandpass,.05,.0};
+        mode addFilter=descriptions[i].addFilter;
+        double cutoff=descriptions[i].cutoff;
+        double resonance=descriptions[i].resonance;
+        filters[i]=new filter{addFilter,cutoff,resonance};
     }
 
 }
@@ -74,7 +77,8 @@ bool synth::onGetData(Chunk& data)
             wave=chan.get(env->getCurrentTime(j,time),decoder.getWaveform(j),freq)*decoder.getVolume(j);
             wave+=chan.get(env->getCurrentTime(j,time),decoder.getSubWaveform(j),subFreq)*decoder.getSubVolume(j);
             wave*=env->getVolume(j,time);
-            // wave-=filters[j]->getFiltered(wave);
+            if(!isnan(wave))
+            wave=filters[j]->getFiltered(wave*.1)*10;
 
             channelFloatBuffers[j][i]=wave*.75;
             floatBuffer[i]+=wave*.1;

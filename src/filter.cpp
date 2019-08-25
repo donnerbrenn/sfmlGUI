@@ -14,8 +14,9 @@ filter::~filter()
 
 }
 
-double filter::getFiltered(double value) {
-    buf0 += cutoff * (value - buf0);
+double filter::getFiltered(double value) 
+{
+    buf0 += cutoff * (value - buf0 + feedbackAmount * (buf0 - buf1));
     buf1 += cutoff * (buf0 - buf1);
     switch (currentMode) {
         case lowpass:
@@ -25,7 +26,7 @@ double filter::getFiltered(double value) {
         case bandpass:
             return buf0 - buf1;
         default:
-            return 0.0;
+            return value;
     }
 }
 

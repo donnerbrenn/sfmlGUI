@@ -6,7 +6,7 @@
 struct description
 {
     bool freqModulate=false;
-    int waveform=sine;
+    osc waveform=sine;
     double volume=.5;
     int modify=0;
     double a=.0;
@@ -14,9 +14,13 @@ struct description
     double s=.025;
     double r=.5;
 
-    int sub_waveform=mute;
+    osc sub_waveform=mute;
     double sub_volume=.25;
     int sub_modify=0;
+
+    mode addFilter=none;
+    double cutoff=.99;
+    double resonance=.0;
 };
 
 const description bassdrum
@@ -31,7 +35,10 @@ const description bassdrum
     .r=.4,
     .sub_waveform=sine,
     .sub_volume=.15,
-    .sub_modify=8,    
+    .sub_modify=8,
+    .addFilter=lowpass,
+    .cutoff=.04,
+    .resonance=.9
 };
 
 const description hihat
@@ -43,15 +50,18 @@ const description hihat
     .d=6.5,
     .s=.05,
     .r=.25,
-    .sub_waveform=sine,
-    .sub_volume=.25,
+    .sub_waveform=square,
+    .sub_volume=.05,
     .sub_modify=-24,
+    .addFilter=highpass,
+    .cutoff=.55,
+    .resonance=.5
 };
 
 const description bass
 {
     .waveform=sine,
-    .volume=.5,
+    .volume=.3,
     .modify=0,
     .a=.0,
     .d=2.0,
@@ -59,7 +69,10 @@ const description bass
     .r=.5,
     .sub_waveform=square,
     .sub_volume=.5,
-    .sub_modify=0
+    .sub_modify=0,
+    .addFilter=lowpass,
+    .cutoff=.1,
+    .resonance=.4
 };
 
 const description lead
@@ -74,10 +87,14 @@ const description lead
     .sub_waveform=rsaw,
     .sub_volume=.15,
     .sub_modify=0,
+    .addFilter=highpass,
+    .cutoff=.05,
+    .resonance=.5
 };
 
 const description lead2
 {
+
     .waveform=square,
     .volume=.2,
     .modify=0,
@@ -87,5 +104,8 @@ const description lead2
     .r=1.0,
     .sub_waveform=triangle,
     .sub_volume=.15,
-    .sub_modify=0
+    .sub_modify=0,
+    .addFilter=highpass,
+    .cutoff=.05,
+    .resonance=.5
 };

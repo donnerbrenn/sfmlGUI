@@ -2,7 +2,7 @@
 
 #include <math.h>
 
- enum channelType{sine,triangle,square,saw,rsaw,noise, mute};
+ enum osc{sine,triangle,square,saw,rsaw,noise, mute};
 
 
 class channel
