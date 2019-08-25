@@ -63,7 +63,9 @@
         "cfenv": "cpp",
         "cinttypes": "cpp",
         "typeindex": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "hash_map": "cpp",
+        "forward_list": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

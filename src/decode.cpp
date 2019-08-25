@@ -39,7 +39,7 @@ double decode::getFreq(int channel, double time, bool getSub)
         return 0;
     int pos = time*SPEED*5;
 
-    char note = cpatterns[channel][(pos>>6)&7][pos&63];
+    char note = cpatterns[channel][(pos/PATTERNLENGTH)%LENGTH][pos%PATTERNLENGTH];
 
 if(!getSub)
 {
@@ -74,6 +74,11 @@ if(!getSub)
 bool decode::isStriked(int channel)
 {
     return strike[channel];
+}
+
+bool decode::isfreqModulated(int channel)
+{
+    return descriptions[channel].freqModulate;
 }
 
 double decode::getSubVolume(int channel)

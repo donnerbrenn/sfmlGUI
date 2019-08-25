@@ -1,5 +1,3 @@
-#ifndef COLLECTION
-#define COLLECTION
 #include <vector>
 #include <string>
 #include "button.h"
@@ -43,5 +41,3 @@ private:
     float delta;
     sf::Clock runtime;
 };
-
-#endif

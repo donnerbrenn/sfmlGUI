@@ -1,7 +1,7 @@
-#ifndef ENVELOPE
-#define ENVELOPE
+#pragma once
 #include <iostream>
-#include "tetris_sng.h"
+#include "defines.h"
+#include SONG
 
 class envelope
 {
@@ -20,6 +20,3 @@ private:
     double *s;
     double *r;
 };
-
-
-#endif//ENVELOPE

@@ -1,6 +1,4 @@
-#ifndef VECTOR2F
-#define VECTOR2F
-
+#pragma once
 #include <SFML/System.hpp>
 #include <math.h>
 
@@ -48,5 +46,3 @@ protected:
     void mul(float value);
     void div(float value);
 };
-
-#endif //VECTOR2F

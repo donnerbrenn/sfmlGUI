@@ -3,8 +3,9 @@
 #include "vector2f.h"
 #include <math.h>
 #include "synth.h"
+#include "iostream"
 
-int buffersize=1024;
+int buffersize=44100/(74/2);
 vector2f pos;
 sf::Texture ball;
 sf::Texture ball8;
@@ -25,7 +26,6 @@ sf::String cat(sf::String string, int value)
     return string;
 }
 
-
 float fX,fY;
 int dX=1;
 int dY=1;
@@ -44,7 +44,8 @@ void setVolume(int id, float value)
 
 int main()
 {
-    setVolume(0,.2);
+    std::cout << "Buffersize: " << buffersize << "\n";
+    setVolume(0,1.0);
     synthesizer.play();
     bool running=true;
     sf::Event event;
@@ -54,33 +55,32 @@ int main()
     
     int clicked=-1;
     
-
     sf::String labelTXT;
     int id;
     sf::String buttonImage="bitmaps/button.png";
     sf::String pressedImage="bitmaps/pressed_button.png";
 
     int chanDisplayWidth=(WIDTH-20)/VOICES;
-    std:: cout << chanDisplayWidth << "\n";
+    //std::cout << chanDisplayWidth << "\n";
 
-    id=elements.add(new oscilloscope(10+0*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(0),buffersize,1.0,sf::Color::Black,sf::Color::White));
-    id=elements.add(new oscilloscope(10+1*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(1),buffersize,1.0,sf::Color::Black,sf::Color::White));
-    id=elements.add(new oscilloscope(10+2*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(2),buffersize,1.0,sf::Color::Black,sf::Color::White));
-    id=elements.add(new oscilloscope(10+3*chanDisplayWidth,10,chanDisplayWidth-5,190,synthesizer.getChannelFloatBuffer(3),buffersize,1.0,sf::Color::Black,sf::Color::White));
-    oscID=elements.add(new oscilloscope(10,210,WIDTH-20,700,synthesizer.getFloatBufferPtr(),buffersize,1.0,sf::Color::Black,sf::Color::White));
-    elements.add(new label(20,870,"Tetris - Tune"));
+    for(int i=0;i<VOICES;i++)
+    {
+        id=elements.add(new oscilloscope(10+i*chanDisplayWidth,10,chanDisplayWidth-5,240,synthesizer.getChannelFloatBuffer(i),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    }
+    oscID=elements.add(new oscilloscope(10,260,WIDTH-20,700,synthesizer.getFloatBufferPtr(),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    elements.add(new label(20,920,songName));
     
 
-    id = elements.add(new slider (200,920,"OSC Scale"));
+    id = elements.add(new slider (200,970,"OSC Scale"));
     elements.getPtrbyID(id)->setMin(1.0);
     elements.getPtrbyID(id)->setMax(50.0);
-    elements.getPtrbyID(id)->setValue(1.0);
-    setOscScale(0,1.0);
+    elements.getPtrbyID(id)->setValue(10.0);
+    setOscScale(0,10.0);
     elements.getPtrbyID(id)->setMoveActionPtr(setOscScale);
 
-    id = elements.add(new knob(10,920,"Volume"));
+    id = elements.add(new knob(10,970,"Volume"));
     elements.getPtrbyID(id)->setMin(0);
-    elements.getPtrbyID(id)->setMax(2.0);
+    elements.getPtrbyID(id)->setMax(1.0);
     elements.getPtrbyID(id)->setValue(synthesizer.getVolume());
     elements.getPtrbyID(id)->setMoveActionPtr(setVolume);
 

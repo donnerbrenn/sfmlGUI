@@ -1,8 +1,4 @@
-
-#ifndef BUTTON
-#define BUTTON
-
-
+#pragma once
 #include "element.h"
 #include "defines.h"
 
@@ -24,5 +20,3 @@ public:
 protected:
     sf::Texture pressedTexture;
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef LABEL
-#define LABEL
+#pragma once
 #include "element.h"
 
 
@@ -37,6 +36,3 @@ protected:
 
 
 };
-
-
-#endif //LABEL

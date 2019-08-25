@@ -1,6 +1,4 @@
-#ifndef KNOB
-#define KNOB
-
+#pragma once
 #include "element.h"
 #include "defines.h"
 #include "iostream"
@@ -40,4 +38,3 @@ protected:
 
     void initDisplay(int x, int y);
 };
-#endif

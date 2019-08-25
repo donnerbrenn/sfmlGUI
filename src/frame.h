@@ -1,6 +1,4 @@
-#ifndef FRAME
-#define FRAME
-
+#pragma once
 #include "element.h"
 #include "defines.h"
 
@@ -15,4 +13,3 @@ public:
     }
     virtual void draw(sf::RenderWindow *window);
 };
-#endif
