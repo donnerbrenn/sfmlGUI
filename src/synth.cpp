@@ -16,10 +16,14 @@ synth::synth(int channels,int bufferSize,int samplerate, double volume)
     for(int i=0;i<VOICES;i++)
     {
         channelFloatBuffers[i]=new float[bufferSize];
-        mode addFilter=descriptions[i].addFilter;
+        mode useFilter=descriptions[i].useFilter;
         double cutoff=descriptions[i].cutoff;
         double resonance=descriptions[i].resonance;
-        filters[i]=new filter{addFilter,cutoff,resonance};
+        filters[i]=new filter{useFilter,cutoff,resonance};
+        effectType useEffect=descriptions[i].useEffect;
+        double delay=descriptions[i].delay;
+        double strength=descriptions[i].strength;
+        effects[i]=new effect(samplerate,useEffect,delay,strength);
     }
 
 }
@@ -33,6 +37,7 @@ synth::~synth()
     {
         delete[] channelFloatBuffers[i];
         delete filters[i];
+        delete effects[i];
     }
 }
 
@@ -81,6 +86,7 @@ bool synth::onGetData(Chunk& data)
             wave*=env->getVolume(j,time);
             if(!isnan(wave))
             wave=filters[j]->getFiltered(wave);
+            wave=effects[j]->getEffect(wave);
 
             channelFloatBuffers[j][i]=wave;
             floatBuffer[i]+=wave*.1;

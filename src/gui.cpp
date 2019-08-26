@@ -5,7 +5,8 @@
 #include "synth.h"
 #include "iostream"
 
-int buffersize=44100/(74/2);
+
+int buffersize=44100/(74/8);
 vector2f pos;
 sf::Texture ball;
 sf::Texture ball8;
@@ -63,7 +64,8 @@ int main()
     bool running=true;
     sf::Event event;
     sf::RenderWindow window{sf::VideoMode(WIDTH,HEIGHT),"GUI"};
-    window.setVerticalSyncEnabled(true);
+    window.setVerticalSyncEnabled(false);
+    // window.setFramerateLimit(2);
     sf::RenderTexture *canvas;
     
     int clicked=-1;
@@ -80,18 +82,18 @@ int main()
     {
         id=elements.add(new oscilloscope(10+i*chanDisplayWidth,10,chanDisplayWidth-5,240,synthesizer.getChannelFloatBuffer(i),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
     }
-    oscID=elements.add(new oscilloscope(10,260,WIDTH-20,700,synthesizer.getFloatBufferPtr(),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
-    elements.add(new label(20,920,songName));
+    oscID=elements.add(new oscilloscope(10,260,WIDTH-20,500,synthesizer.getFloatBufferPtr(),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+    elements.add(new label(20,720,songName));
     
 
-    id = elements.add(new slider (200,970,"OSC Scale"));
+    id = elements.add(new slider (200,770,"OSC Scale"));
     elements.getPtrbyID(id)->setMin(1.0);
     elements.getPtrbyID(id)->setMax(50.0);
     elements.getPtrbyID(id)->setValue(10.0);
     setOscScale(0,10.0);
     elements.getPtrbyID(id)->setMoveActionPtr(setOscScale);
 
-    id = elements.add(new knob(10,970,"Volume"));
+    id = elements.add(new knob(10,770,"Volume"));
     elements.getPtrbyID(id)->setMin(0);
     elements.getPtrbyID(id)->setMax(1.0);
     elements.getPtrbyID(id)->setValue(synthesizer.getVolume());

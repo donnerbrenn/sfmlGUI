@@ -5,6 +5,7 @@
 #include "decode.h"
 #include "envelope.h"
 #include "filter.h"
+#include "effect.h"
 
 class synth : public sf::SoundStream
 {
@@ -34,4 +35,6 @@ private:
     envelope *env;
     float *channelFloatBuffers[VOICES];
     filter *filters[VOICES];
+    effect *effects[VOICES];
+
 };

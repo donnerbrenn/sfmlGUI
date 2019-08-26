@@ -1,6 +1,6 @@
 #pragma once
 
-enum mode{none,highpass,lowpass,bandpass,highstop,lowstop,bandstop};
+enum mode{noFilter,highpass,lowpass,bandpass,highstop,lowstop,bandstop};
 
 class filter
 {
