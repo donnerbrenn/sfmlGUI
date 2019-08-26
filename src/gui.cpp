@@ -6,7 +6,7 @@
 #include "iostream"
 
 
-int buffersize=44100/(74/8);
+int buffersize=44100/4;//(74/8);
 vector2f pos;
 sf::Texture ball;
 sf::Texture ball8;
