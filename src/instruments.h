@@ -77,12 +77,12 @@ const description bass
     .sub_waveform=rsaw,
     .sub_volume=.25,
     .sub_modify=0,
-    .useFilter=highstop,
+    .useFilter=noFilter,
     .cutoff=.3,
     .resonance=.4,
-    // .useEffect=reverb,
-    // .delay=.125,
-    // .strength=.5
+    .useEffect=reverb,
+    .delay=.125,
+    .strength=.5
 };
 
 
@@ -118,16 +118,16 @@ const description lead
     .sub_modify=0,
     .useFilter=highstop,
     .cutoff=.05,
-    .resonance=.25,
-    // .useEffect=reverb,
-    // .delay=.125,
-    // .strength=.0125
+    .resonance=.5,
+    .useEffect=reverb,
+    .delay=.125,
+    .strength=.0125
 };
 
 const description lead2
 {
     .waveform=square,
-    .volume=.1,
+    .volume=.2,
     .modify=0,
     .a=.0025,
     .d=1.8,
@@ -136,12 +136,12 @@ const description lead2
     .sub_waveform=mute,
     .sub_volume=.15,
     .sub_modify=0,
-    // .useFilter=highpass,
-    // .cutoff=.05,
-    // .resonance=.5,
-    // .useEffect=reverb,
-    // .delay=.025,
-    // .strength=.1
+    .useFilter=highpass,
+    .cutoff=.05,
+    .resonance=.5,
+    .useEffect=reverb,
+    .delay=.025,
+    .strength=.1
 };
 
 

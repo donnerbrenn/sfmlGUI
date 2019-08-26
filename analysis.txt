@@ -1,0 +1,1386 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  us/call  us/call  name    
+ 41.91      3.57     3.57   491396     7.27     9.16  oscilloscope::drawCurve()
+ 28.52      6.00     2.43 10303888     0.24     0.24  decode::getFreq(int, double, bool)
+ 10.92      6.93     0.93 583517486     0.00     0.00  sf::Vector2<float>::Vector2(float, float)
+  5.63      7.41     0.48 15458746     0.03     0.03  envelope::getVolume(int, double)
+  4.46      7.79     0.38                             synth::onGetData(sf::SoundStream::Chunk&)
+  1.88      7.95     0.16 10309129     0.02     0.03  channel::get(double, int, double)
+  1.29      8.06     0.11  2061740     0.05     0.06  channel::getSquare(double, double)
+  1.29      8.17     0.11  5153429     0.02     0.02  filter::getFiltered(double)
+  0.82      8.24     0.07  5154195     0.01     0.01  std::isnan(double)
+  0.65      8.30     0.06  5154483     0.01     0.01  decode::getSubVolume(int)
+  0.47      8.34     0.04  5153322     0.01     0.01  decode::getVolume(int)
+  0.35      8.37     0.03  5154489     0.01     0.01  decode::isStriked(int)
+  0.35      8.40     0.03  5154015     0.01     0.01  decode::getWaveform(int)
+  0.29      8.42     0.03  5153087     0.00     0.00  decode::getSubWaveform(int)
+  0.23      8.44     0.02  5154724     0.00     0.00  effect::getEffect(double)
+  0.23      8.46     0.02  1030852     0.02     0.02  channel::getNoise()
+  0.12      8.47     0.01  5154313     0.00     0.00  channel::getSine(double, double)
+  0.12      8.48     0.01  5153347     0.00     0.00  decode::isfreqModulated(int)
+  0.12      8.49     0.01  1030954     0.01     0.01  channel::getSaw(double, double)
+  0.12      8.50     0.01   491145     0.02     0.02  sf::Drawable::~Drawable()
+  0.12      8.51     0.01    81840     0.12    55.30  collection::drawAll(sf::RenderWindow*)
+  0.06      8.52     0.01   491111     0.01     0.03  sf::Sprite::~Sprite()
+  0.06      8.52     0.01                             non-virtual thunk to sf::Text::~Text()
+  0.00      8.52     0.00  5152677     0.00     0.00  envelope::getCurrentTime(int, double)
+  0.00      8.52     0.00  1030961     0.00     0.01  channel::getRSaw(double, double)
+  0.00      8.52     0.00   909595     0.00     0.00  std::vector<element*, std::allocator<element*> >::size() const
+  0.00      8.52     0.00   826933     0.00     0.00  std::vector<element*, std::allocator<element*> >::operator[](unsigned long)
+  0.00      8.52     0.00   491425     0.00     9.19  oscilloscope::draw(sf::RenderWindow*)
+  0.00      8.52     0.00   163688     0.00     0.00  element::drawLabel(sf::RenderWindow*)
+  0.00      8.52     0.00    81968     0.00     0.00  slider::draw(sf::RenderWindow*)
+  0.00      8.52     0.00    81957     0.00     0.00  button::draw(sf::RenderWindow*)
+  0.00      8.52     0.00    81947     0.00     0.00  element::drawSprite(sf::RenderWindow*)
+  0.00      8.52     0.00    81900     0.00     0.00  knob::draw(sf::RenderWindow*)
+  0.00      8.52     0.00    81900     0.00     0.00  label::draw(sf::RenderWindow*)
+  0.00      8.52     0.00     6706     0.00     0.00  element::moveAction(float, sf::RenderWindow*)
+  0.00      8.52     0.00     6698     0.00     0.00  element::performAction(void (*)(int, float), float)
+  0.00      8.52     0.00     1665     0.00     0.00  sf::Vector2<int>::Vector2()
+  0.00      8.52     0.00      857     0.00     0.00  collection::triggerEvents(sf::RenderWindow*, sf::Event)
+  0.00      8.52     0.00      839     0.00     0.00  collection::triggerMoveElement(sf::RenderWindow*, float)
+  0.00      8.52     0.00      831     0.00     0.00  slider::moveAction(float, sf::RenderWindow*)
+  0.00      8.52     0.00      830     0.00     0.00  knob::moveAction(float, sf::RenderWindow*)
+  0.00      8.52     0.00      391     0.00     0.00  envelope::trigger(int, double)
+  0.00      8.52     0.00      105     0.00     0.00  std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_data() const
+  0.00      8.52     0.00       94     0.00     0.00  element::getID()
+  0.00      8.52     0.00       64     0.00     0.00  __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::__normal_iterator(element** const&)
+  0.00      8.52     0.00       59     0.00     0.00  __gnu_cxx::new_allocator<unsigned int>::~new_allocator()
+  0.00      8.52     0.00       59     0.00     0.00  std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_is_local() const
+  0.00      8.52     0.00       59     0.00     0.00  std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_local_data() const
+  0.00      8.52     0.00       59     0.00     0.00  std::allocator<unsigned int>::~allocator()
+  0.00      8.52     0.00       59     0.00     0.00  std::pointer_traits<unsigned int const*>::pointer_to(unsigned int const&)
+  0.00      8.52     0.00       59     0.00     0.00  std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_dispose()
+  0.00      8.52     0.00       59     0.00     0.00  std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_Alloc_hider::~_Alloc_hider()
+  0.00      8.52     0.00       59     0.00     0.00  std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::~basic_string()
+  0.00      8.52     0.00       59     0.00     0.00  unsigned int const* std::__addressof<unsigned int const>(unsigned int const&)
+  0.00      8.52     0.00       59     0.00     0.00  unsigned int const* std::addressof<unsigned int const>(unsigned int const&)
+  0.00      8.52     0.00       55     0.00     0.00  sf::String::~String()
+  0.00      8.52     0.00       47     0.00     0.00  __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::base() const
+  0.00      8.52     0.00       46     0.00     0.00  __gnu_cxx::new_allocator<unsigned int>::deallocate(unsigned int*, unsigned long)
+  0.00      8.52     0.00       46     0.00     0.00  std::allocator_traits<std::allocator<unsigned int> >::deallocate(std::allocator<unsigned int>&, unsigned int*, unsigned long)
+  0.00      8.52     0.00       46     0.00     0.00  std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_destroy(unsigned long)
+  0.00      8.52     0.00       46     0.00     0.00  std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_get_allocator()
+  0.00      8.52     0.00       35     0.00     0.00  element*& std::forward<element*&>(std::remove_reference<element*&>::type&)
+  0.00      8.52     0.00       30     0.00     0.00  element** std::__niter_base<element**>(element**)
+  0.00      8.52     0.00       27     0.00     0.00  __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::operator+(long) const
+  0.00      8.52     0.00       23     0.00     0.00  std::vector<element*, std::allocator<element*> >::begin()
+  0.00      8.52     0.00       18     0.00     0.02  sf::VertexArray::~VertexArray()
+  0.00      8.52     0.00       18     0.00     0.00  __gnu_cxx::new_allocator<sf::Vertex>::~new_allocator()
+  0.00      8.52     0.00       18     0.00     0.00  __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::base() const
+  0.00      8.52     0.00       18     0.00     0.00  std::allocator<sf::Vertex>::~allocator()
+  0.00      8.52     0.00       18     0.00     0.00  void std::_Destroy_aux<true>::__destroy<sf::Vertex*>(sf::Vertex*, sf::Vertex*)
+  0.00      8.52     0.00       18     0.00     0.00  std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_Vector_impl::~_Vector_impl()
+  0.00      8.52     0.00       18     0.00     0.00  std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_M_deallocate(sf::Vertex*, unsigned long)
+  0.00      8.52     0.00       18     0.00     0.00  std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_M_get_Tp_allocator()
+  0.00      8.52     0.00       18     0.00     0.00  std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::~_Vector_base()
+  0.00      8.52     0.00       18     0.00     0.00  std::vector<sf::Vertex, std::allocator<sf::Vertex> >::~vector()
+  0.00      8.52     0.00       18     0.00     0.00  void std::_Destroy<sf::Vertex*>(sf::Vertex*, sf::Vertex*)
+  0.00      8.52     0.00       18     0.00     0.00  void std::_Destroy<sf::Vertex*, sf::Vertex>(sf::Vertex*, sf::Vertex*, std::allocator<sf::Vertex>&)
+  0.00      8.52     0.00       15     0.00     0.00  __gnu_cxx::new_allocator<element*>::max_size() const
+  0.00      8.52     0.00       14     0.00     0.00  std::vector<element*, std::allocator<element*> >::end()
+  0.00      8.52     0.00       13     0.00     0.00  sf::Rect<int>::Rect()
+  0.00      8.52     0.00       11     0.00     0.00  collection::getPtrbyID(int)
+  0.00      8.52     0.00       11     0.00     0.00  collection::getPtrbyIDX(int)
+  0.00      8.52     0.00       11     0.00     0.00  collection::find(int)
+  0.00      8.52     0.00       11     0.00     0.00  element::initImage(int, int)
+  0.00      8.52     0.00       11     0.00     0.00  std::_Vector_base<element*, std::allocator<element*> >::_M_get_Tp_allocator()
+  0.00      8.52     0.00       11     0.00     0.00  bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  0.00      8.52     0.00       11     0.00     0.00  bool std::operator!=<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  0.00      8.52     0.00       10     0.00     0.00  collection::add(element*)
+  0.00      8.52     0.00       10     0.00     0.00  element::setID(int)
+  0.00      8.52     0.00       10     0.00     0.00  element::element(int, int, int, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int)
+  0.00      8.52     0.00       10     0.00     0.00  void __gnu_cxx::new_allocator<element*>::construct<element*, element*&>(element**, element*&)
+  0.00      8.52     0.00       10     0.00     0.00  std::_Vector_base<element*, std::allocator<element*> >::_M_get_Tp_allocator() const
+  0.00      8.52     0.00       10     0.00     0.00  std::vector<element*, std::allocator<element*> >::max_size() const
+  0.00      8.52     0.00       10     0.00     0.00  std::allocator_traits<std::allocator<element*> >::max_size(std::allocator<element*> const&)
+  0.00      8.52     0.00       10     0.00     0.00  void std::allocator_traits<std::allocator<element*> >::construct<element*, element*&>(std::allocator<element*>&, element**, element*&)
+  0.00      8.52     0.00       10     0.00     0.00  std::vector<element*, std::allocator<element*> >::_S_max_size(std::allocator<element*> const&)
+  0.00      8.52     0.00       10     0.00     0.00  std::vector<element*, std::allocator<element*> >::_S_relocate(element**, element**, element**, std::allocator<element*>&)
+  0.00      8.52     0.00       10     0.00     0.00  void std::vector<element*, std::allocator<element*> >::emplace_back<element*&>(element*&)
+  0.00      8.52     0.00       10     0.00     0.00  std::vector<element*, std::allocator<element*> >::_S_do_relocate(element**, element**, element**, std::allocator<element*>&, std::integral_constant<bool, true>)
+  0.00      8.52     0.00       10     0.00     0.00  std::vector<element*, std::allocator<element*> >::_S_use_relocate()
+  0.00      8.52     0.00       10     0.00     0.00  std::vector<element*, std::allocator<element*> >::_S_nothrow_relocate(std::integral_constant<bool, true>)
+  0.00      8.52     0.00       10     0.00     0.00  element** std::__relocate_a<element**, element**, std::allocator<element*> >(element**, element**, element**, std::allocator<element*>&)
+  0.00      8.52     0.00       10     0.00     0.00  std::enable_if<std::__is_bitwise_relocatable<element*, void>::value, element**>::type std::__relocate_a_1<element*, element*>(element**, element**, element**, std::allocator<element*>&)
+  0.00      8.52     0.00       10     0.00     0.00  unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&)
+  0.00      8.52     0.00       10     0.00     0.00  operator new(unsigned long, void*)
+  0.00      8.52     0.00        9     0.00     0.06  sf::Text::~Text()
+  0.00      8.52     0.00        9     0.00     0.00  element::ftoa(float)
+  0.00      8.52     0.00        9     0.00     0.12  element::~element()
+  0.00      8.52     0.00        9     0.00     0.00  void __gnu_cxx::new_allocator<element*>::destroy<element*>(element**)
+  0.00      8.52     0.00        9     0.00     0.00  __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::__normal_iterator(element* const* const&)
+  0.00      8.52     0.00        9     0.00     0.00  __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::__normal_iterator<element**>(__gnu_cxx::__normal_iterator<element**, __gnu_cxx::__enable_if<std::__are_same<element**, element**>::__value, std::vector<element*, std::allocator<element*> > >::__type> const&)
+  0.00      8.52     0.00        9     0.00     0.00  __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::difference_type __gnu_cxx::operator-<element* const*, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > > const&)
+  0.00      8.52     0.00        9     0.00     0.00  bool __gnu_cxx::operator!=<element**, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&)
+  0.00      8.52     0.00        9     0.00     0.00  std::vector<element*, std::allocator<element*> >::cbegin() const
+  0.00      8.52     0.00        9     0.00     0.00  void std::allocator_traits<std::allocator<element*> >::destroy<element*>(std::allocator<element*>&, element**)
+  0.00      8.52     0.00        9     0.00     0.00  std::vector<element*, std::allocator<element*> >::erase(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >)
+  0.00      8.52     0.00        9     0.00     0.00  std::vector<element*, std::allocator<element*> >::_M_erase(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >)
+  0.00      8.52     0.00        8     0.00     0.00  __gnu_cxx::new_allocator<sf::Vertex>::deallocate(sf::Vertex*, unsigned long)
+  0.00      8.52     0.00        8     0.00     0.00  std::allocator_traits<std::allocator<sf::Vertex> >::deallocate(std::allocator<sf::Vertex>&, sf::Vertex*, unsigned long)
+  0.00      8.52     0.00        7     0.00     0.00  sf::ContextSettings::ContextSettings(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, bool)
+  0.00      8.52     0.00        7     0.00     0.00  knob::initDisplay(int, int)
+  0.00      8.52     0.00        6     0.00     0.00  oscilloscope::oscilloscope(int, int, int, int, float*, int, bool, float, sf::Color, sf::Color)
+  0.00      8.52     0.00        6     0.00     0.00  knob::update()
+  0.00      8.52     0.00        6     0.00     0.00  knob::getRange()
+  0.00      8.52     0.00        6     0.00     0.00  frame::frame(int, int, int, int, sf::String)
+  0.00      8.52     0.00        6     0.00     0.00  element::initCanvas(int, int)
+  0.00      8.52     0.00        6     0.00     0.00  std::_Vector_base<element*, std::allocator<element*> >::_M_deallocate(element**, unsigned long)
+  0.00      8.52     0.00        5     0.00     0.00  synth::getChannelFloatBuffer(int)
+  0.00      8.52     0.00        5     0.00     0.00  effect::effect(int, effectType, double, double)
+  0.00      8.52     0.00        5     0.00     0.00  effect::~effect()
+  0.00      8.52     0.00        5     0.00     0.00  filter::calculateFeedbackAmount()
+  0.00      8.52     0.00        5     0.00     0.00  filter::filter(mode, double, double)
+  0.00      8.52     0.00        5     0.00     0.00  filter::~filter()
+  0.00      8.52     0.00        5     0.00     0.00  __gnu_cxx::new_allocator<element*>::deallocate(element**, unsigned long)
+  0.00      8.52     0.00        5     0.00     0.00  __gnu_cxx::new_allocator<element*>::allocate(unsigned long, void const*)
+  0.00      8.52     0.00        5     0.00     0.00  __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::difference_type __gnu_cxx::operator-<element**, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&)
+  0.00      8.52     0.00        5     0.00     0.00  std::vector<element*, std::allocator<element*> >::_M_check_len(unsigned long, char const*) const
+  0.00      8.52     0.00        5     0.00     0.00  std::_Vector_base<element*, std::allocator<element*> >::_M_allocate(unsigned long)
+  0.00      8.52     0.00        5     0.00     0.00  std::allocator_traits<std::allocator<element*> >::deallocate(std::allocator<element*>&, element**, unsigned long)
+  0.00      8.52     0.00        5     0.00     0.00  std::allocator_traits<std::allocator<element*> >::allocate(std::allocator<element*>&, unsigned long)
+  0.00      8.52     0.00        5     0.00     0.00  void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&)
+  0.00      8.52     0.00        5     0.00     0.00  unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&)
+  0.00      8.52     0.00        4     0.00     0.00  knob::setValue(float)
+  0.00      8.52     0.00        3     0.00     0.00  slider::update()
+  0.00      8.52     0.00        3     0.00     0.00  slider::getRange()
+  0.00      8.52     0.00        3     0.00     0.00  element::initLabel(int, int, sf::String)
+  0.00      8.52     0.00        2     0.00     0.00  slider::setValue(float)
+  0.00      8.52     0.00        2     0.00     0.00  channel::channel(int, double)
+  0.00      8.52     0.00        2     0.00     0.00  channel::~channel()
+  0.00      8.52     0.00        2     0.00     0.00  element::setMoveActionPtr(void (*)(int, float))
+  0.00      8.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN10collectionC2Ev
+  0.00      8.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN12oscilloscope4drawEPN2sf12RenderWindowE
+  0.00      8.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN2vu4drawEPN2sf12RenderWindowE
+  0.00      8.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN4knob4drawEPN2sf12RenderWindowE
+  0.00      8.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN5synthC2Eiiid
+  0.00      8.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN6decodeC2Ev
+  0.00      8.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN6effectC2Ei10effectTypedd
+  0.00      8.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN6filterC2E4modedd
+  0.00      8.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN8envelopeC2Ei
+  0.00      8.52     0.00        1     0.00     0.00  _GLOBAL__sub_I_buffersize
+  0.00      8.52     0.00        1     0.00     0.00  setOscScale(int, float)
+  0.00      8.52     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      8.52     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      8.52     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      8.52     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      8.52     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      8.52     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      8.52     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      8.52     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      8.52     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      8.52     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      8.52     0.00        1     0.00     0.00  setVolume(int, float)
+  0.00      8.52     0.00        1     0.00     0.00  collection::collection()
+  0.00      8.52     0.00        1     0.00     0.00  lockbutton::lockbutton(int, int, int, int, sf::String, sf::String, sf::String)
+  0.00      8.52     0.00        1     0.00     0.00  oscilloscope::setScale(float)
+  0.00      8.52     0.00        1     0.00     0.00  sf::Vector2<float>::Vector2()
+  0.00      8.52     0.00        1     0.00     0.00  knob::setMax(float)
+  0.00      8.52     0.00        1     0.00     0.00  knob::setMin(float)
+  0.00      8.52     0.00        1     0.00     0.00  knob::knob(int, int, sf::String, int, int)
+  0.00      8.52     0.00        1     0.00     0.00  label::init(int, int, sf::String, bool)
+  0.00      8.52     0.00        1     0.00     0.00  label::initLabel(int, int, sf::String)
+  0.00      8.52     0.00        1     0.00     0.00  label::label(int, int, sf::String, bool)
+  0.00      8.52     0.00        1     0.00     0.00  synth::getFloatBufferPtr()
+  0.00      8.52     0.00        1     0.00     0.00  synth::getVolume()
+  0.00      8.52     0.00        1     0.00     0.00  synth::setVolume(double)
+  0.00      8.52     0.00        1     0.00     0.00  synth::synth(int, int, int, double)
+  0.00      8.52     0.00        1     0.00     0.00  button::button(int, int, int, int, sf::String, sf::String, sf::String)
+  0.00      8.52     0.00        1     0.00     0.00  decode::decode()
+  0.00      8.52     0.00        1     0.00     0.00  slider::setMax(float)
+  0.00      8.52     0.00        1     0.00     0.00  slider::setMin(float)
+  0.00      8.52     0.00        1     0.00     0.00  slider::slider(int, int, sf::String, int, int)
+  0.00      8.52     0.00        1     0.00     0.00  element::initOverlay(int, int)
+  0.00      8.52     0.00        1     0.00     0.00  element::setClickActionPtr(void (*)(int, float))
+  0.00      8.52     0.00        1     0.00     0.00  element::setReleaseActionPtr(void (*)(int, float))
+  0.00      8.52     0.00        1     0.00     0.00  envelope::envelope(int)
+  0.00      8.52     0.00        1     0.00     0.00  envelope::~envelope()
+  0.00      8.52     0.00        1     0.00     0.00  vector2f::vector2f()
+  0.00      8.52     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<element*>::new_allocator()
+  0.00      8.52     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<element*>::~new_allocator()
+  0.00      8.52     0.00        1     0.00     0.00  std::allocator<element*>::allocator()
+  0.00      8.52     0.00        1     0.00     0.00  std::allocator<element*>::~allocator()
+  0.00      8.52     0.00        1     0.00     0.00  void std::_Destroy_aux<true>::__destroy<element**>(element**, element**)
+  0.00      8.52     0.00        1     0.00     0.00  std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl::_Vector_impl()
+  0.00      8.52     0.00        1     0.00     0.00  std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl::~_Vector_impl()
+  0.00      8.52     0.00        1     0.00     0.00  std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl_data::_Vector_impl_data()
+  0.00      8.52     0.00        1     0.00     0.00  std::_Vector_base<element*, std::allocator<element*> >::_Vector_base()
+  0.00      8.52     0.00        1     0.00     0.00  std::_Vector_base<element*, std::allocator<element*> >::~_Vector_base()
+  0.00      8.52     0.00        1     0.00     0.00  std::vector<element*, std::allocator<element*> >::vector()
+  0.00      8.52     0.00        1     0.00     0.00  std::vector<element*, std::allocator<element*> >::~vector()
+  0.00      8.52     0.00        1     0.00     0.00  void std::_Destroy<element**>(element**, element**)
+  0.00      8.52     0.00        1     0.00     0.00  void std::_Destroy<element**, element*>(element**, element**, std::allocator<element*>&)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.12% of 8.52 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     53.1    0.00    4.53                 main [1]
+                0.01    4.52   81840/81840       collection::drawAll(sf::RenderWindow*) [2]
+                0.00    0.00     857/857         collection::triggerEvents(sf::RenderWindow*, sf::Event) [48]
+                0.00    0.00      10/55          sf::String::~String() [66]
+                0.00    0.00      10/10          collection::add(element*) [97]
+                0.00    0.00      10/11          collection::getPtrbyID(int) [90]
+                0.00    0.00       6/6           oscilloscope::oscilloscope(int, int, int, int, float*, int, bool, float, sf::Color, sf::Color) [129]
+                0.00    0.00       5/5           synth::getChannelFloatBuffer(int) [135]
+                0.00    0.00       2/2           element::setMoveActionPtr(void (*)(int, float)) [157]
+                0.00    0.00       1/1           setVolume(int, float) [179]
+                0.00    0.00       1/7           sf::ContextSettings::ContextSettings(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, bool) [127]
+                0.00    0.00       1/1           synth::getFloatBufferPtr() [190]
+                0.00    0.00       1/1           label::label(int, int, sf::String, bool) [189]
+                0.00    0.00       1/1           slider::slider(int, int, sf::String, int, int) [198]
+                0.00    0.00       1/1           slider::setMin(float) [197]
+                0.00    0.00       1/1           slider::setMax(float) [196]
+                0.00    0.00       1/2           slider::setValue(float) [154]
+                0.00    0.00       1/1           setOscScale(int, float) [168]
+                0.00    0.00       1/1           knob::knob(int, int, sf::String, int, int) [186]
+                0.00    0.00       1/1           knob::setMin(float) [185]
+                0.00    0.00       1/1           knob::setMax(float) [184]
+                0.00    0.00       1/4           knob::setValue(float) [150]
+                0.00    0.00       1/1           synth::getVolume() [191]
+                0.00    0.00       1/1           lockbutton::lockbutton(int, int, int, int, sf::String, sf::String, sf::String) [181]
+                0.00    0.00       1/1           element::setClickActionPtr(void (*)(int, float)) [200]
+                0.00    0.00       1/1           element::setReleaseActionPtr(void (*)(int, float)) [201]
+-----------------------------------------------
+                0.01    4.52   81840/81840       main [1]
+[2]     53.1    0.01    4.52   81840         collection::drawAll(sf::RenderWindow*) [2]
+                0.00    4.52  491425/491425      oscilloscope::draw(sf::RenderWindow*) [3]
+                0.00    0.00  900283/909595      std::vector<element*, std::allocator<element*> >::size() const [37]
+                0.00    0.00  818446/826933      std::vector<element*, std::allocator<element*> >::operator[](unsigned long) [38]
+                0.00    0.00   81968/81968       slider::draw(sf::RenderWindow*) [40]
+                0.00    0.00   81957/81957       button::draw(sf::RenderWindow*) [41]
+                0.00    0.00   81900/81900       knob::draw(sf::RenderWindow*) [43]
+                0.00    0.00   81900/81900       label::draw(sf::RenderWindow*) [44]
+-----------------------------------------------
+                0.00    4.52  491425/491425      collection::drawAll(sf::RenderWindow*) [2]
+[3]     53.0    0.00    4.52  491425         oscilloscope::draw(sf::RenderWindow*) [3]
+                3.57    0.93  491396/491396      oscilloscope::drawCurve() [4]
+                0.01    0.01  491093/491111      sf::Sprite::~Sprite() [20]
+-----------------------------------------------
+                3.57    0.93  491396/491396      oscilloscope::draw(sf::RenderWindow*) [3]
+[4]     52.8    3.57    0.93  491396         oscilloscope::drawCurve() [4]
+                0.93    0.00 583517486/583517486     sf::Vector2<float>::Vector2(float, float) [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[5]     46.8    0.38    3.61                 synth::onGetData(sf::SoundStream::Chunk&) [5]
+                2.43    0.00 10303888/10303888     decode::getFreq(int, double, bool) [6]
+                0.48    0.00 15458746/15458746     envelope::getVolume(int, double) [8]
+                0.16    0.15 10309129/10309129     channel::get(double, int, double) [9]
+                0.11    0.00 5153429/5153429     filter::getFiltered(double) [11]
+                0.07    0.00 5154195/5154195     std::isnan(double) [12]
+                0.06    0.00 5154483/5154483     decode::getSubVolume(int) [13]
+                0.04    0.00 5153322/5153322     decode::getVolume(int) [14]
+                0.03    0.00 5154489/5154489     decode::isStriked(int) [15]
+                0.03    0.00 5154015/5154015     decode::getWaveform(int) [16]
+                0.03    0.00 5153087/5153087     decode::getSubWaveform(int) [17]
+                0.02    0.00 5154724/5154724     effect::getEffect(double) [18]
+                0.01    0.00 5153347/5153347     decode::isfreqModulated(int) [22]
+                0.00    0.00 5152677/5152677     envelope::getCurrentTime(int, double) [36]
+                0.00    0.00     391/391         envelope::trigger(int, double) [52]
+-----------------------------------------------
+                2.43    0.00 10303888/10303888     synth::onGetData(sf::SoundStream::Chunk&) [5]
+[6]     28.5    2.43    0.00 10303888         decode::getFreq(int, double, bool) [6]
+-----------------------------------------------
+                0.93    0.00 583517486/583517486     oscilloscope::drawCurve() [4]
+[7]     10.9    0.93    0.00 583517486         sf::Vector2<float>::Vector2(float, float) [7]
+-----------------------------------------------
+                0.48    0.00 15458746/15458746     synth::onGetData(sf::SoundStream::Chunk&) [5]
+[8]      5.6    0.48    0.00 15458746         envelope::getVolume(int, double) [8]
+-----------------------------------------------
+                0.16    0.15 10309129/10309129     synth::onGetData(sf::SoundStream::Chunk&) [5]
+[9]      3.6    0.16    0.15 10309129         channel::get(double, int, double) [9]
+                0.11    0.00 2061740/2061740     channel::getSquare(double, double) [10]
+                0.02    0.00 1030852/1030852     channel::getNoise() [19]
+                0.00    0.01 1030961/1030961     channel::getRSaw(double, double) [23]
+                0.01    0.00 3092294/5154313     channel::getSine(double, double) [21]
+-----------------------------------------------
+                0.11    0.00 2061740/2061740     channel::get(double, int, double) [9]
+[10]     1.3    0.11    0.00 2061740         channel::getSquare(double, double) [10]
+                0.00    0.00 2062019/5154313     channel::getSine(double, double) [21]
+-----------------------------------------------
+                0.11    0.00 5153429/5153429     synth::onGetData(sf::SoundStream::Chunk&) [5]
+[11]     1.3    0.11    0.00 5153429         filter::getFiltered(double) [11]
+-----------------------------------------------
+                0.07    0.00 5154195/5154195     synth::onGetData(sf::SoundStream::Chunk&) [5]
+[12]     0.8    0.07    0.00 5154195         std::isnan(double) [12]
+-----------------------------------------------
+                0.06    0.00 5154483/5154483     synth::onGetData(sf::SoundStream::Chunk&) [5]
+[13]     0.6    0.06    0.00 5154483         decode::getSubVolume(int) [13]
+-----------------------------------------------
+                0.04    0.00 5153322/5153322     synth::onGetData(sf::SoundStream::Chunk&) [5]
+[14]     0.5    0.04    0.00 5153322         decode::getVolume(int) [14]
+-----------------------------------------------
+                0.03    0.00 5154489/5154489     synth::onGetData(sf::SoundStream::Chunk&) [5]
+[15]     0.4    0.03    0.00 5154489         decode::isStriked(int) [15]
+-----------------------------------------------
+                0.03    0.00 5154015/5154015     synth::onGetData(sf::SoundStream::Chunk&) [5]
+[16]     0.4    0.03    0.00 5154015         decode::getWaveform(int) [16]
+-----------------------------------------------
+                0.03    0.00 5153087/5153087     synth::onGetData(sf::SoundStream::Chunk&) [5]
+[17]     0.3    0.03    0.00 5153087         decode::getSubWaveform(int) [17]
+-----------------------------------------------
+                0.02    0.00 5154724/5154724     synth::onGetData(sf::SoundStream::Chunk&) [5]
+[18]     0.2    0.02    0.00 5154724         effect::getEffect(double) [18]
+-----------------------------------------------
+                0.02    0.00 1030852/1030852     channel::get(double, int, double) [9]
+[19]     0.2    0.02    0.00 1030852         channel::getNoise() [19]
+-----------------------------------------------
+                0.00    0.00      18/491111      element::~element() [27]
+                0.01    0.01  491093/491111      oscilloscope::draw(sf::RenderWindow*) [3]
+[20]     0.2    0.01    0.01  491111         sf::Sprite::~Sprite() [20]
+                0.01    0.00  491118/491145      sf::Drawable::~Drawable() [25]
+-----------------------------------------------
+                0.00    0.00 2062019/5154313     channel::getSquare(double, double) [10]
+                0.01    0.00 3092294/5154313     channel::get(double, int, double) [9]
+[21]     0.1    0.01    0.00 5154313         channel::getSine(double, double) [21]
+-----------------------------------------------
+                0.01    0.00 5153347/5153347     synth::onGetData(sf::SoundStream::Chunk&) [5]
+[22]     0.1    0.01    0.00 5153347         decode::isfreqModulated(int) [22]
+-----------------------------------------------
+                0.00    0.01 1030961/1030961     channel::get(double, int, double) [9]
+[23]     0.1    0.00    0.01 1030961         channel::getRSaw(double, double) [23]
+                0.01    0.00 1030954/1030954     channel::getSaw(double, double) [24]
+-----------------------------------------------
+                0.01    0.00 1030954/1030954     channel::getRSaw(double, double) [23]
+[24]     0.1    0.01    0.00 1030954         channel::getSaw(double, double) [24]
+-----------------------------------------------
+                0.00    0.00       9/491145      sf::Text::~Text() [29]
+                0.00    0.00      18/491145      sf::VertexArray::~VertexArray() [30]
+                0.01    0.00  491118/491145      sf::Sprite::~Sprite() [20]
+[25]     0.1    0.01    0.00  491145         sf::Drawable::~Drawable() [25]
+-----------------------------------------------
+                                                 <spontaneous>
+[26]     0.1    0.01    0.00                 non-virtual thunk to sf::Text::~Text() [26]
+-----------------------------------------------
+                0.00    0.00       9/9           collection::~collection() [28]
+[27]     0.0    0.00    0.00       9         element::~element() [27]
+                0.00    0.00      18/491111      sf::Sprite::~Sprite() [20]
+                0.00    0.00       9/9           sf::Text::~Text() [29]
+                0.00    0.00       9/55          sf::String::~String() [66]
+-----------------------------------------------
+                                                 <spontaneous>
+[28]     0.0    0.00    0.00                 collection::~collection() [28]
+                0.00    0.00       9/9           element::~element() [27]
+                0.00    0.00      18/826933      std::vector<element*, std::allocator<element*> >::operator[](unsigned long) [38]
+                0.00    0.00       9/23          std::vector<element*, std::allocator<element*> >::begin() [75]
+                0.00    0.00       9/27          __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::operator+(long) const [74]
+                0.00    0.00       9/9           __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::__normal_iterator<element**>(__gnu_cxx::__normal_iterator<element**, __gnu_cxx::__enable_if<std::__are_same<element**, element**>::__value, std::vector<element*, std::allocator<element*> > >::__type> const&) [118]
+                0.00    0.00       9/9           std::vector<element*, std::allocator<element*> >::erase(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >) [123]
+                0.00    0.00       1/909595      std::vector<element*, std::allocator<element*> >::size() const [37]
+                0.00    0.00       1/1           std::vector<element*, std::allocator<element*> >::~vector() [216]
+-----------------------------------------------
+                0.00    0.00       9/9           element::~element() [27]
+[29]     0.0    0.00    0.00       9         sf::Text::~Text() [29]
+                0.00    0.00      18/18          sf::VertexArray::~VertexArray() [30]
+                0.00    0.00       9/491145      sf::Drawable::~Drawable() [25]
+                0.00    0.00       9/55          sf::String::~String() [66]
+-----------------------------------------------
+                0.00    0.00      18/18          sf::Text::~Text() [29]
+[30]     0.0    0.00    0.00      18         sf::VertexArray::~VertexArray() [30]
+                0.00    0.00      18/491145      sf::Drawable::~Drawable() [25]
+                0.00    0.00      18/18          std::vector<sf::Vertex, std::allocator<sf::Vertex> >::~vector() [84]
+-----------------------------------------------
+                0.00    0.00 5152677/5152677     synth::onGetData(sf::SoundStream::Chunk&) [5]
+[36]     0.0    0.00    0.00 5152677         envelope::getCurrentTime(int, double) [36]
+-----------------------------------------------
+                0.00    0.00       1/909595      collection::~collection() [28]
+                0.00    0.00      20/909595      std::vector<element*, std::allocator<element*> >::_M_check_len(unsigned long, char const*) const [144]
+                0.00    0.00      94/909595      collection::find(int) [92]
+                0.00    0.00    9197/909595      collection::triggerMoveElement(sf::RenderWindow*, float) [49]
+                0.00    0.00  900283/909595      collection::drawAll(sf::RenderWindow*) [2]
+[37]     0.0    0.00    0.00  909595         std::vector<element*, std::allocator<element*> >::size() const [37]
+-----------------------------------------------
+                0.00    0.00      11/826933      collection::getPtrbyIDX(int) [91]
+                0.00    0.00      18/826933      collection::~collection() [28]
+                0.00    0.00      94/826933      collection::find(int) [92]
+                0.00    0.00    8364/826933      collection::triggerMoveElement(sf::RenderWindow*, float) [49]
+                0.00    0.00  818446/826933      collection::drawAll(sf::RenderWindow*) [2]
+[38]     0.0    0.00    0.00  826933         std::vector<element*, std::allocator<element*> >::operator[](unsigned long) [38]
+-----------------------------------------------
+                0.00    0.00   81837/163688      knob::draw(sf::RenderWindow*) [43]
+                0.00    0.00   81851/163688      button::draw(sf::RenderWindow*) [41]
+[39]     0.0    0.00    0.00  163688         element::drawLabel(sf::RenderWindow*) [39]
+-----------------------------------------------
+                0.00    0.00   81968/81968       collection::drawAll(sf::RenderWindow*) [2]
+[40]     0.0    0.00    0.00   81968         slider::draw(sf::RenderWindow*) [40]
+-----------------------------------------------
+                0.00    0.00   81957/81957       collection::drawAll(sf::RenderWindow*) [2]
+[41]     0.0    0.00    0.00   81957         button::draw(sf::RenderWindow*) [41]
+                0.00    0.00   81947/81947       element::drawSprite(sf::RenderWindow*) [42]
+                0.00    0.00   81851/163688      element::drawLabel(sf::RenderWindow*) [39]
+-----------------------------------------------
+                0.00    0.00   81947/81947       button::draw(sf::RenderWindow*) [41]
+[42]     0.0    0.00    0.00   81947         element::drawSprite(sf::RenderWindow*) [42]
+-----------------------------------------------
+                0.00    0.00   81900/81900       collection::drawAll(sf::RenderWindow*) [2]
+[43]     0.0    0.00    0.00   81900         knob::draw(sf::RenderWindow*) [43]
+                0.00    0.00   81837/163688      element::drawLabel(sf::RenderWindow*) [39]
+-----------------------------------------------
+                0.00    0.00   81900/81900       collection::drawAll(sf::RenderWindow*) [2]
+[44]     0.0    0.00    0.00   81900         label::draw(sf::RenderWindow*) [44]
+-----------------------------------------------
+                0.00    0.00    6706/6706        collection::triggerMoveElement(sf::RenderWindow*, float) [49]
+[45]     0.0    0.00    0.00    6706         element::moveAction(float, sf::RenderWindow*) [45]
+                0.00    0.00    6698/6698        element::performAction(void (*)(int, float), float) [46]
+-----------------------------------------------
+                0.00    0.00    6698/6698        element::moveAction(float, sf::RenderWindow*) [45]
+[46]     0.0    0.00    0.00    6698         element::performAction(void (*)(int, float), float) [46]
+-----------------------------------------------
+                0.00    0.00       1/1665        knob::knob(int, int, sf::String, int, int) [186]
+                0.00    0.00       1/1665        slider::slider(int, int, sf::String, int, int) [198]
+                0.00    0.00     829/1665        knob::moveAction(float, sf::RenderWindow*) [51]
+                0.00    0.00     834/1665        slider::moveAction(float, sf::RenderWindow*) [50]
+[47]     0.0    0.00    0.00    1665         sf::Vector2<int>::Vector2() [47]
+-----------------------------------------------
+                0.00    0.00     857/857         main [1]
+[48]     0.0    0.00    0.00     857         collection::triggerEvents(sf::RenderWindow*, sf::Event) [48]
+                0.00    0.00     839/839         collection::triggerMoveElement(sf::RenderWindow*, float) [49]
+-----------------------------------------------
+                0.00    0.00     839/839         collection::triggerEvents(sf::RenderWindow*, sf::Event) [48]
+[49]     0.0    0.00    0.00     839         collection::triggerMoveElement(sf::RenderWindow*, float) [49]
+                0.00    0.00    9197/909595      std::vector<element*, std::allocator<element*> >::size() const [37]
+                0.00    0.00    8364/826933      std::vector<element*, std::allocator<element*> >::operator[](unsigned long) [38]
+                0.00    0.00    6706/6706        element::moveAction(float, sf::RenderWindow*) [45]
+                0.00    0.00     831/831         slider::moveAction(float, sf::RenderWindow*) [50]
+                0.00    0.00     830/830         knob::moveAction(float, sf::RenderWindow*) [51]
+-----------------------------------------------
+                0.00    0.00     831/831         collection::triggerMoveElement(sf::RenderWindow*, float) [49]
+[50]     0.0    0.00    0.00     831         slider::moveAction(float, sf::RenderWindow*) [50]
+                0.00    0.00     834/1665        sf::Vector2<int>::Vector2() [47]
+-----------------------------------------------
+                0.00    0.00     830/830         collection::triggerMoveElement(sf::RenderWindow*, float) [49]
+[51]     0.0    0.00    0.00     830         knob::moveAction(float, sf::RenderWindow*) [51]
+                0.00    0.00     829/1665        sf::Vector2<int>::Vector2() [47]
+-----------------------------------------------
+                0.00    0.00     391/391         synth::onGetData(sf::SoundStream::Chunk&) [5]
+[52]     0.0    0.00    0.00     391         envelope::trigger(int, double) [52]
+-----------------------------------------------
+                0.00    0.00      46/105         std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_destroy(unsigned long) [70]
+                0.00    0.00      59/105         std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_is_local() const [57]
+[53]     0.0    0.00    0.00     105         std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_data() const [53]
+-----------------------------------------------
+                0.00    0.00      94/94          collection::find(int) [92]
+[54]     0.0    0.00    0.00      94         element::getID() [54]
+-----------------------------------------------
+                0.00    0.00      14/64          std::vector<element*, std::allocator<element*> >::end() [88]
+                0.00    0.00      23/64          std::vector<element*, std::allocator<element*> >::begin() [75]
+                0.00    0.00      27/64          __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::operator+(long) const [74]
+[55]     0.0    0.00    0.00      64         __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::__normal_iterator(element** const&) [55]
+-----------------------------------------------
+                0.00    0.00      59/59          std::allocator<unsigned int>::~allocator() [59]
+[56]     0.0    0.00    0.00      59         __gnu_cxx::new_allocator<unsigned int>::~new_allocator() [56]
+-----------------------------------------------
+                0.00    0.00      59/59          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_dispose() [61]
+[57]     0.0    0.00    0.00      59         std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_is_local() const [57]
+                0.00    0.00      59/105         std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_data() const [53]
+                0.00    0.00      59/59          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_local_data() const [58]
+-----------------------------------------------
+                0.00    0.00      59/59          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_is_local() const [57]
+[58]     0.0    0.00    0.00      59         std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_local_data() const [58]
+                0.00    0.00      59/59          std::pointer_traits<unsigned int const*>::pointer_to(unsigned int const&) [60]
+-----------------------------------------------
+                0.00    0.00      59/59          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_Alloc_hider::~_Alloc_hider() [62]
+[59]     0.0    0.00    0.00      59         std::allocator<unsigned int>::~allocator() [59]
+                0.00    0.00      59/59          __gnu_cxx::new_allocator<unsigned int>::~new_allocator() [56]
+-----------------------------------------------
+                0.00    0.00      59/59          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_local_data() const [58]
+[60]     0.0    0.00    0.00      59         std::pointer_traits<unsigned int const*>::pointer_to(unsigned int const&) [60]
+                0.00    0.00      59/59          unsigned int const* std::addressof<unsigned int const>(unsigned int const&) [65]
+-----------------------------------------------
+                0.00    0.00      59/59          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::~basic_string() [63]
+[61]     0.0    0.00    0.00      59         std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_dispose() [61]
+                0.00    0.00      59/59          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_is_local() const [57]
+                0.00    0.00      46/46          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_destroy(unsigned long) [70]
+-----------------------------------------------
+                0.00    0.00      59/59          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::~basic_string() [63]
+[62]     0.0    0.00    0.00      59         std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_Alloc_hider::~_Alloc_hider() [62]
+                0.00    0.00      59/59          std::allocator<unsigned int>::~allocator() [59]
+-----------------------------------------------
+                0.00    0.00      59/59          sf::String::~String() [66]
+[63]     0.0    0.00    0.00      59         std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::~basic_string() [63]
+                0.00    0.00      59/59          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_dispose() [61]
+                0.00    0.00      59/59          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_Alloc_hider::~_Alloc_hider() [62]
+-----------------------------------------------
+                0.00    0.00      59/59          unsigned int const* std::addressof<unsigned int const>(unsigned int const&) [65]
+[64]     0.0    0.00    0.00      59         unsigned int const* std::__addressof<unsigned int const>(unsigned int const&) [64]
+-----------------------------------------------
+                0.00    0.00      59/59          std::pointer_traits<unsigned int const*>::pointer_to(unsigned int const&) [60]
+[65]     0.0    0.00    0.00      59         unsigned int const* std::addressof<unsigned int const>(unsigned int const&) [65]
+                0.00    0.00      59/59          unsigned int const* std::__addressof<unsigned int const>(unsigned int const&) [64]
+-----------------------------------------------
+                0.00    0.00       1/55          button::button(int, int, int, int, sf::String, sf::String, sf::String) [194]
+                0.00    0.00       1/55          knob::knob(int, int, sf::String, int, int) [186]
+                0.00    0.00       1/55          label::label(int, int, sf::String, bool) [189]
+                0.00    0.00       1/55          label::init(int, int, sf::String, bool) [187]
+                0.00    0.00       2/55          slider::slider(int, int, sf::String, int, int) [198]
+                0.00    0.00       3/55          lockbutton::lockbutton(int, int, int, int, sf::String, sf::String, sf::String) [181]
+                0.00    0.00       6/55          oscilloscope::oscilloscope(int, int, int, int, float*, int, bool, float, sf::Color, sf::Color) [129]
+                0.00    0.00       6/55          knob::update() [130]
+                0.00    0.00       6/55          slider::update() [151]
+                0.00    0.00       9/55          sf::Text::~Text() [29]
+                0.00    0.00       9/55          element::~element() [27]
+                0.00    0.00      10/55          main [1]
+[66]     0.0    0.00    0.00      55         sf::String::~String() [66]
+                0.00    0.00      59/59          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::~basic_string() [63]
+-----------------------------------------------
+                0.00    0.00       9/47          __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::__normal_iterator<element**>(__gnu_cxx::__normal_iterator<element**, __gnu_cxx::__enable_if<std::__are_same<element**, element**>::__value, std::vector<element*, std::allocator<element*> > >::__type> const&) [118]
+                0.00    0.00      10/47          void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&) [148]
+                0.00    0.00      10/47          __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::difference_type __gnu_cxx::operator-<element**, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&) [143]
+                0.00    0.00      18/47          bool __gnu_cxx::operator!=<element**, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&) [120]
+[67]     0.0    0.00    0.00      47         __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::base() const [67]
+-----------------------------------------------
+                0.00    0.00      46/46          std::allocator_traits<std::allocator<unsigned int> >::deallocate(std::allocator<unsigned int>&, unsigned int*, unsigned long) [69]
+[68]     0.0    0.00    0.00      46         __gnu_cxx::new_allocator<unsigned int>::deallocate(unsigned int*, unsigned long) [68]
+-----------------------------------------------
+                0.00    0.00      46/46          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_destroy(unsigned long) [70]
+[69]     0.0    0.00    0.00      46         std::allocator_traits<std::allocator<unsigned int> >::deallocate(std::allocator<unsigned int>&, unsigned int*, unsigned long) [69]
+                0.00    0.00      46/46          __gnu_cxx::new_allocator<unsigned int>::deallocate(unsigned int*, unsigned long) [68]
+-----------------------------------------------
+                0.00    0.00      46/46          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_dispose() [61]
+[70]     0.0    0.00    0.00      46         std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_destroy(unsigned long) [70]
+                0.00    0.00      46/105         std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_data() const [53]
+                0.00    0.00      46/46          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_get_allocator() [71]
+                0.00    0.00      46/46          std::allocator_traits<std::allocator<unsigned int> >::deallocate(std::allocator<unsigned int>&, unsigned int*, unsigned long) [69]
+-----------------------------------------------
+                0.00    0.00      46/46          std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_destroy(unsigned long) [70]
+[71]     0.0    0.00    0.00      46         std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_get_allocator() [71]
+-----------------------------------------------
+                0.00    0.00       5/35          void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&) [148]
+                0.00    0.00      10/35          void std::vector<element*, std::allocator<element*> >::emplace_back<element*&>(element*&) [107]
+                0.00    0.00      10/35          void std::allocator_traits<std::allocator<element*> >::construct<element*, element*&>(std::allocator<element*>&, element**, element*&) [104]
+                0.00    0.00      10/35          void __gnu_cxx::new_allocator<element*>::construct<element*, element*&>(element**, element*&) [100]
+[72]     0.0    0.00    0.00      35         element*& std::forward<element*&>(std::remove_reference<element*&>::type&) [72]
+-----------------------------------------------
+                0.00    0.00      30/30          element** std::__relocate_a<element**, element**, std::allocator<element*> >(element**, element**, element**, std::allocator<element*>&) [111]
+[73]     0.0    0.00    0.00      30         element** std::__niter_base<element**>(element**) [73]
+-----------------------------------------------
+                0.00    0.00       9/27          collection::~collection() [28]
+                0.00    0.00       9/27          std::vector<element*, std::allocator<element*> >::erase(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >) [123]
+                0.00    0.00       9/27          std::vector<element*, std::allocator<element*> >::_M_erase(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >) [124]
+[74]     0.0    0.00    0.00      27         __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::operator+(long) const [74]
+                0.00    0.00      27/64          __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::__normal_iterator(element** const&) [55]
+-----------------------------------------------
+                0.00    0.00       5/23          void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&) [148]
+                0.00    0.00       9/23          collection::~collection() [28]
+                0.00    0.00       9/23          std::vector<element*, std::allocator<element*> >::erase(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >) [123]
+[75]     0.0    0.00    0.00      23         std::vector<element*, std::allocator<element*> >::begin() [75]
+                0.00    0.00      23/64          __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::__normal_iterator(element** const&) [55]
+-----------------------------------------------
+                0.00    0.00      18/18          std::allocator<sf::Vertex>::~allocator() [78]
+[76]     0.0    0.00    0.00      18         __gnu_cxx::new_allocator<sf::Vertex>::~new_allocator() [76]
+-----------------------------------------------
+                0.00    0.00      18/18          __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::difference_type __gnu_cxx::operator-<element* const*, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > > const&) [119]
+[77]     0.0    0.00    0.00      18         __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::base() const [77]
+-----------------------------------------------
+                0.00    0.00      18/18          std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_Vector_impl::~_Vector_impl() [80]
+[78]     0.0    0.00    0.00      18         std::allocator<sf::Vertex>::~allocator() [78]
+                0.00    0.00      18/18          __gnu_cxx::new_allocator<sf::Vertex>::~new_allocator() [76]
+-----------------------------------------------
+                0.00    0.00      18/18          void std::_Destroy<sf::Vertex*>(sf::Vertex*, sf::Vertex*) [85]
+[79]     0.0    0.00    0.00      18         void std::_Destroy_aux<true>::__destroy<sf::Vertex*>(sf::Vertex*, sf::Vertex*) [79]
+-----------------------------------------------
+                0.00    0.00      18/18          std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::~_Vector_base() [83]
+[80]     0.0    0.00    0.00      18         std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_Vector_impl::~_Vector_impl() [80]
+                0.00    0.00      18/18          std::allocator<sf::Vertex>::~allocator() [78]
+-----------------------------------------------
+                0.00    0.00      18/18          std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::~_Vector_base() [83]
+[81]     0.0    0.00    0.00      18         std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_M_deallocate(sf::Vertex*, unsigned long) [81]
+                0.00    0.00       8/8           std::allocator_traits<std::allocator<sf::Vertex> >::deallocate(std::allocator<sf::Vertex>&, sf::Vertex*, unsigned long) [126]
+-----------------------------------------------
+                0.00    0.00      18/18          std::vector<sf::Vertex, std::allocator<sf::Vertex> >::~vector() [84]
+[82]     0.0    0.00    0.00      18         std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_M_get_Tp_allocator() [82]
+-----------------------------------------------
+                0.00    0.00      18/18          std::vector<sf::Vertex, std::allocator<sf::Vertex> >::~vector() [84]
+[83]     0.0    0.00    0.00      18         std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::~_Vector_base() [83]
+                0.00    0.00      18/18          std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_Vector_impl::~_Vector_impl() [80]
+                0.00    0.00      18/18          std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_M_deallocate(sf::Vertex*, unsigned long) [81]
+-----------------------------------------------
+                0.00    0.00      18/18          sf::VertexArray::~VertexArray() [30]
+[84]     0.0    0.00    0.00      18         std::vector<sf::Vertex, std::allocator<sf::Vertex> >::~vector() [84]
+                0.00    0.00      18/18          std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_M_get_Tp_allocator() [82]
+                0.00    0.00      18/18          void std::_Destroy<sf::Vertex*, sf::Vertex>(sf::Vertex*, sf::Vertex*, std::allocator<sf::Vertex>&) [86]
+                0.00    0.00      18/18          std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::~_Vector_base() [83]
+-----------------------------------------------
+                0.00    0.00      18/18          void std::_Destroy<sf::Vertex*, sf::Vertex>(sf::Vertex*, sf::Vertex*, std::allocator<sf::Vertex>&) [86]
+[85]     0.0    0.00    0.00      18         void std::_Destroy<sf::Vertex*>(sf::Vertex*, sf::Vertex*) [85]
+                0.00    0.00      18/18          void std::_Destroy_aux<true>::__destroy<sf::Vertex*>(sf::Vertex*, sf::Vertex*) [79]
+-----------------------------------------------
+                0.00    0.00      18/18          std::vector<sf::Vertex, std::allocator<sf::Vertex> >::~vector() [84]
+[86]     0.0    0.00    0.00      18         void std::_Destroy<sf::Vertex*, sf::Vertex>(sf::Vertex*, sf::Vertex*, std::allocator<sf::Vertex>&) [86]
+                0.00    0.00      18/18          void std::_Destroy<sf::Vertex*>(sf::Vertex*, sf::Vertex*) [85]
+-----------------------------------------------
+                0.00    0.00       5/15          __gnu_cxx::new_allocator<element*>::allocate(unsigned long, void const*) [142]
+                0.00    0.00      10/15          std::allocator_traits<std::allocator<element*> >::max_size(std::allocator<element*> const&) [103]
+[87]     0.0    0.00    0.00      15         __gnu_cxx::new_allocator<element*>::max_size() const [87]
+-----------------------------------------------
+                0.00    0.00       5/14          void std::vector<element*, std::allocator<element*> >::emplace_back<element*&>(element*&) [107]
+                0.00    0.00       9/14          std::vector<element*, std::allocator<element*> >::_M_erase(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >) [124]
+[88]     0.0    0.00    0.00      14         std::vector<element*, std::allocator<element*> >::end() [88]
+                0.00    0.00      14/64          __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::__normal_iterator(element** const&) [55]
+-----------------------------------------------
+                0.00    0.00       1/13          button::button(int, int, int, int, sf::String, sf::String, sf::String) [194]
+                0.00    0.00       1/13          slider::slider(int, int, sf::String, int, int) [198]
+                0.00    0.00       1/13          element::initOverlay(int, int) [199]
+                0.00    0.00      10/13          element::initImage(int, int) [93]
+[89]     0.0    0.00    0.00      13         sf::Rect<int>::Rect() [89]
+-----------------------------------------------
+                0.00    0.00       1/11          setOscScale(int, float) [168]
+                0.00    0.00      10/11          main [1]
+[90]     0.0    0.00    0.00      11         collection::getPtrbyID(int) [90]
+                0.00    0.00      11/11          collection::find(int) [92]
+                0.00    0.00      11/11          collection::getPtrbyIDX(int) [91]
+-----------------------------------------------
+                0.00    0.00      11/11          collection::getPtrbyID(int) [90]
+[91]     0.0    0.00    0.00      11         collection::getPtrbyIDX(int) [91]
+                0.00    0.00      11/826933      std::vector<element*, std::allocator<element*> >::operator[](unsigned long) [38]
+-----------------------------------------------
+                0.00    0.00      11/11          collection::getPtrbyID(int) [90]
+[92]     0.0    0.00    0.00      11         collection::find(int) [92]
+                0.00    0.00      94/909595      std::vector<element*, std::allocator<element*> >::size() const [37]
+                0.00    0.00      94/826933      std::vector<element*, std::allocator<element*> >::operator[](unsigned long) [38]
+                0.00    0.00      94/94          element::getID() [54]
+-----------------------------------------------
+                0.00    0.00       1/11          slider::slider(int, int, sf::String, int, int) [198]
+                0.00    0.00      10/11          element::element(int, int, int, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) [99]
+[93]     0.0    0.00    0.00      11         element::initImage(int, int) [93]
+                0.00    0.00      11/11          bool std::operator!=<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [96]
+                0.00    0.00      10/13          sf::Rect<int>::Rect() [89]
+-----------------------------------------------
+                0.00    0.00       1/11          std::vector<element*, std::allocator<element*> >::~vector() [216]
+                0.00    0.00      10/11          void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&) [148]
+[94]     0.0    0.00    0.00      11         std::_Vector_base<element*, std::allocator<element*> >::_M_get_Tp_allocator() [94]
+-----------------------------------------------
+                0.00    0.00      11/11          bool std::operator!=<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [96]
+[95]     0.0    0.00    0.00      11         bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [95]
+-----------------------------------------------
+                0.00    0.00      11/11          element::initImage(int, int) [93]
+[96]     0.0    0.00    0.00      11         bool std::operator!=<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [96]
+                0.00    0.00      11/11          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [95]
+-----------------------------------------------
+                0.00    0.00      10/10          main [1]
+[97]     0.0    0.00    0.00      10         collection::add(element*) [97]
+                0.00    0.00      10/10          element::setID(int) [98]
+                0.00    0.00      10/10          void std::vector<element*, std::allocator<element*> >::emplace_back<element*&>(element*&) [107]
+-----------------------------------------------
+                0.00    0.00      10/10          collection::add(element*) [97]
+[98]     0.0    0.00    0.00      10         element::setID(int) [98]
+-----------------------------------------------
+                0.00    0.00       1/10          button::button(int, int, int, int, sf::String, sf::String, sf::String) [194]
+                0.00    0.00       1/10          knob::knob(int, int, sf::String, int, int) [186]
+                0.00    0.00       1/10          slider::slider(int, int, sf::String, int, int) [198]
+                0.00    0.00       1/10          label::label(int, int, sf::String, bool) [189]
+                0.00    0.00       6/10          frame::frame(int, int, int, int, sf::String) [132]
+[99]     0.0    0.00    0.00      10         element::element(int, int, int, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) [99]
+                0.00    0.00      10/11          element::initImage(int, int) [93]
+-----------------------------------------------
+                0.00    0.00      10/10          void std::allocator_traits<std::allocator<element*> >::construct<element*, element*&>(std::allocator<element*>&, element**, element*&) [104]
+[100]    0.0    0.00    0.00      10         void __gnu_cxx::new_allocator<element*>::construct<element*, element*&>(element**, element*&) [100]
+                0.00    0.00      10/35          element*& std::forward<element*&>(std::remove_reference<element*&>::type&) [72]
+                0.00    0.00      10/10          operator new(unsigned long, void*) [114]
+-----------------------------------------------
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::max_size() const [102]
+[101]    0.0    0.00    0.00      10         std::_Vector_base<element*, std::allocator<element*> >::_M_get_Tp_allocator() const [101]
+-----------------------------------------------
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::_M_check_len(unsigned long, char const*) const [144]
+[102]    0.0    0.00    0.00      10         std::vector<element*, std::allocator<element*> >::max_size() const [102]
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::_S_max_size(std::allocator<element*> const&) [105]
+                0.00    0.00      10/10          std::_Vector_base<element*, std::allocator<element*> >::_M_get_Tp_allocator() const [101]
+-----------------------------------------------
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::_S_max_size(std::allocator<element*> const&) [105]
+[103]    0.0    0.00    0.00      10         std::allocator_traits<std::allocator<element*> >::max_size(std::allocator<element*> const&) [103]
+                0.00    0.00      10/15          __gnu_cxx::new_allocator<element*>::max_size() const [87]
+-----------------------------------------------
+                0.00    0.00       5/10          void std::vector<element*, std::allocator<element*> >::emplace_back<element*&>(element*&) [107]
+                0.00    0.00       5/10          void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&) [148]
+[104]    0.0    0.00    0.00      10         void std::allocator_traits<std::allocator<element*> >::construct<element*, element*&>(std::allocator<element*>&, element**, element*&) [104]
+                0.00    0.00      10/35          element*& std::forward<element*&>(std::remove_reference<element*&>::type&) [72]
+                0.00    0.00      10/10          void __gnu_cxx::new_allocator<element*>::construct<element*, element*&>(element**, element*&) [100]
+-----------------------------------------------
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::max_size() const [102]
+[105]    0.0    0.00    0.00      10         std::vector<element*, std::allocator<element*> >::_S_max_size(std::allocator<element*> const&) [105]
+                0.00    0.00      10/10          std::allocator_traits<std::allocator<element*> >::max_size(std::allocator<element*> const&) [103]
+                0.00    0.00      10/10          unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&) [113]
+-----------------------------------------------
+                0.00    0.00      10/10          void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&) [148]
+[106]    0.0    0.00    0.00      10         std::vector<element*, std::allocator<element*> >::_S_relocate(element**, element**, element**, std::allocator<element*>&) [106]
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::_S_do_relocate(element**, element**, element**, std::allocator<element*>&, std::integral_constant<bool, true>) [108]
+-----------------------------------------------
+                0.00    0.00      10/10          collection::add(element*) [97]
+[107]    0.0    0.00    0.00      10         void std::vector<element*, std::allocator<element*> >::emplace_back<element*&>(element*&) [107]
+                0.00    0.00      10/35          element*& std::forward<element*&>(std::remove_reference<element*&>::type&) [72]
+                0.00    0.00       5/10          void std::allocator_traits<std::allocator<element*> >::construct<element*, element*&>(std::allocator<element*>&, element**, element*&) [104]
+                0.00    0.00       5/14          std::vector<element*, std::allocator<element*> >::end() [88]
+                0.00    0.00       5/5           void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&) [148]
+-----------------------------------------------
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::_S_relocate(element**, element**, element**, std::allocator<element*>&) [106]
+[108]    0.0    0.00    0.00      10         std::vector<element*, std::allocator<element*> >::_S_do_relocate(element**, element**, element**, std::allocator<element*>&, std::integral_constant<bool, true>) [108]
+                0.00    0.00      10/10          element** std::__relocate_a<element**, element**, std::allocator<element*> >(element**, element**, element**, std::allocator<element*>&) [111]
+-----------------------------------------------
+                0.00    0.00      10/10          void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&) [148]
+[109]    0.0    0.00    0.00      10         std::vector<element*, std::allocator<element*> >::_S_use_relocate() [109]
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::_S_nothrow_relocate(std::integral_constant<bool, true>) [110]
+-----------------------------------------------
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::_S_use_relocate() [109]
+[110]    0.0    0.00    0.00      10         std::vector<element*, std::allocator<element*> >::_S_nothrow_relocate(std::integral_constant<bool, true>) [110]
+-----------------------------------------------
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::_S_do_relocate(element**, element**, element**, std::allocator<element*>&, std::integral_constant<bool, true>) [108]
+[111]    0.0    0.00    0.00      10         element** std::__relocate_a<element**, element**, std::allocator<element*> >(element**, element**, element**, std::allocator<element*>&) [111]
+                0.00    0.00      30/30          element** std::__niter_base<element**>(element**) [73]
+                0.00    0.00      10/10          std::enable_if<std::__is_bitwise_relocatable<element*, void>::value, element**>::type std::__relocate_a_1<element*, element*>(element**, element**, element**, std::allocator<element*>&) [112]
+-----------------------------------------------
+                0.00    0.00      10/10          element** std::__relocate_a<element**, element**, std::allocator<element*> >(element**, element**, element**, std::allocator<element*>&) [111]
+[112]    0.0    0.00    0.00      10         std::enable_if<std::__is_bitwise_relocatable<element*, void>::value, element**>::type std::__relocate_a_1<element*, element*>(element**, element**, element**, std::allocator<element*>&) [112]
+-----------------------------------------------
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::_S_max_size(std::allocator<element*> const&) [105]
+[113]    0.0    0.00    0.00      10         unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&) [113]
+-----------------------------------------------
+                0.00    0.00      10/10          void __gnu_cxx::new_allocator<element*>::construct<element*, element*&>(element**, element*&) [100]
+[114]    0.0    0.00    0.00      10         operator new(unsigned long, void*) [114]
+-----------------------------------------------
+                0.00    0.00       3/9           slider::update() [151]
+                0.00    0.00       6/9           knob::update() [130]
+[115]    0.0    0.00    0.00       9         element::ftoa(float) [115]
+-----------------------------------------------
+                0.00    0.00       9/9           void std::allocator_traits<std::allocator<element*> >::destroy<element*>(std::allocator<element*>&, element**) [122]
+[116]    0.0    0.00    0.00       9         void __gnu_cxx::new_allocator<element*>::destroy<element*>(element**) [116]
+-----------------------------------------------
+                0.00    0.00       9/9           std::vector<element*, std::allocator<element*> >::cbegin() const [121]
+[117]    0.0    0.00    0.00       9         __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::__normal_iterator(element* const* const&) [117]
+-----------------------------------------------
+                0.00    0.00       9/9           collection::~collection() [28]
+[118]    0.0    0.00    0.00       9         __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::__normal_iterator<element**>(__gnu_cxx::__normal_iterator<element**, __gnu_cxx::__enable_if<std::__are_same<element**, element**>::__value, std::vector<element*, std::allocator<element*> > >::__type> const&) [118]
+                0.00    0.00       9/47          __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::base() const [67]
+-----------------------------------------------
+                0.00    0.00       9/9           std::vector<element*, std::allocator<element*> >::erase(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >) [123]
+[119]    0.0    0.00    0.00       9         __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::difference_type __gnu_cxx::operator-<element* const*, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > > const&) [119]
+                0.00    0.00      18/18          __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::base() const [77]
+-----------------------------------------------
+                0.00    0.00       9/9           std::vector<element*, std::allocator<element*> >::_M_erase(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >) [124]
+[120]    0.0    0.00    0.00       9         bool __gnu_cxx::operator!=<element**, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&) [120]
+                0.00    0.00      18/47          __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::base() const [67]
+-----------------------------------------------
+                0.00    0.00       9/9           std::vector<element*, std::allocator<element*> >::erase(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >) [123]
+[121]    0.0    0.00    0.00       9         std::vector<element*, std::allocator<element*> >::cbegin() const [121]
+                0.00    0.00       9/9           __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::__normal_iterator(element* const* const&) [117]
+-----------------------------------------------
+                0.00    0.00       9/9           std::vector<element*, std::allocator<element*> >::_M_erase(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >) [124]
+[122]    0.0    0.00    0.00       9         void std::allocator_traits<std::allocator<element*> >::destroy<element*>(std::allocator<element*>&, element**) [122]
+                0.00    0.00       9/9           void __gnu_cxx::new_allocator<element*>::destroy<element*>(element**) [116]
+-----------------------------------------------
+                0.00    0.00       9/9           collection::~collection() [28]
+[123]    0.0    0.00    0.00       9         std::vector<element*, std::allocator<element*> >::erase(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >) [123]
+                0.00    0.00       9/9           std::vector<element*, std::allocator<element*> >::cbegin() const [121]
+                0.00    0.00       9/9           __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::difference_type __gnu_cxx::operator-<element* const*, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > > const&) [119]
+                0.00    0.00       9/23          std::vector<element*, std::allocator<element*> >::begin() [75]
+                0.00    0.00       9/27          __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::operator+(long) const [74]
+                0.00    0.00       9/9           std::vector<element*, std::allocator<element*> >::_M_erase(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >) [124]
+-----------------------------------------------
+                0.00    0.00       9/9           std::vector<element*, std::allocator<element*> >::erase(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >) [123]
+[124]    0.0    0.00    0.00       9         std::vector<element*, std::allocator<element*> >::_M_erase(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >) [124]
+                0.00    0.00       9/14          std::vector<element*, std::allocator<element*> >::end() [88]
+                0.00    0.00       9/27          __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::operator+(long) const [74]
+                0.00    0.00       9/9           bool __gnu_cxx::operator!=<element**, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&) [120]
+                0.00    0.00       9/9           void std::allocator_traits<std::allocator<element*> >::destroy<element*>(std::allocator<element*>&, element**) [122]
+-----------------------------------------------
+                0.00    0.00       8/8           std::allocator_traits<std::allocator<sf::Vertex> >::deallocate(std::allocator<sf::Vertex>&, sf::Vertex*, unsigned long) [126]
+[125]    0.0    0.00    0.00       8         __gnu_cxx::new_allocator<sf::Vertex>::deallocate(sf::Vertex*, unsigned long) [125]
+-----------------------------------------------
+                0.00    0.00       8/8           std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_M_deallocate(sf::Vertex*, unsigned long) [81]
+[126]    0.0    0.00    0.00       8         std::allocator_traits<std::allocator<sf::Vertex> >::deallocate(std::allocator<sf::Vertex>&, sf::Vertex*, unsigned long) [126]
+                0.00    0.00       8/8           __gnu_cxx::new_allocator<sf::Vertex>::deallocate(sf::Vertex*, unsigned long) [125]
+-----------------------------------------------
+                0.00    0.00       1/7           main [1]
+                0.00    0.00       6/7           element::initCanvas(int, int) [133]
+[127]    0.0    0.00    0.00       7         sf::ContextSettings::ContextSettings(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, bool) [127]
+-----------------------------------------------
+                0.00    0.00       1/7           knob::knob(int, int, sf::String, int, int) [186]
+                0.00    0.00       6/7           knob::update() [130]
+[128]    0.0    0.00    0.00       7         knob::initDisplay(int, int) [128]
+-----------------------------------------------
+                0.00    0.00       6/6           main [1]
+[129]    0.0    0.00    0.00       6         oscilloscope::oscilloscope(int, int, int, int, float*, int, bool, float, sf::Color, sf::Color) [129]
+                0.00    0.00       6/6           frame::frame(int, int, int, int, sf::String) [132]
+                0.00    0.00       6/55          sf::String::~String() [66]
+-----------------------------------------------
+                0.00    0.00       1/6           knob::setMin(float) [185]
+                0.00    0.00       1/6           knob::setMax(float) [184]
+                0.00    0.00       4/6           knob::setValue(float) [150]
+[130]    0.0    0.00    0.00       6         knob::update() [130]
+                0.00    0.00       6/6           knob::getRange() [131]
+                0.00    0.00       6/9           element::ftoa(float) [115]
+                0.00    0.00       6/55          sf::String::~String() [66]
+                0.00    0.00       6/7           knob::initDisplay(int, int) [128]
+-----------------------------------------------
+                0.00    0.00       6/6           knob::update() [130]
+[131]    0.0    0.00    0.00       6         knob::getRange() [131]
+-----------------------------------------------
+                0.00    0.00       6/6           oscilloscope::oscilloscope(int, int, int, int, float*, int, bool, float, sf::Color, sf::Color) [129]
+[132]    0.0    0.00    0.00       6         frame::frame(int, int, int, int, sf::String) [132]
+                0.00    0.00       6/10          element::element(int, int, int, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) [99]
+                0.00    0.00       6/6           element::initCanvas(int, int) [133]
+-----------------------------------------------
+                0.00    0.00       6/6           frame::frame(int, int, int, int, sf::String) [132]
+[133]    0.0    0.00    0.00       6         element::initCanvas(int, int) [133]
+                0.00    0.00       6/7           sf::ContextSettings::ContextSettings(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, bool) [127]
+-----------------------------------------------
+                0.00    0.00       1/6           std::_Vector_base<element*, std::allocator<element*> >::~_Vector_base() [214]
+                0.00    0.00       5/6           void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&) [148]
+[134]    0.0    0.00    0.00       6         std::_Vector_base<element*, std::allocator<element*> >::_M_deallocate(element**, unsigned long) [134]
+                0.00    0.00       5/5           std::allocator_traits<std::allocator<element*> >::deallocate(std::allocator<element*>&, element**, unsigned long) [146]
+-----------------------------------------------
+                0.00    0.00       5/5           main [1]
+[135]    0.0    0.00    0.00       5         synth::getChannelFloatBuffer(int) [135]
+-----------------------------------------------
+                0.00    0.00       5/5           synth::synth(int, int, int, double) [193]
+[136]    0.0    0.00    0.00       5         effect::effect(int, effectType, double, double) [136]
+-----------------------------------------------
+                0.00    0.00       5/5           synth::~synth() [262]
+[137]    0.0    0.00    0.00       5         effect::~effect() [137]
+-----------------------------------------------
+                0.00    0.00       5/5           filter::filter(mode, double, double) [139]
+[138]    0.0    0.00    0.00       5         filter::calculateFeedbackAmount() [138]
+-----------------------------------------------
+                0.00    0.00       5/5           synth::synth(int, int, int, double) [193]
+[139]    0.0    0.00    0.00       5         filter::filter(mode, double, double) [139]
+                0.00    0.00       5/5           filter::calculateFeedbackAmount() [138]
+-----------------------------------------------
+                0.00    0.00       5/5           synth::~synth() [262]
+[140]    0.0    0.00    0.00       5         filter::~filter() [140]
+-----------------------------------------------
+                0.00    0.00       5/5           std::allocator_traits<std::allocator<element*> >::deallocate(std::allocator<element*>&, element**, unsigned long) [146]
+[141]    0.0    0.00    0.00       5         __gnu_cxx::new_allocator<element*>::deallocate(element**, unsigned long) [141]
+-----------------------------------------------
+                0.00    0.00       5/5           std::allocator_traits<std::allocator<element*> >::allocate(std::allocator<element*>&, unsigned long) [147]
+[142]    0.0    0.00    0.00       5         __gnu_cxx::new_allocator<element*>::allocate(unsigned long, void const*) [142]
+                0.00    0.00       5/15          __gnu_cxx::new_allocator<element*>::max_size() const [87]
+-----------------------------------------------
+                0.00    0.00       5/5           void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&) [148]
+[143]    0.0    0.00    0.00       5         __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::difference_type __gnu_cxx::operator-<element**, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&) [143]
+                0.00    0.00      10/47          __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::base() const [67]
+-----------------------------------------------
+                0.00    0.00       5/5           void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&) [148]
+[144]    0.0    0.00    0.00       5         std::vector<element*, std::allocator<element*> >::_M_check_len(unsigned long, char const*) const [144]
+                0.00    0.00      20/909595      std::vector<element*, std::allocator<element*> >::size() const [37]
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::max_size() const [102]
+                0.00    0.00       5/5           unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&) [149]
+-----------------------------------------------
+                0.00    0.00       5/5           void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&) [148]
+[145]    0.0    0.00    0.00       5         std::_Vector_base<element*, std::allocator<element*> >::_M_allocate(unsigned long) [145]
+                0.00    0.00       5/5           std::allocator_traits<std::allocator<element*> >::allocate(std::allocator<element*>&, unsigned long) [147]
+-----------------------------------------------
+                0.00    0.00       5/5           std::_Vector_base<element*, std::allocator<element*> >::_M_deallocate(element**, unsigned long) [134]
+[146]    0.0    0.00    0.00       5         std::allocator_traits<std::allocator<element*> >::deallocate(std::allocator<element*>&, element**, unsigned long) [146]
+                0.00    0.00       5/5           __gnu_cxx::new_allocator<element*>::deallocate(element**, unsigned long) [141]
+-----------------------------------------------
+                0.00    0.00       5/5           std::_Vector_base<element*, std::allocator<element*> >::_M_allocate(unsigned long) [145]
+[147]    0.0    0.00    0.00       5         std::allocator_traits<std::allocator<element*> >::allocate(std::allocator<element*>&, unsigned long) [147]
+                0.00    0.00       5/5           __gnu_cxx::new_allocator<element*>::allocate(unsigned long, void const*) [142]
+-----------------------------------------------
+                0.00    0.00       5/5           void std::vector<element*, std::allocator<element*> >::emplace_back<element*&>(element*&) [107]
+[148]    0.0    0.00    0.00       5         void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&) [148]
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::_S_use_relocate() [109]
+                0.00    0.00      10/11          std::_Vector_base<element*, std::allocator<element*> >::_M_get_Tp_allocator() [94]
+                0.00    0.00      10/47          __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::base() const [67]
+                0.00    0.00      10/10          std::vector<element*, std::allocator<element*> >::_S_relocate(element**, element**, element**, std::allocator<element*>&) [106]
+                0.00    0.00       5/5           std::vector<element*, std::allocator<element*> >::_M_check_len(unsigned long, char const*) const [144]
+                0.00    0.00       5/23          std::vector<element*, std::allocator<element*> >::begin() [75]
+                0.00    0.00       5/5           __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::difference_type __gnu_cxx::operator-<element**, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&) [143]
+                0.00    0.00       5/5           std::_Vector_base<element*, std::allocator<element*> >::_M_allocate(unsigned long) [145]
+                0.00    0.00       5/35          element*& std::forward<element*&>(std::remove_reference<element*&>::type&) [72]
+                0.00    0.00       5/10          void std::allocator_traits<std::allocator<element*> >::construct<element*, element*&>(std::allocator<element*>&, element**, element*&) [104]
+                0.00    0.00       5/6           std::_Vector_base<element*, std::allocator<element*> >::_M_deallocate(element**, unsigned long) [134]
+-----------------------------------------------
+                0.00    0.00       5/5           std::vector<element*, std::allocator<element*> >::_M_check_len(unsigned long, char const*) const [144]
+[149]    0.0    0.00    0.00       5         unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&) [149]
+-----------------------------------------------
+                0.00    0.00       1/4           main [1]
+                0.00    0.00       1/4           knob::knob(int, int, sf::String, int, int) [186]
+                0.00    0.00       1/4           knob::setMin(float) [185]
+                0.00    0.00       1/4           knob::setMax(float) [184]
+[150]    0.0    0.00    0.00       4         knob::setValue(float) [150]
+                0.00    0.00       4/6           knob::update() [130]
+-----------------------------------------------
+                0.00    0.00       1/3           slider::slider(int, int, sf::String, int, int) [198]
+                0.00    0.00       2/3           slider::setValue(float) [154]
+[151]    0.0    0.00    0.00       3         slider::update() [151]
+                0.00    0.00       6/55          sf::String::~String() [66]
+                0.00    0.00       3/3           slider::getRange() [152]
+                0.00    0.00       3/9           element::ftoa(float) [115]
+-----------------------------------------------
+                0.00    0.00       3/3           slider::update() [151]
+[152]    0.0    0.00    0.00       3         slider::getRange() [152]
+-----------------------------------------------
+                0.00    0.00       1/3           button::button(int, int, int, int, sf::String, sf::String, sf::String) [194]
+                0.00    0.00       1/3           knob::knob(int, int, sf::String, int, int) [186]
+                0.00    0.00       1/3           slider::slider(int, int, sf::String, int, int) [198]
+[153]    0.0    0.00    0.00       3         element::initLabel(int, int, sf::String) [153]
+-----------------------------------------------
+                0.00    0.00       1/2           main [1]
+                0.00    0.00       1/2           slider::slider(int, int, sf::String, int, int) [198]
+[154]    0.0    0.00    0.00       2         slider::setValue(float) [154]
+                0.00    0.00       2/3           slider::update() [151]
+-----------------------------------------------
+                0.00    0.00       2/2           synth::synth(int, int, int, double) [193]
+[155]    0.0    0.00    0.00       2         channel::channel(int, double) [155]
+-----------------------------------------------
+                0.00    0.00       1/2           synth::synth(int, int, int, double) [193]
+                0.00    0.00       1/2           synth::~synth() [262]
+[156]    0.0    0.00    0.00       2         channel::~channel() [156]
+-----------------------------------------------
+                0.00    0.00       2/2           main [1]
+[157]    0.0    0.00    0.00       2         element::setMoveActionPtr(void (*)(int, float)) [157]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [356]
+[158]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN10collectionC2Ev [158]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [170]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [356]
+[159]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN12oscilloscope4drawEPN2sf12RenderWindowE [159]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [173]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [356]
+[160]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN2vu4drawEPN2sf12RenderWindowE [160]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [172]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [356]
+[161]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN4knob4drawEPN2sf12RenderWindowE [161]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [171]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [356]
+[162]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN5synthC2Eiiid [162]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [174]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [356]
+[163]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN6decodeC2Ev [163]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [175]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [356]
+[164]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN6effectC2Ei10effectTypedd [164]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [178]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [356]
+[165]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN6filterC2E4modedd [165]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [177]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [356]
+[166]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN8envelopeC2Ei [166]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [176]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [356]
+[167]    0.0    0.00    0.00       1         _GLOBAL__sub_I_buffersize [167]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [169]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[168]    0.0    0.00    0.00       1         setOscScale(int, float) [168]
+                0.00    0.00       1/11          collection::getPtrbyID(int) [90]
+                0.00    0.00       1/1           oscilloscope::setScale(float) [182]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I_buffersize [167]
+[169]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [169]
+                0.00    0.00       1/1           vector2f::vector2f() [204]
+                0.00    0.00       1/1           collection::collection() [180]
+                0.00    0.00       1/1           synth::synth(int, int, int, double) [193]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN10collectionC2Ev [158]
+[170]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [170]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN4knob4drawEPN2sf12RenderWindowE [161]
+[171]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [171]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN2vu4drawEPN2sf12RenderWindowE [160]
+[172]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [172]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN12oscilloscope4drawEPN2sf12RenderWindowE [159]
+[173]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [173]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN5synthC2Eiiid [162]
+[174]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [174]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN6decodeC2Ev [163]
+[175]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [175]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN8envelopeC2Ei [166]
+[176]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [176]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN6filterC2E4modedd [165]
+[177]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [177]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN6effectC2Ei10effectTypedd [164]
+[178]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [178]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[179]    0.0    0.00    0.00       1         setVolume(int, float) [179]
+                0.00    0.00       1/1           synth::setVolume(double) [192]
+-----------------------------------------------
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [169]
+[180]    0.0    0.00    0.00       1         collection::collection() [180]
+                0.00    0.00       1/1           std::vector<element*, std::allocator<element*> >::vector() [215]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[181]    0.0    0.00    0.00       1         lockbutton::lockbutton(int, int, int, int, sf::String, sf::String, sf::String) [181]
+                0.00    0.00       3/55          sf::String::~String() [66]
+                0.00    0.00       1/1           button::button(int, int, int, int, sf::String, sf::String, sf::String) [194]
+-----------------------------------------------
+                0.00    0.00       1/1           setOscScale(int, float) [168]
+[182]    0.0    0.00    0.00       1         oscilloscope::setScale(float) [182]
+-----------------------------------------------
+                0.00    0.00       1/1           vector2f::vector2f() [204]
+[183]    0.0    0.00    0.00       1         sf::Vector2<float>::Vector2() [183]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[184]    0.0    0.00    0.00       1         knob::setMax(float) [184]
+                0.00    0.00       1/4           knob::setValue(float) [150]
+                0.00    0.00       1/6           knob::update() [130]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[185]    0.0    0.00    0.00       1         knob::setMin(float) [185]
+                0.00    0.00       1/4           knob::setValue(float) [150]
+                0.00    0.00       1/6           knob::update() [130]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[186]    0.0    0.00    0.00       1         knob::knob(int, int, sf::String, int, int) [186]
+                0.00    0.00       1/10          element::element(int, int, int, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) [99]
+                0.00    0.00       1/1665        sf::Vector2<int>::Vector2() [47]
+                0.00    0.00       1/4           knob::setValue(float) [150]
+                0.00    0.00       1/1           element::initOverlay(int, int) [199]
+                0.00    0.00       1/55          sf::String::~String() [66]
+                0.00    0.00       1/3           element::initLabel(int, int, sf::String) [153]
+                0.00    0.00       1/7           knob::initDisplay(int, int) [128]
+-----------------------------------------------
+                0.00    0.00       1/1           label::label(int, int, sf::String, bool) [189]
+[187]    0.0    0.00    0.00       1         label::init(int, int, sf::String, bool) [187]
+                0.00    0.00       1/55          sf::String::~String() [66]
+                0.00    0.00       1/1           label::initLabel(int, int, sf::String) [188]
+-----------------------------------------------
+                0.00    0.00       1/1           label::init(int, int, sf::String, bool) [187]
+[188]    0.0    0.00    0.00       1         label::initLabel(int, int, sf::String) [188]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[189]    0.0    0.00    0.00       1         label::label(int, int, sf::String, bool) [189]
+                0.00    0.00       1/10          element::element(int, int, int, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) [99]
+                0.00    0.00       1/55          sf::String::~String() [66]
+                0.00    0.00       1/1           label::init(int, int, sf::String, bool) [187]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[190]    0.0    0.00    0.00       1         synth::getFloatBufferPtr() [190]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[191]    0.0    0.00    0.00       1         synth::getVolume() [191]
+-----------------------------------------------
+                0.00    0.00       1/1           setVolume(int, float) [179]
+[192]    0.0    0.00    0.00       1         synth::setVolume(double) [192]
+-----------------------------------------------
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [169]
+[193]    0.0    0.00    0.00       1         synth::synth(int, int, int, double) [193]
+                0.00    0.00       5/5           filter::filter(mode, double, double) [139]
+                0.00    0.00       5/5           effect::effect(int, effectType, double, double) [136]
+                0.00    0.00       2/2           channel::channel(int, double) [155]
+                0.00    0.00       1/1           decode::decode() [195]
+                0.00    0.00       1/1           envelope::envelope(int) [202]
+                0.00    0.00       1/2           channel::~channel() [156]
+-----------------------------------------------
+                0.00    0.00       1/1           lockbutton::lockbutton(int, int, int, int, sf::String, sf::String, sf::String) [181]
+[194]    0.0    0.00    0.00       1         button::button(int, int, int, int, sf::String, sf::String, sf::String) [194]
+                0.00    0.00       1/10          element::element(int, int, int, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) [99]
+                0.00    0.00       1/13          sf::Rect<int>::Rect() [89]
+                0.00    0.00       1/55          sf::String::~String() [66]
+                0.00    0.00       1/3           element::initLabel(int, int, sf::String) [153]
+-----------------------------------------------
+                0.00    0.00       1/1           synth::synth(int, int, int, double) [193]
+[195]    0.0    0.00    0.00       1         decode::decode() [195]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[196]    0.0    0.00    0.00       1         slider::setMax(float) [196]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[197]    0.0    0.00    0.00       1         slider::setMin(float) [197]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[198]    0.0    0.00    0.00       1         slider::slider(int, int, sf::String, int, int) [198]
+                0.00    0.00       2/55          sf::String::~String() [66]
+                0.00    0.00       1/10          element::element(int, int, int, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) [99]
+                0.00    0.00       1/1665        sf::Vector2<int>::Vector2() [47]
+                0.00    0.00       1/2           slider::setValue(float) [154]
+                0.00    0.00       1/13          sf::Rect<int>::Rect() [89]
+                0.00    0.00       1/11          element::initImage(int, int) [93]
+                0.00    0.00       1/3           element::initLabel(int, int, sf::String) [153]
+                0.00    0.00       1/3           slider::update() [151]
+-----------------------------------------------
+                0.00    0.00       1/1           knob::knob(int, int, sf::String, int, int) [186]
+[199]    0.0    0.00    0.00       1         element::initOverlay(int, int) [199]
+                0.00    0.00       1/13          sf::Rect<int>::Rect() [89]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[200]    0.0    0.00    0.00       1         element::setClickActionPtr(void (*)(int, float)) [200]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[201]    0.0    0.00    0.00       1         element::setReleaseActionPtr(void (*)(int, float)) [201]
+-----------------------------------------------
+                0.00    0.00       1/1           synth::synth(int, int, int, double) [193]
+[202]    0.0    0.00    0.00       1         envelope::envelope(int) [202]
+-----------------------------------------------
+                0.00    0.00       1/1           synth::~synth() [262]
+[203]    0.0    0.00    0.00       1         envelope::~envelope() [203]
+-----------------------------------------------
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [169]
+[204]    0.0    0.00    0.00       1         vector2f::vector2f() [204]
+                0.00    0.00       1/1           sf::Vector2<float>::Vector2() [183]
+-----------------------------------------------
+                0.00    0.00       1/1           std::allocator<element*>::allocator() [207]
+[205]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<element*>::new_allocator() [205]
+-----------------------------------------------
+                0.00    0.00       1/1           std::allocator<element*>::~allocator() [208]
+[206]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<element*>::~new_allocator() [206]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl::_Vector_impl() [210]
+[207]    0.0    0.00    0.00       1         std::allocator<element*>::allocator() [207]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<element*>::new_allocator() [205]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl::~_Vector_impl() [211]
+[208]    0.0    0.00    0.00       1         std::allocator<element*>::~allocator() [208]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<element*>::~new_allocator() [206]
+-----------------------------------------------
+                0.00    0.00       1/1           void std::_Destroy<element**>(element**, element**) [217]
+[209]    0.0    0.00    0.00       1         void std::_Destroy_aux<true>::__destroy<element**>(element**, element**) [209]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<element*, std::allocator<element*> >::_Vector_base() [213]
+[210]    0.0    0.00    0.00       1         std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl::_Vector_impl() [210]
+                0.00    0.00       1/1           std::allocator<element*>::allocator() [207]
+                0.00    0.00       1/1           std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl_data::_Vector_impl_data() [212]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<element*, std::allocator<element*> >::~_Vector_base() [214]
+[211]    0.0    0.00    0.00       1         std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl::~_Vector_impl() [211]
+                0.00    0.00       1/1           std::allocator<element*>::~allocator() [208]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl::_Vector_impl() [210]
+[212]    0.0    0.00    0.00       1         std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl_data::_Vector_impl_data() [212]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<element*, std::allocator<element*> >::vector() [215]
+[213]    0.0    0.00    0.00       1         std::_Vector_base<element*, std::allocator<element*> >::_Vector_base() [213]
+                0.00    0.00       1/1           std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl::_Vector_impl() [210]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<element*, std::allocator<element*> >::~vector() [216]
+[214]    0.0    0.00    0.00       1         std::_Vector_base<element*, std::allocator<element*> >::~_Vector_base() [214]
+                0.00    0.00       1/1           std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl::~_Vector_impl() [211]
+                0.00    0.00       1/6           std::_Vector_base<element*, std::allocator<element*> >::_M_deallocate(element**, unsigned long) [134]
+-----------------------------------------------
+                0.00    0.00       1/1           collection::collection() [180]
+[215]    0.0    0.00    0.00       1         std::vector<element*, std::allocator<element*> >::vector() [215]
+                0.00    0.00       1/1           std::_Vector_base<element*, std::allocator<element*> >::_Vector_base() [213]
+-----------------------------------------------
+                0.00    0.00       1/1           collection::~collection() [28]
+[216]    0.0    0.00    0.00       1         std::vector<element*, std::allocator<element*> >::~vector() [216]
+                0.00    0.00       1/11          std::_Vector_base<element*, std::allocator<element*> >::_M_get_Tp_allocator() [94]
+                0.00    0.00       1/1           void std::_Destroy<element**, element*>(element**, element**, std::allocator<element*>&) [218]
+                0.00    0.00       1/1           std::_Vector_base<element*, std::allocator<element*> >::~_Vector_base() [214]
+-----------------------------------------------
+                0.00    0.00       1/1           void std::_Destroy<element**, element*>(element**, element**, std::allocator<element*>&) [218]
+[217]    0.0    0.00    0.00       1         void std::_Destroy<element**>(element**, element**) [217]
+                0.00    0.00       1/1           void std::_Destroy_aux<true>::__destroy<element**>(element**, element**) [209]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<element*, std::allocator<element*> >::~vector() [216]
+[218]    0.0    0.00    0.00       1         void std::_Destroy<element**, element*>(element**, element**, std::allocator<element*>&) [218]
+                0.00    0.00       1/1           void std::_Destroy<element**>(element**, element**) [217]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+ [158] _GLOBAL__sub_I__ZN10collectionC2Ev (collection.cpp) [6] decode::getFreq(int, double, bool) [37] std::vector<element*, std::allocator<element*> >::size() const
+ [159] _GLOBAL__sub_I__ZN12oscilloscope4drawEPN2sf12RenderWindowE (oscilloscope.cpp) [14] decode::getVolume(int) [121] std::vector<element*, std::allocator<element*> >::cbegin() const
+ [160] _GLOBAL__sub_I__ZN2vu4drawEPN2sf12RenderWindowE (vu.cpp) [15] decode::isStriked(int) [102] std::vector<element*, std::allocator<element*> >::max_size() const
+ [161] _GLOBAL__sub_I__ZN4knob4drawEPN2sf12RenderWindowE (knob.cpp) [195] decode::decode() [57] std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_is_local() const
+ [162] _GLOBAL__sub_I__ZN5synthC2Eiiid (synth.cpp) [18] effect::getEffect(double) [58] std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_local_data() const
+ [163] _GLOBAL__sub_I__ZN6decodeC2Ev (decode.cpp) [136] effect::effect(int, effectType, double, double) [53] std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_data() const
+ [164] _GLOBAL__sub_I__ZN6effectC2Ei10effectTypedd (effect.cpp) [137] effect::~effect() [78] std::allocator<sf::Vertex>::~allocator()
+ [165] _GLOBAL__sub_I__ZN6filterC2E4modedd (filter.cpp) [11] filter::getFiltered(double) [207] std::allocator<element*>::allocator()
+ [166] _GLOBAL__sub_I__ZN8envelopeC2Ei (envelope.cpp) [138] filter::calculateFeedbackAmount() [208] std::allocator<element*>::~allocator()
+ [167] _GLOBAL__sub_I_buffersize (gui.cpp) [139] filter::filter(mode, double, double) [59] std::allocator<unsigned int>::~allocator()
+ [168] setOscScale(int, float) [140] filter::~filter()    [79] void std::_Destroy_aux<true>::__destroy<sf::Vertex*>(sf::Vertex*, sf::Vertex*)
+ [169] __static_initialization_and_destruction_0(int, int) (gui.cpp) [50] slider::moveAction(float, sf::RenderWindow*) [209] void std::_Destroy_aux<true>::__destroy<element**>(element**, element**)
+ [170] __static_initialization_and_destruction_0(int, int) (collection.cpp) [40] slider::draw(sf::RenderWindow*) [80] std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_Vector_impl::~_Vector_impl()
+ [171] __static_initialization_and_destruction_0(int, int) (knob.cpp) [196] slider::setMax(float) [81] std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_M_deallocate(sf::Vertex*, unsigned long)
+ [172] __static_initialization_and_destruction_0(int, int) (vu.cpp) [197] slider::setMin(float) [82] std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::_M_get_Tp_allocator()
+ [173] __static_initialization_and_destruction_0(int, int) (oscilloscope.cpp) [151] slider::update() [83] std::_Vector_base<sf::Vertex, std::allocator<sf::Vertex> >::~_Vector_base()
+ [174] __static_initialization_and_destruction_0(int, int) (synth.cpp) [152] slider::getRange() [145] std::_Vector_base<element*, std::allocator<element*> >::_M_allocate(unsigned long)
+ [175] __static_initialization_and_destruction_0(int, int) (decode.cpp) [154] slider::setValue(float) [210] std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl::_Vector_impl()
+ [176] __static_initialization_and_destruction_0(int, int) (envelope.cpp) [198] slider::slider(int, int, sf::String, int, int) [211] std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl::~_Vector_impl()
+ [177] __static_initialization_and_destruction_0(int, int) (filter.cpp) [9] channel::get(double, int, double) [134] std::_Vector_base<element*, std::allocator<element*> >::_M_deallocate(element**, unsigned long)
+ [178] __static_initialization_and_destruction_0(int, int) (effect.cpp) [24] channel::getSaw(double, double) [212] std::_Vector_base<element*, std::allocator<element*> >::_Vector_impl_data::_Vector_impl_data()
+ [179] setVolume(int, float)  [23] channel::getRSaw(double, double) [94] std::_Vector_base<element*, std::allocator<element*> >::_M_get_Tp_allocator()
+  [90] collection::getPtrbyID(int) [21] channel::getSine(double, double) [213] std::_Vector_base<element*, std::allocator<element*> >::_Vector_base()
+  [91] collection::getPtrbyIDX(int) [19] channel::getNoise() [214] std::_Vector_base<element*, std::allocator<element*> >::~_Vector_base()
+  [48] collection::triggerEvents(sf::RenderWindow*, sf::Event) [10] channel::getSquare(double, double) [60] std::pointer_traits<unsigned int const*>::pointer_to(unsigned int const&)
+  [49] collection::triggerMoveElement(sf::RenderWindow*, float) [155] channel::channel(int, double) [126] std::allocator_traits<std::allocator<sf::Vertex> >::deallocate(std::allocator<sf::Vertex>&, sf::Vertex*, unsigned long)
+  [97] collection::add(element*) [156] channel::~channel() [146] std::allocator_traits<std::allocator<element*> >::deallocate(std::allocator<element*>&, element**, unsigned long)
+  [92] collection::find(int)  [42] element::drawSprite(sf::RenderWindow*) [122] void std::allocator_traits<std::allocator<element*> >::destroy<element*>(std::allocator<element*>&, element**)
+   [2] collection::drawAll(sf::RenderWindow*) [133] element::initCanvas(int, int) [147] std::allocator_traits<std::allocator<element*> >::allocate(std::allocator<element*>&, unsigned long)
+ [180] collection::collection() [45] element::moveAction(float, sf::RenderWindow*) [103] std::allocator_traits<std::allocator<element*> >::max_size(std::allocator<element*> const&)
+ [181] lockbutton::lockbutton(int, int, int, int, sf::String, sf::String, sf::String) [199] element::initOverlay(int, int) [104] void std::allocator_traits<std::allocator<element*> >::construct<element*, element*&>(std::allocator<element*>&, element**, element*&)
+   [3] oscilloscope::draw(sf::RenderWindow*) [46] element::performAction(void (*)(int, float), float) [69] std::allocator_traits<std::allocator<unsigned int> >::deallocate(std::allocator<unsigned int>&, unsigned int*, unsigned long)
+ [182] oscilloscope::setScale(float) [157] element::setMoveActionPtr(void (*)(int, float)) [84] std::vector<sf::Vertex, std::allocator<sf::Vertex> >::~vector()
+   [4] oscilloscope::drawCurve() [200] element::setClickActionPtr(void (*)(int, float)) [105] std::vector<element*, std::allocator<element*> >::_S_max_size(std::allocator<element*> const&)
+ [129] oscilloscope::oscilloscope(int, int, int, int, float*, int, bool, float, sf::Color, sf::Color) [201] element::setReleaseActionPtr(void (*)(int, float)) [106] std::vector<element*, std::allocator<element*> >::_S_relocate(element**, element**, element**, std::allocator<element*>&)
+  [30] sf::VertexArray::~VertexArray() [115] element::ftoa(float) [107] void std::vector<element*, std::allocator<element*> >::emplace_back<element*&>(element*&)
+ [127] sf::ContextSettings::ContextSettings(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, bool) [54] element::getID() [108] std::vector<element*, std::allocator<element*> >::_S_do_relocate(element**, element**, element**, std::allocator<element*>&, std::integral_constant<bool, true>)
+  [89] sf::Rect<int>::Rect()  [98] element::setID(int)   [109] std::vector<element*, std::allocator<element*> >::_S_use_relocate()
+  [29] sf::Text::~Text()      [39] element::drawLabel(sf::RenderWindow*) [148] void std::vector<element*, std::allocator<element*> >::_M_realloc_insert<element*&>(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >, element*&)
+  [20] sf::Sprite::~Sprite()  [93] element::initImage(int, int) [110] std::vector<element*, std::allocator<element*> >::_S_nothrow_relocate(std::integral_constant<bool, true>)
+  [66] sf::String::~String() [153] element::initLabel(int, int, sf::String) [88] std::vector<element*, std::allocator<element*> >::end()
+ [183] sf::Vector2<float>::Vector2() [99] element::element(int, int, int, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int) [75] std::vector<element*, std::allocator<element*> >::begin()
+   [7] sf::Vector2<float>::Vector2(float, float) [27] element::~element() [123] std::vector<element*, std::allocator<element*> >::erase(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >)
+  [47] sf::Vector2<int>::Vector2() [36] envelope::getCurrentTime(int, double) [124] std::vector<element*, std::allocator<element*> >::_M_erase(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >)
+  [25] sf::Drawable::~Drawable() [52] envelope::trigger(int, double) [215] std::vector<element*, std::allocator<element*> >::vector()
+  [51] knob::moveAction(float, sf::RenderWindow*) [8] envelope::getVolume(int, double) [216] std::vector<element*, std::allocator<element*> >::~vector()
+ [128] knob::initDisplay(int, int) [202] envelope::envelope(int) [38] std::vector<element*, std::allocator<element*> >::operator[](unsigned long)
+  [43] knob::draw(sf::RenderWindow*) [203] envelope::~envelope() [70] std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_destroy(unsigned long)
+ [184] knob::setMax(float)   [204] vector2f::vector2f()   [61] std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_dispose()
+ [185] knob::setMin(float)   [125] __gnu_cxx::new_allocator<sf::Vertex>::deallocate(sf::Vertex*, unsigned long) [62] std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_Alloc_hider::~_Alloc_hider()
+ [130] knob::update()         [76] __gnu_cxx::new_allocator<sf::Vertex>::~new_allocator() [71] std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::_M_get_allocator()
+ [131] knob::getRange()      [141] __gnu_cxx::new_allocator<element*>::deallocate(element**, unsigned long) [63] std::__cxx11::basic_string<unsigned int, std::char_traits<unsigned int>, std::allocator<unsigned int> >::~basic_string()
+ [150] knob::setValue(float) [116] void __gnu_cxx::new_allocator<element*>::destroy<element*>(element**) [64] unsigned int const* std::__addressof<unsigned int const>(unsigned int const&)
+ [186] knob::knob(int, int, sf::String, int, int) [142] __gnu_cxx::new_allocator<element*>::allocate(unsigned long, void const*) [73] element** std::__niter_base<element**>(element**)
+ [132] frame::frame(int, int, int, int, sf::String) [100] void __gnu_cxx::new_allocator<element*>::construct<element*, element*&>(element**, element*&) [111] element** std::__relocate_a<element**, element**, std::allocator<element*> >(element**, element**, element**, std::allocator<element*>&)
+  [44] label::draw(sf::RenderWindow*) [205] __gnu_cxx::new_allocator<element*>::new_allocator() [112] std::enable_if<std::__is_bitwise_relocatable<element*, void>::value, element**>::type std::__relocate_a_1<element*, element*>(element**, element**, element**, std::allocator<element*>&)
+ [187] label::init(int, int, sf::String, bool) [206] __gnu_cxx::new_allocator<element*>::~new_allocator() [149] unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&)
+ [188] label::initLabel(int, int, sf::String) [68] __gnu_cxx::new_allocator<unsigned int>::deallocate(unsigned int*, unsigned long) [113] unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&)
+ [189] label::label(int, int, sf::String, bool) [56] __gnu_cxx::new_allocator<unsigned int>::~new_allocator() [12] std::isnan(double)
+ [190] synth::getFloatBufferPtr() [117] __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::__normal_iterator(element* const* const&) [72] element*& std::forward<element*&>(std::remove_reference<element*&>::type&)
+ [135] synth::getChannelFloatBuffer(int) [118] __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::__normal_iterator<element**>(__gnu_cxx::__normal_iterator<element**, __gnu_cxx::__enable_if<std::__are_same<element**, element**>::__value, std::vector<element*, std::allocator<element*> > >::__type> const&) [85] void std::_Destroy<sf::Vertex*>(sf::Vertex*, sf::Vertex*)
+ [191] synth::getVolume()     [55] __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::__normal_iterator(element** const&) [86] void std::_Destroy<sf::Vertex*, sf::Vertex>(sf::Vertex*, sf::Vertex*, std::allocator<sf::Vertex>&)
+   [5] synth::onGetData(sf::SoundStream::Chunk&) [119] __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::difference_type __gnu_cxx::operator-<element* const*, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > > const&) [217] void std::_Destroy<element**>(element**, element**)
+ [192] synth::setVolume(double) [143] __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::difference_type __gnu_cxx::operator-<element**, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&) [218] void std::_Destroy<element**, element*>(element**, element**, std::allocator<element*>&)
+ [193] synth::synth(int, int, int, double) [120] bool __gnu_cxx::operator!=<element**, std::vector<element*, std::allocator<element*> > >(__gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&, __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > > const&) [65] unsigned int const* std::addressof<unsigned int const>(unsigned int const&)
+  [41] button::draw(sf::RenderWindow*) [87] __gnu_cxx::new_allocator<element*>::max_size() const [95] bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+ [194] button::button(int, int, int, int, sf::String, sf::String, sf::String) [77] __gnu_cxx::__normal_iterator<element* const*, std::vector<element*, std::allocator<element*> > >::base() const [96] bool std::operator!=<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  [16] decode::getWaveform(int) [67] __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::base() const [26] non-virtual thunk to sf::Text::~Text()
+  [13] decode::getSubVolume(int) [74] __gnu_cxx::__normal_iterator<element**, std::vector<element*, std::allocator<element*> > >::operator+(long) const [114] operator new(unsigned long, void*)
+  [17] decode::getSubWaveform(int) [101] std::_Vector_base<element*, std::allocator<element*> >::_M_get_Tp_allocator() const
+  [22] decode::isfreqModulated(int) [144] std::vector<element*, std::allocator<element*> >::_M_check_len(unsigned long, char const*) const

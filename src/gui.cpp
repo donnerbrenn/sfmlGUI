@@ -6,7 +6,7 @@
 #include "iostream"
 
 
-int buffersize=44100/4;//(74/8);
+int buffersize=44100/(74/2);
 vector2f pos;
 sf::Texture ball;
 sf::Texture ball8;
@@ -64,7 +64,7 @@ int main()
     bool running=true;
     sf::Event event;
     sf::RenderWindow window{sf::VideoMode(WIDTH,HEIGHT),"GUI"};
-    window.setVerticalSyncEnabled(false);
+    window.setVerticalSyncEnabled(true);
     // window.setFramerateLimit(2);
     sf::RenderTexture *canvas;
     
