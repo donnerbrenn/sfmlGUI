@@ -22,7 +22,7 @@ struct description
     double cutoff=.99;
     double resonance=.0;
 
-    effectType useEffect=noeEffect;
+    effectType useEffect=noEffect;
     double delay=.025;
     double strength=.5;
 };
@@ -43,9 +43,9 @@ const description bassdrum
     .useFilter=highstop,
     .cutoff=.99,
     .resonance=.9,
-    // .useEffect=reverb,
-    // .delay=.1,
-    // .strength=.25
+    .useEffect=noEffect,
+    .delay=.1,
+    .strength=.25
 };
 
 const description hihat
@@ -58,18 +58,21 @@ const description hihat
     .s=.05,
     .r=.25,
     .sub_waveform=mute,
-    .sub_volume=.005,
+    .sub_volume=.1,
     .sub_modify=48,
     .useFilter=bandstop,
     .cutoff=.45,
-    .resonance=.525,
+    .resonance=.8,
+    .useEffect=reverb,
+    .delay=.125,
+    .strength=.25
 };
 
 const description bass
 {
     .waveform=sine,
     .volume=.2,
-    .modify=0,
+    .modify=-12,
     .a=.0,
     .d=2.0,
     .s=.025,
@@ -77,9 +80,9 @@ const description bass
     .sub_waveform=rsaw,
     .sub_volume=.25,
     .sub_modify=0,
-    .useFilter=noFilter,
-    .cutoff=.3,
-    .resonance=.4,
+    .useFilter=highstop,
+    .cutoff=.5,
+    .resonance=.9,
     .useEffect=reverb,
     .delay=.125,
     .strength=.5
@@ -112,27 +115,7 @@ const description lead
     .a=.0,
     .d=2.0,
     .s=.1,
-    .r=1.0,
-    .sub_waveform=rsaw,
-    .sub_volume=.15,
-    .sub_modify=0,
-    .useFilter=highstop,
-    .cutoff=.05,
-    .resonance=.5,
-    .useEffect=reverb,
-    .delay=.125,
-    .strength=.0125
-};
-
-const description lead2
-{
-    .waveform=square,
-    .volume=.2,
-    .modify=0,
-    .a=.0025,
-    .d=1.8,
-    .s=.25,
-    .r=1.0,
+    .r=.5,
     .sub_waveform=mute,
     .sub_volume=.15,
     .sub_modify=0,
@@ -140,9 +123,30 @@ const description lead2
     .cutoff=.05,
     .resonance=.5,
     .useEffect=reverb,
-    .delay=.025,
-    .strength=.1
+    .delay=.125,
+    .strength=.5
 };
+
+const description lead2
+{
+    .waveform=square,
+    .volume=.2,
+    .modify=0,
+    .a=.0,
+    .d=1.8,
+    .s=.0,
+    .r=1.5,
+    .sub_waveform=mute,
+    .sub_volume=.15,
+    .sub_modify=0,
+    .useFilter=highpass,
+    .cutoff=.01,
+    .resonance=.9,
+    .useEffect=noEffect,
+    .delay=.125*.5,
+    .strength=.25
+};
+
 
 
 const description lowlead

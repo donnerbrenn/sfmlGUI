@@ -84,7 +84,6 @@ bool synth::onGetData(Chunk& data)
             wave=chan.get(currentTime,decoder.getWaveform(j),freq)*decoder.getVolume(j);
             wave+=chan.get(currentTime,decoder.getSubWaveform(j),subFreq)*decoder.getSubVolume(j);
             wave*=env->getVolume(j,time);
-            if(!isnan(wave))
             wave=filters[j]->getFiltered(wave);
             wave=effects[j]->getEffect(wave);
 

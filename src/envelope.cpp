@@ -42,9 +42,13 @@ double envelope::getVolume(int channel, double time)
 
     if(a_time<=a[channel])
     {
-        double result=a_time/a[channel];
-        result*=result;
-        return result*d[channel];
+        if(a[channel]!=0)
+        {
+            double result=a_time/a[channel];
+            result*=result;
+            return result*d[channel];
+        }
+        return 0;
     }
 
     if(s_time <= s[channel])
