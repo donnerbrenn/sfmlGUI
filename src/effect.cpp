@@ -39,10 +39,10 @@ double effect::getReverb(double value)
     currentIDX=getRingbufferIDX(currentIDX);
     buffer[currentIDX]=value;
 
-    for(int i=0;i<iterations;i++)
-    {
+    // for(int i=0;i<iterations;i++)
+    // {
         
-    }
+    // }
     int reverbIDX=getRingbufferIDX(currentIDX+1);
     return value+(buffer[reverbIDX]*strength);
 }
@@ -54,8 +54,6 @@ double effect::getEffect(double value)
     {
     case reverb:
         return getReverb(value);
-    default:
-        break;
     }
     return value;
 }
