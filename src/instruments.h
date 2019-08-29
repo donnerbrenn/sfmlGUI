@@ -81,7 +81,7 @@ const description bass
     .sub_volume=.25,
     .sub_modify=0,
     .useFilter=highstop,
-    .cutoff=.05,
+    .cutoff=.075,
     .resonance=.4,
     .useEffect=reverb,
     .delay=.125,
