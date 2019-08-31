@@ -63,3 +63,8 @@ void filter::calculateFeedbackAmount()
 {
     feedbackAmount = resonance + resonance/(1.0 - cutoff);
 }
+
+void filter::setFilter(mode flt)
+{
+    this->currentMode=flt;
+}

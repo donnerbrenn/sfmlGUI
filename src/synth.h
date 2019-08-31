@@ -33,6 +33,11 @@ public:
     void setInstrumentSubVolume(int channel, double value);
 
     void switchInstrumentMuted(int channel);
+    void switchInstrumentSMuted(int channel);
+
+    void setWaveform(int channel, osc waveform);
+    void setSWaveform(int channel, osc waveform);
+    void setFilter(int channel, mode flt);
 
 private:
     bool onGetData(Chunk& data);
@@ -56,4 +61,7 @@ private:
     double subvolumes[VOICES];
     bool muted[VOICES];
     bool smuted[VOICES];
+    osc waveforms[VOICES];
+    osc swaveforms[VOICES];
+    mode modes[VOICES];
 };

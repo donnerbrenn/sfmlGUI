@@ -8,6 +8,7 @@
 #include "label.h"
 #include "oscilloscope.h"
 #include "lockbutton.h"
+#include "rotButton.h"
 #include "element.h"
 #include "vector2f.h"
 #include "defines.h"

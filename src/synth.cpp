@@ -17,6 +17,8 @@ synth::synth(int channels,int bufferSize,int samplerate, double volume)
     {
         this->muted[i]=false;
         this->smuted[i]=false;
+        this->waveforms[i]=osc(decoder.getWaveform(i));
+        this->swaveforms[i]=osc(decoder.getSubWaveform(i));
         volumes[i]=decoder.getVolume(i);
         subvolumes[i]=decoder.getSubVolume(i);
         channelFloatBuffers[i]=new float[bufferSize];
@@ -88,10 +90,10 @@ bool synth::onGetData(Chunk& data)
             double currentTime=env->getCurrentTime(j,time);
             if(!this->muted[j])
             {
-                wave=chan.get(currentTime,decoder.getWaveform(j),freq)*volumes[j];
+                wave=chan.get(currentTime,waveforms[j],freq)*volumes[j];
                  if(!this->smuted[j])
                 {
-                    wave+=chan.get(currentTime,decoder.getSubWaveform(j),subFreq)*subvolumes[j];
+                    wave+=chan.get(currentTime,swaveforms[j],subFreq)*subvolumes[j];
                 }
                 wave*=volumes[j];
                 wave*=env->getVolume(j,time);
@@ -205,4 +207,31 @@ void synth::switchInstrumentMuted(int channel)
     {
         muted[channel]=true;
     }
+}
+
+void synth::switchInstrumentSMuted(int channel)
+{
+    if(smuted[channel])
+    {
+        smuted[channel]=false;
+    }
+    else
+    {
+        smuted[channel]=true;
+    }
+}
+
+void synth::setWaveform(int channel, osc waveform)
+{
+    waveforms[channel]=waveform;
+}
+
+void synth::setSWaveform(int channel, osc waveform)
+{
+    swaveforms[channel]=waveform;
+}
+
+void synth::setFilter(int channel, mode flt)
+{
+    filters[channel]->setFilter(flt);
 }

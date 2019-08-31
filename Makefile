@@ -9,7 +9,7 @@ OBJ=obj
 MAIN=$(OBJ)/gui.o $(OBJ)/vector2f.o
 SYNTH=$(OBJ)/synth.o $(OBJ)/channel.o $(OBJ)/decode.o $(OBJ)/envelope.o $(OBJ)/filter.o $(OBJ)/effect.o
 GUI=$(OBJ)/lockbutton.o $(OBJ)/collection.o $(OBJ)/element.o $(OBJ)/button.o $(OBJ)/frame.o $(OBJ)/knob.o\
-	 $(OBJ)/vu.o $(OBJ)/slider.o $(OBJ)/label.o $(OBJ)/oscilloscope.o
+	 $(OBJ)/vu.o $(OBJ)/slider.o $(OBJ)/label.o $(OBJ)/oscilloscope.o $(OBJ)/rotButton.o
 TARGETS=$(MAIN) $(GUI) $(SYNTH)
 
 %/:

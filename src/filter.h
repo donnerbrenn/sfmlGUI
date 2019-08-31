@@ -12,6 +12,7 @@ public:
     void setCutoff(double value);
     double getResonance();
     double getCutoff();
+    void setFilter(mode flt);
 
 private:
     mode currentMode;

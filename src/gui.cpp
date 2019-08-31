@@ -35,7 +35,7 @@ int dX=1;
 int dY=1;
 float rot=-10.1;
 
-enum function{none=0,a,d,s,r,delay,strength,cutoff,resonance, volume, svolume, muting, smuting};
+enum function{none=0,a,d,s,r,delay,strength,cutoff,resonance, volume, svolume, muting, smuting, changeform, changesform, flt};
 
 struct knobLink
 {
@@ -61,6 +61,11 @@ void play(int id, float value)
         synthesizer.play();
         isPlaying=true;
 }
+
+ std::vector<sf::String> oscNames;
+ std::vector<sf::String> fltNames;
+
+ //noFilter,highpass,lowpass,bandpass
 
 void changeChannelSetting(int id,float value)
 {
@@ -103,13 +108,38 @@ void changeChannelSetting(int id,float value)
             case muting:
                 synthesizer.switchInstrumentMuted(knobLayout[i].voice);
                 break;
+            case smuting:
+                synthesizer.switchInstrumentSMuted(knobLayout[i].voice);
+                break;
 
             default:
                 break;
             }
         }
     }
-    //*target=value;
+}
+
+void changeWaveform(int id, float fvalue)
+{
+    int value=fvalue;
+    for(int i=0;i<knobLayout.size();i++)
+    {
+        if(knobLayout[i].id==id)
+        {
+            switch (knobLayout[i].value)
+            {
+                case changeform:
+                    synthesizer.setWaveform(knobLayout[i].voice,osc(value));
+                    break;
+                case changesform:
+                    synthesizer.setSWaveform(knobLayout[i].voice,osc(value));
+                    break;
+                case flt:
+                    synthesizer.setFilter(knobLayout[i].voice,mode(value));
+            }
+            
+        }
+    }
 }
 
 void createGUI(double chanDisplayWidth, sf::String buttonImage, sf::String pressedImage)
@@ -203,6 +233,22 @@ void createGUI(double chanDisplayWidth, sf::String buttonImage, sf::String press
         currentKnob=elements.getPtrbyID(id);
         currentKnob->setClickActionPtr(changeChannelSetting);
         currentKnob->setReleaseActionPtr(changeChannelSetting);
+
+        id=elements.add(new rotation_button(10+i*chanDisplayWidth+200,500,128,32,buttonImage,pressedImage,oscNames,descriptions[i].waveform));
+        knobLayout.emplace_back(knobLink{id,i,changeform});
+        currentKnob=elements.getPtrbyID(id);
+        currentKnob->setClickActionPtr(changeWaveform);
+
+        id=elements.add(new rotation_button(10+i*chanDisplayWidth+200,543,128,32,buttonImage,pressedImage,oscNames,descriptions[i].sub_waveform));
+        knobLayout.emplace_back(knobLink{id,i,changesform});
+        currentKnob=elements.getPtrbyID(id);
+        currentKnob->setClickActionPtr(changeWaveform);
+
+        id=elements.add(new rotation_button(10+i*chanDisplayWidth+200,586,128,32,buttonImage,pressedImage,fltNames,descriptions[i].useFilter));
+        knobLayout.emplace_back(knobLink{id,i,flt});
+        currentKnob=elements.getPtrbyID(id);
+        currentKnob->setClickActionPtr(changeWaveform);
+        
       
     }
     id = elements.add(new slider(10,810,"Volume"));
@@ -214,6 +260,21 @@ void createGUI(double chanDisplayWidth, sf::String buttonImage, sf::String press
 
 int main()
 {
+    oscNames.emplace_back("Mute");
+    oscNames.emplace_back("Sine");
+    oscNames.emplace_back("Triangle");
+    oscNames.emplace_back("Square");
+    oscNames.emplace_back("Saw");
+    oscNames.emplace_back("RSaw");
+    oscNames.emplace_back("Noise");
+
+     //noFilter,highpass,lowpass,bandpass
+
+    fltNames.emplace_back("None");
+    fltNames.emplace_back("High");
+    fltNames.emplace_back("Low");
+    fltNames.emplace_back("Band");
+
     setVolume(0,1.0);
     synthesizer.play();
     bool running=true;
