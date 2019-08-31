@@ -220,7 +220,7 @@ int main()
     sf::Event event;
     sf::RenderWindow window{sf::VideoMode(WIDTH,HEIGHT),"GUI"};
     window.setVerticalSyncEnabled(true);
-    window.setFramerateLimit(30);
+    // window.setFramerateLimit(30);
     sf::RenderTexture *canvas;
     
     int clicked=-1;
