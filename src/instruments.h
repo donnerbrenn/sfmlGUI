@@ -34,7 +34,7 @@ const description bassdrum
     .name="Bassdrum",
     .freqModulate=true,
     .waveform=sine,
-    .volume=.75,
+    .volume=1.0,
     .modify=16,
     .a=.01,
     .d=2.0,
@@ -46,8 +46,8 @@ const description bassdrum
     .useFilter=lowpass,
     .cutoff=.99,
     .resonance=.9,
-    .useEffect=noEffect,
-    .delay=.1,
+    .useEffect=reverb,
+    .delay=.0,
     .strength=.25
 };
 
@@ -55,7 +55,7 @@ const description hihat
 {
     .name="Hihat",
     .waveform=noise,
-    .volume=.175,
+    .volume=.5,
     .modify=-6,
     .a=.00,
     .d=6.5,
@@ -64,7 +64,7 @@ const description hihat
     .sub_waveform=sine,
     .sub_volume=.1,
     .sub_modify=0,
-    .useFilter=bandstop,
+    .useFilter=bandpass,
     .cutoff=.45,
     .resonance=.8,
     .useEffect=reverb,
@@ -76,7 +76,7 @@ const description bass
 {
     .name="Bass",
     .waveform=square,
-    .volume=.4,
+    .volume=.75,
     .modify=0,
     .a=.0,
     .d=2.0,
@@ -85,7 +85,7 @@ const description bass
     .sub_waveform=triangle,
     .sub_volume=.25,
     .sub_modify=0,
-    .useFilter=highstop,
+    .useFilter=lowpass,
     .cutoff=.075,
     .resonance=.4,
     .useEffect=reverb,
@@ -98,7 +98,7 @@ const description lowbass
 {
     .name="Low Bass",
     .waveform=sine,
-    .volume=.022,
+    .volume=.05,
     .modify=-12,
     .a=.0,
     .d=2.0,
@@ -120,7 +120,7 @@ const description lead
 {
     .name="Lead Synth",
     .waveform=saw,
-    .volume=.2,
+    .volume=.75,
     .modify=0,
     .a=.0,
     .d=2.0,
@@ -141,7 +141,7 @@ const description lead2
 {
     .name="Lead Synth 2",
     .waveform=square,
-    .volume=.2,
+    .volume=.75,
     .modify=0,
     .a=.0,
     .d=1.8,
@@ -153,8 +153,8 @@ const description lead2
     .useFilter=highpass,
     .cutoff=.05,
     .resonance=.3,
-    .useEffect=noEffect,
-    .delay=.125,
+    .useEffect=reverb,
+    .delay=.0,
     .strength=.60
 };
 
@@ -164,7 +164,7 @@ const description lowlead
 {
     .name="Low Lead",
     .waveform=square,
-    .volume=.2,
+    .volume=.75,
     .modify=-0,
     .a=.0,
     .d=2.0,
@@ -184,7 +184,7 @@ const description lowlead2
 {
     .name="Low Lead 2",
     .waveform=square,
-    .volume=.2,
+    .volume=.75,
     .modify=-12,
     .a=.025,
     .d=1.8,

@@ -16,7 +16,7 @@ synth::synth(int channels,int bufferSize,int samplerate, double volume)
     for(int i=0;i<VOICES;i++)
     {
         this->muted[i]=false;
-        this->smuted[i]=descriptions[i].sub_waveform;
+        this->smuted[i]=false;
         volumes[i]=decoder.getVolume(i);
         subvolumes[i]=decoder.getSubVolume(i);
         channelFloatBuffers[i]=new float[bufferSize];
@@ -93,6 +93,7 @@ bool synth::onGetData(Chunk& data)
                 {
                     wave+=chan.get(currentTime,decoder.getSubWaveform(j),subFreq)*subvolumes[j];
                 }
+                wave*=volumes[j];
                 wave*=env->getVolume(j,time);
                 wave=filters[j]->getFiltered(wave);
                 wave=effects[j]->getEffect(wave);

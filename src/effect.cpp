@@ -36,16 +36,8 @@ int effect::getRingbufferIDX(int IDX)
 
 double effect::getReverb(double value)
 {
-    // int currentIDX;
-    // for(int i=0;i<buffersize-1;i++)
-    // {
-    //     currentIDX=samplerate-buffersize+i;        
-    //     buffer[currentIDX]=buffer[currentIDX+1];
-    // }
-    // currentIDX=samplerate-buffersize;
-    // buffer[samplerate-1]=value;
-    // return buffer[currentIDX];
-
+    if(buffersize==0)
+        return value;
 
     currentIDX++;
     currentIDX=getRingbufferIDX(currentIDX);
