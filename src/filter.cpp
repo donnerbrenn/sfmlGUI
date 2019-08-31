@@ -1,5 +1,5 @@
 #include "filter.h"
-#include <iostream>
+// #include <iostream>
 
 
 filter::filter(mode currentMode, double cutoff, double resonance)

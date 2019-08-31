@@ -35,8 +35,6 @@ int decode::getWaveform(int channel)
 
 double decode::getFreq(int channel, double time, bool getSub)
 {
-    if(muted[channel])
-        return 0;
     int pos = time*SPEED*5;
 
     char note = cpatterns[channel][(pos/PATTERNLENGTH)%LENGTH][pos%PATTERNLENGTH];

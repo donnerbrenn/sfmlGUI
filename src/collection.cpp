@@ -116,10 +116,6 @@ int collection::triggerReleasedElement(sf::RenderWindow *window)
     mousePos.x=transformedMousePos.x;
     mousePos.y=transformedMousePos.y;
 
-
-    #ifdef DEBUG
-    std::cout << mousePos.x << ":" << mousePos.y << "\n";
-    #endif
     for(int i=0;i<elements.size();i++)
     {
             elements[i]->releaseAction();
@@ -139,7 +135,6 @@ void collection::triggerEvents(sf::RenderWindow *window, sf::Event event)
 {
     currentTick=runtime.getElapsedTime().asSeconds();
     delta=currentTick-lastTick;
-    // std::cout << delta << "\n";
     lastTick=currentTick;
 
     if(event.type==sf::Event::MouseButtonPressed)
@@ -164,8 +159,5 @@ vector2f collection::transformMousePos(vector2f mousePos, sf::RenderWindow *wind
     mul.y=size.y/HEIGHT;
     mousePos/=mul;
 
-    #ifdef DEBUG
-    std::cout << mul.x << " " << mul.y << "\n";
-    #endif
     return mousePos;    
 }

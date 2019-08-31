@@ -2,9 +2,11 @@
 #include "channel.h"
 #include "filter.h"
 #include "effect.h"
+#include <SFML/System.hpp>
 
 struct description
 {
+    sf::String name="Undefined";
     bool freqModulate=false;
     osc waveform=sine;
     double volume=.5;
@@ -29,18 +31,19 @@ struct description
 
 const description bassdrum
 {
+    .name="Bassdrum",
     .freqModulate=true,
     .waveform=sine,
     .volume=.75,
     .modify=16,
     .a=.01,
-    .d=1.5,
+    .d=2.0,
     .s=.1,
     .r=.4,
     .sub_waveform=sine,
     .sub_volume=.15,
     .sub_modify=8,
-    .useFilter=highstop,
+    .useFilter=lowpass,
     .cutoff=.99,
     .resonance=.9,
     .useEffect=noEffect,
@@ -50,6 +53,7 @@ const description bassdrum
 
 const description hihat
 {
+    .name="Hihat",
     .waveform=noise,
     .volume=.175,
     .modify=-6,
@@ -57,9 +61,9 @@ const description hihat
     .d=6.5,
     .s=.05,
     .r=.25,
-    .sub_waveform=mute,
+    .sub_waveform=sine,
     .sub_volume=.1,
-    .sub_modify=48,
+    .sub_modify=0,
     .useFilter=bandstop,
     .cutoff=.45,
     .resonance=.8,
@@ -70,6 +74,7 @@ const description hihat
 
 const description bass
 {
+    .name="Bass",
     .waveform=square,
     .volume=.4,
     .modify=0,
@@ -77,7 +82,7 @@ const description bass
     .d=2.0,
     .s=.025,
     .r=.5,
-    .sub_waveform=mute,
+    .sub_waveform=triangle,
     .sub_volume=.25,
     .sub_modify=0,
     .useFilter=highstop,
@@ -91,6 +96,7 @@ const description bass
 
 const description lowbass
 {
+    .name="Low Bass",
     .waveform=sine,
     .volume=.022,
     .modify=-12,
@@ -112,14 +118,15 @@ const description lowbass
 
 const description lead
 {
-    .waveform=square,
+    .name="Lead Synth",
+    .waveform=saw,
     .volume=.2,
     .modify=0,
     .a=.0,
     .d=2.0,
     .s=.1,
     .r=.5,
-    .sub_waveform=mute,
+    .sub_waveform=sine,
     .sub_volume=.15,
     .sub_modify=0,
     .useFilter=highpass,
@@ -132,6 +139,7 @@ const description lead
 
 const description lead2
 {
+    .name="Lead Synth 2",
     .waveform=square,
     .volume=.2,
     .modify=0,
@@ -139,21 +147,22 @@ const description lead2
     .d=1.8,
     .s=.0,
     .r=1.25,
-    .sub_waveform=mute,
+    .sub_waveform=sine,
     .sub_volume=.15,
     .sub_modify=0,
     .useFilter=highpass,
-    .cutoff=.01,
-    .resonance=.9,
+    .cutoff=.05,
+    .resonance=.3,
     .useEffect=noEffect,
-    .delay=.125*.5,
-    .strength=.25
+    .delay=.125,
+    .strength=.60
 };
 
 
 
 const description lowlead
 {
+    .name="Low Lead",
     .waveform=square,
     .volume=.2,
     .modify=-0,
@@ -173,6 +182,7 @@ const description lowlead
 
 const description lowlead2
 {
+    .name="Low Lead 2",
     .waveform=square,
     .volume=.2,
     .modify=-12,

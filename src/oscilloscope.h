@@ -1,6 +1,6 @@
 #pragma once
 #include "frame.h"
-#include "iostream"
+// #include "iostream"
 
 enum partition{all,left,right};
 
@@ -29,8 +29,6 @@ public:
     void setFgColor(sf::Color col);
     sf::Color getBgColor();
     sf::Color getFgColor();
-
-
 
 protected:
     sf::Color fgColor;

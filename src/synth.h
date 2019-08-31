@@ -6,6 +6,7 @@
 #include "envelope.h"
 #include "filter.h"
 #include "effect.h"
+#include <iostream>
 
 class synth : public sf::SoundStream
 {
@@ -17,6 +18,21 @@ public:
     float *getChannelFloatBuffer(int channel);
     void setVolume(double volume);
     float getVolume();
+
+    void setFilterCutoff(int channel, double value);
+    void setFilterResonance(int channel, double value);
+    void setEffectStrength(int channel, double value);
+    void setEffectDelay(int channel, double value);
+
+    void setEnvelopeA(int channel, double value);
+    void setEnvelopeD(int channel, double value);
+    void setEnvelopeS(int channel, double value);
+    void setEnvelopeR(int channel, double value);
+
+    void setInstrumentVolume(int channel, double value);
+    void setInstrumentSubVolume(int channel, double value);
+
+    void switchInstrumentMuted(int channel);
 
 private:
     bool onGetData(Chunk& data);
@@ -36,5 +52,8 @@ private:
     float *channelFloatBuffers[VOICES];
     filter *filters[VOICES];
     effect *effects[VOICES];
-
+    double volumes[VOICES];
+    double subvolumes[VOICES];
+    bool muted[VOICES];
+    bool smuted[VOICES];
 };

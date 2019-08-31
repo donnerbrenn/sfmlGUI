@@ -127,9 +127,6 @@ bool element::isUnderPos(sf::Vector2i mousePos)
 bool element::isUnderMouse(sf::RenderWindow *window)
 {
     sf::Vector2i mousePos=sf::Mouse::getPosition(*window);
-    #ifdef DEBUG
-    std::cout << mousePos.x << ":" << mousePos.y << "\n";
-    #endif
 
     if(mousePos.x > posX && mousePos.x < posX+width)
         if(mousePos.y > posY && mousePos.y < posY+height)

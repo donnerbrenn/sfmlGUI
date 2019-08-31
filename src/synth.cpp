@@ -15,6 +15,10 @@ synth::synth(int channels,int bufferSize,int samplerate, double volume)
     env=new envelope{VOICES};
     for(int i=0;i<VOICES;i++)
     {
+        this->muted[i]=false;
+        this->smuted[i]=descriptions[i].sub_waveform;
+        volumes[i]=decoder.getVolume(i);
+        subvolumes[i]=decoder.getSubVolume(i);
         channelFloatBuffers[i]=new float[bufferSize];
         mode useFilter=descriptions[i].useFilter;
         double cutoff=descriptions[i].cutoff;
@@ -80,16 +84,23 @@ bool synth::onGetData(Chunk& data)
                 
 
             double wave;
+            
             double currentTime=env->getCurrentTime(j,time);
-            wave=chan.get(currentTime,decoder.getWaveform(j),freq)*decoder.getVolume(j);
-            wave+=chan.get(currentTime,decoder.getSubWaveform(j),subFreq)*decoder.getSubVolume(j);
-            wave*=env->getVolume(j,time);
-            wave=filters[j]->getFiltered(wave);
-            wave=effects[j]->getEffect(wave);
+            if(!this->muted[j])
+            {
+                wave=chan.get(currentTime,decoder.getWaveform(j),freq)*volumes[j];
+                 if(!this->smuted[j])
+                {
+                    wave+=chan.get(currentTime,decoder.getSubWaveform(j),subFreq)*subvolumes[j];
+                }
+                wave*=env->getVolume(j,time);
+                wave=filters[j]->getFiltered(wave);
+                wave=effects[j]->getEffect(wave);
+                channelFloatBuffers[j][i]=wave;
+                floatBuffer[i]+=wave*.1;
+                buffer[i]+=wave*4096*volume;
+            }
 
-            channelFloatBuffers[j][i]=wave;
-            floatBuffer[i]+=wave*.1;
-            buffer[i]+=wave*4096*volume;
         }
         time+=1.0/samplerate;
     }
@@ -129,4 +140,68 @@ float *synth::getChannelFloatBuffer(int channel)
 float synth::getVolume()
 {
     return this->volume;
+}
+
+void synth::setFilterCutoff(int channel, double value)
+{
+    filters[channel]->setCutoff(value);
+    
+}
+
+void synth::setFilterResonance(int channel, double value)
+{
+    filters[channel]->setResonance(value);
+}
+
+void synth::setEffectStrength(int channel, double value)
+{
+    effects[channel]->setStrength(value);
+}
+
+void synth::setEffectDelay(int channel, double value)
+{
+    effects[channel]->setDelay(value);
+}
+
+void synth::setEnvelopeA(int channel, double value)
+{
+    env->setEnvelopeA(channel,value);
+}
+
+void synth::setEnvelopeD(int channel, double value)
+{
+    env->setEnvelopeD(channel,value);
+}
+
+void synth::setEnvelopeS(int channel, double value)
+{
+    env->setEnvelopeS(channel,value);
+}
+
+void synth::setEnvelopeR(int channel, double value)
+{
+    env->setEnvelopeR(channel,value);
+}
+
+void synth::setInstrumentVolume(int channel, double value)
+{
+    volumes[channel]=value;
+}
+
+
+void synth::setInstrumentSubVolume(int channel, double value)
+{
+    subvolumes[channel]=value;
+}
+
+void synth::switchInstrumentMuted(int channel)
+{
+    if(muted[channel])
+    {
+        muted[channel]=false;
+    }
+    else
+    {
+        muted[channel]=true;
+    }
 }

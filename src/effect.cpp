@@ -1,17 +1,18 @@
 #include "effect.h"
-#include <iostream>
+// #include <iostream>
 
-effect::effect(int samplerate, effectType type, double buffersize, double strength, int iterations)
+effect::effect(int samplerate, effectType type, double delay, double strength, int iterations)
 {
+    this->delay=delay;
+    this->samplerate=samplerate;
     if(type==noEffect)
-        buffersize=0;
+        delay=0;
     this->strength=strength;
     this->type=type;
-    this->buffersize=buffersize/(1.0/samplerate);
-    this->buffer=new double[this->buffersize];
+    this->buffersize=delay/(1.0/samplerate);
+    this->buffer=new double[samplerate];
     this->currentIDX=0;
     this->iterations=iterations;
-    std::cout << buffersize << " " << this->buffersize << "\n";
 }
 
 effect::~effect()
@@ -35,14 +36,20 @@ int effect::getRingbufferIDX(int IDX)
 
 double effect::getReverb(double value)
 {
+    // int currentIDX;
+    // for(int i=0;i<buffersize-1;i++)
+    // {
+    //     currentIDX=samplerate-buffersize+i;        
+    //     buffer[currentIDX]=buffer[currentIDX+1];
+    // }
+    // currentIDX=samplerate-buffersize;
+    // buffer[samplerate-1]=value;
+    // return buffer[currentIDX];
+
+
     currentIDX++;
     currentIDX=getRingbufferIDX(currentIDX);
     buffer[currentIDX]=value;
-
-    // for(int i=0;i<iterations;i++)
-    // {
-        
-    // }
     int reverbIDX=getRingbufferIDX(currentIDX+1);
     return value+(buffer[reverbIDX]*strength);
 }
@@ -56,4 +63,14 @@ double effect::getEffect(double value)
         return getReverb(value);
     }
     return value;
+}
+
+void effect::setStrength(double value)
+{
+    strength=value;
+}
+
+void effect::setDelay(double value)
+{
+    this->buffersize=value/(1.0/samplerate);
 }

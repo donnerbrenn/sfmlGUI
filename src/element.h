@@ -4,10 +4,6 @@
 #include <string>
 #include "defines.h"
 
-#ifdef DEBUG
-#include <iostream>
-#endif
-
 class element
 {
 public:

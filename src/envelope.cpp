@@ -70,3 +70,23 @@ double envelope::getCurrentTime(int channel, double time)
 {
     return time-start[channel];
 }
+
+void envelope::setEnvelopeA(int channel, double value)
+{
+    a[channel]=value;
+}
+
+void envelope::setEnvelopeD(int channel, double value)
+{
+    d[channel]=value;
+}
+
+void envelope::setEnvelopeS(int channel, double value)
+{
+    s[channel]=value;
+}
+
+void envelope::setEnvelopeR(int channel, double value)
+{
+    r[channel]=value;
+}
