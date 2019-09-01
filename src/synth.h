@@ -39,6 +39,8 @@ public:
     void setSWaveform(int channel, osc waveform);
     void setFilter(int channel, mode flt);
 
+    void switchInstrumentFreqModulate(int channel);
+
 private:
     bool onGetData(Chunk& data);
     void onSeek(sf::Time timeOffset); 
@@ -64,4 +66,5 @@ private:
     osc waveforms[VOICES];
     osc swaveforms[VOICES];
     mode modes[VOICES];
+    bool freqModulates[VOICES];
 };

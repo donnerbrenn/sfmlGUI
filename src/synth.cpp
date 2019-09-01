@@ -15,12 +15,14 @@ synth::synth(int channels,int bufferSize,int samplerate, double volume)
     env=new envelope{VOICES};
     for(int i=0;i<VOICES;i++)
     {
+        
         this->muted[i]=false;
         this->smuted[i]=false;
-        this->waveforms[i]=osc(decoder.getWaveform(i));
-        this->swaveforms[i]=osc(decoder.getSubWaveform(i));
-        volumes[i]=decoder.getVolume(i);
-        subvolumes[i]=decoder.getSubVolume(i);
+        this->freqModulates[i]=descriptions[i].freqModulate;
+        this->waveforms[i]=osc(descriptions[i].waveform);
+        this->swaveforms[i]=osc(descriptions[i].sub_waveform);
+        volumes[i]=descriptions[i].volume;
+        subvolumes[i]=descriptions[i].sub_volume;
         channelFloatBuffers[i]=new float[bufferSize];
         mode useFilter=descriptions[i].useFilter;
         double cutoff=descriptions[i].cutoff;
@@ -78,7 +80,7 @@ bool synth::onGetData(Chunk& data)
             double freq=decoder.getFreq(j,time);
             double subFreq=decoder.getFreq(j,time,true);
             double currentEnvVolume=env->getVolume(j,time)*env->getVolume(j,time);
-            if(decoder.isfreqModulated(j))
+            if(freqModulates[j])
             {
                 freq*=currentEnvVolume;
                 subFreq*=currentEnvVolume;
@@ -234,4 +236,9 @@ void synth::setSWaveform(int channel, osc waveform)
 void synth::setFilter(int channel, mode flt)
 {
     filters[channel]->setFilter(flt);
+}
+
+void synth::switchInstrumentFreqModulate(int channel)
+{
+    freqModulates[channel]=freqModulates[channel]?false:true;
 }

@@ -31,7 +31,7 @@ int dX=1;
 int dY=1;
 float rot=-10.1;
 
-enum function{none=0,a,d,s,r,delay,strength,cutoff,resonance, volume, svolume, muting, smuting, changeform, changesform, flt};
+enum function{none=0,a,d,s,r,delay,strength,cutoff,resonance, volume, svolume, muting, smuting, changeform, changesform, flt, freqmod};
 
 struct knobLink
 {
@@ -116,6 +116,10 @@ void changeChannelSetting(int id,float value)
                 break;
             case smuting:
                 synthesizer.switchInstrumentSMuted(knobLayout[i].voice);
+                return;
+                break;
+            case freqmod:
+                synthesizer.switchInstrumentFreqModulate(knobLayout[i].voice);
                 return;
                 break;
 
@@ -240,8 +244,13 @@ void createGUI(double chanDisplayWidth, sf::String buttonImage, sf::String press
         currentKnob=elements.getPtrbyID(id);
         currentKnob->setClickActionPtr(changeWaveform);
 
-
-
+        id=elements.add(new lockbutton(10+i*chanDisplayWidth+xSpacing*2+28,yOffset+ySpacing*2+30,128,32,buttonImage,pressedImage,"Freq Modulate",descriptions[i].freqModulate));
+        knobLayout.emplace_back(knobLink{id,i,freqmod});
+        currentKnob=elements.getPtrbyID(id);
+        currentKnob->setClickActionPtr(changeChannelSetting);
+        currentKnob->setReleaseActionPtr(changeChannelSetting);
+        currentKnob->setScale(2);
+        
         id=elements.add(new knob (knobXOffset+i*chanDisplayWidth,yOffset+ySpacing*2+10,"Volume"));
         knobLayout.emplace_back(knobLink{id,i,volume});
         currentKnob=elements.getPtrbyID(id);
