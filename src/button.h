@@ -11,7 +11,7 @@ public:
     element(x,y,w,h,imageFile,button_type)
     {
         pressedTexture.loadFromFile(pressedFile);
-        initLabel(0,0,label);
+        initLabel(0,0,label,18);
     }
     void draw(sf::RenderWindow *window);
     virtual void pressAction();

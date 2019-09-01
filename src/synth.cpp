@@ -99,8 +99,8 @@ bool synth::onGetData(Chunk& data)
                 wave*=env->getVolume(j,time);
                 wave=filters[j]->getFiltered(wave);
                 wave=effects[j]->getEffect(wave);
-                channelFloatBuffers[j][i]=wave;
-                floatBuffer[i]+=wave*.1;
+                channelFloatBuffers[j][i]=wave*.5;
+                // floatBuffer[i]+=wave*.1;
                 buffer[i]+=wave*4096*volume;
             }
 

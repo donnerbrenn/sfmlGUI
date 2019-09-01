@@ -52,7 +52,7 @@ protected:
     int type=element_type;
 
     void initCanvas(int w, int h);
-    void initLabel(int x, int y, sf::String label, int charSize=20);
+    void initLabel(int x, int y, sf::String label, int charSize=18);
     void initImage(int x, int y);
     void initOverlay(int x, int y);  
     void performAction(void(*ptr)(int id, float value), float value=.0f);

@@ -155,7 +155,7 @@ void createGUI(double chanDisplayWidth, sf::String buttonImage, sf::String press
 {
     int xSpacing=90;
     int ySpacing=150;
-    int yOffset=335;
+    int yOffset=175;
     int knobXOffset=20;
     int id;
     element *currentKnob;
@@ -164,19 +164,16 @@ void createGUI(double chanDisplayWidth, sf::String buttonImage, sf::String press
     
     for(int i=0;i<VOICES;i++)
     {
+        
+        id=elements.add(new oscilloscope(10+i*chanDisplayWidth,10,chanDisplayWidth-5,120,synthesizer.getChannelFloatBuffer(i),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
+        id=elements.add(new label(10+i*chanDisplayWidth+5,10,descriptions[i].name));
+
         id=elements.add(new frame(10+i*chanDisplayWidth,yOffset-38,chanDisplayWidth-5,142,"",sf::Color(100,100,100)));
         id=elements.add(new frame(10+i*chanDisplayWidth,yOffset-38+ySpacing,chanDisplayWidth-5,142+40,"",sf::Color(100,100,100)));
         id=elements.add(new frame(10+i*chanDisplayWidth,yOffset-38+ySpacing*2+42,chanDisplayWidth-5,110,"",sf::Color(100,100,100)));
-        
  
-        id=elements.add(new oscilloscope(10+i*chanDisplayWidth,10,chanDisplayWidth-5,240,synthesizer.getChannelFloatBuffer(i),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
-        id=elements.add(new label(10+i*chanDisplayWidth+5,10,descriptions[i].name));
-
         id=elements.add(new label(10+i*chanDisplayWidth+2*xSpacing,yOffset-30,"Envelope",true));
         
-
-        
-
         id=elements.add(new knob (knobXOffset+i*chanDisplayWidth,yOffset,"A"));
         knobLayout.emplace_back(knobLink{id,i,a});
         currentKnob=elements.getPtrbyID(id);
@@ -252,40 +249,42 @@ void createGUI(double chanDisplayWidth, sf::String buttonImage, sf::String press
         currentKnob->setValue(descriptions[i].volume);
         currentKnob->setMoveActionPtr(changeChannelSetting);
 
-        id=elements.add(new knob (knobXOffset+i*chanDisplayWidth+xSpacing,yOffset+ySpacing*2+10,"SVolume"));
+        id=elements.add(new knob (knobXOffset+i*chanDisplayWidth+xSpacing,yOffset+ySpacing*2+10,"Sub-Vol."));
         knobLayout.emplace_back(knobLink{id,i,svolume});
         currentKnob=elements.getPtrbyID(id);
         currentKnob->setMax(1.0);
         currentKnob->setValue(descriptions[i].sub_volume);
         currentKnob->setMoveActionPtr(changeChannelSetting);
 
-        id=elements.add(new lockbutton(10+i*chanDisplayWidth+28,740+15,128,32,buttonImage,pressedImage,"Mute"));
+        id=elements.add(new lockbutton(10+i*chanDisplayWidth+48,yOffset+3.1*ySpacing,128,32,buttonImage,pressedImage,"Mute"));
         knobLayout.emplace_back(knobLink{id,i,muting});
         currentKnob=elements.getPtrbyID(id);
         currentKnob->setClickActionPtr(changeChannelSetting);
         currentKnob->setReleaseActionPtr(changeChannelSetting);
 
-        id=elements.add(new lockbutton(10+i*chanDisplayWidth+150+28,740+15,128,32,buttonImage,pressedImage,"SMute"));
+        id=elements.add(new lockbutton(10+i*chanDisplayWidth+130+48,yOffset+3.1*ySpacing,128,32,buttonImage,pressedImage,"Sub Mute"));
         knobLayout.emplace_back(knobLink{id,i,smuting});
         currentKnob=elements.getPtrbyID(id);
         currentKnob->setClickActionPtr(changeChannelSetting);
         currentKnob->setReleaseActionPtr(changeChannelSetting);
 
-        id=elements.add(new rotation_button(10+i*chanDisplayWidth+28,260,128,32,buttonImage,pressedImage,oscNames,descriptions[i].waveform));
+        id=elements.add(new rotation_button(10+i*chanDisplayWidth+48,yOffset+2.8*ySpacing,128,32,buttonImage,pressedImage,oscNames,descriptions[i].waveform));
         knobLayout.emplace_back(knobLink{id,i,changeform});
         currentKnob=elements.getPtrbyID(id);
         currentKnob->setClickActionPtr(changeWaveform);
 
-        id=elements.add(new rotation_button(10+i*chanDisplayWidth+150+28,260,128,32,buttonImage,pressedImage,oscNames,descriptions[i].sub_waveform));
+        id=elements.add(new rotation_button(10+i*chanDisplayWidth+130+48,yOffset+2.8*ySpacing,128,32,buttonImage,pressedImage,oscNames,descriptions[i].sub_waveform));
         knobLayout.emplace_back(knobLink{id,i,changesform});
         currentKnob=elements.getPtrbyID(id);
         currentKnob->setClickActionPtr(changeWaveform);
     }
-    id = elements.add(new slider(10,810,"Volume"));
+    id = elements.add(new slider(58,690,"Volume"));
     elements.getPtrbyID(id)->setMin(0);
     elements.getPtrbyID(id)->setMax(1.0);
     elements.getPtrbyID(id)->setValue(synthesizer.getVolume());
     elements.getPtrbyID(id)->setMoveActionPtr(setVolume);
+
+    // std::cout << elements.getElementCount() << "\n";
 }
 
 int main()
@@ -299,9 +298,9 @@ int main()
     oscNames.emplace_back("Noise");
 
     fltNames.emplace_back("None");
-    fltNames.emplace_back("High");
-    fltNames.emplace_back("Low");
-    fltNames.emplace_back("Band");
+    fltNames.emplace_back("Highpass");
+    fltNames.emplace_back("Lowpass");
+    fltNames.emplace_back("Bandpass");
 
     setVolume(0,1.0);
     synthesizer.play();

@@ -54,6 +54,7 @@ void element::initCanvas(int w, int h)
     canvas.display();
     image.setTexture(canvas.getTexture());
     image.setPosition(posX,posY);
+    canvas.clear(sf::Color::Transparent);
 }
 
 void element::pressAction()

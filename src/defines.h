@@ -6,7 +6,7 @@
 
 //GUI
 #define WIDTH 1920
-#define HEIGHT 880
+#define HEIGHT 760
 #define DUALFRAMED false // broken
 // #define SONG "bubble_bobble_sng.h" 
 #define SONG "tetris_sng.h"

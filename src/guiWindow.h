@@ -35,6 +35,7 @@ public:
     element *getPtrbyIDX(int idx);
     element *getPtrbyID(int id);
     void triggerEvents(sf::Event event);
+    int getElementCount();
 
 
 private:

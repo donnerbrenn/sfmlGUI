@@ -157,4 +157,9 @@ vector2f guiWindow::transformMousePos(vector2f mousePos)
     return mousePos;
 }
 
+int guiWindow::getElementCount()
+{
+    return elements.size();
+}
+
 
