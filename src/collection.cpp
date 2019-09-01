@@ -158,6 +158,5 @@ vector2f collection::transformMousePos(vector2f mousePos, sf::RenderWindow *wind
     mul.x=size.x/WIDTH;
     mul.y=size.y/HEIGHT;
     mousePos/=mul;
-
     return mousePos;    
 }

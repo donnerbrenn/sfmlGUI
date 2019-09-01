@@ -44,7 +44,7 @@ const description bassdrum
     .sub_volume=.15,
     .sub_modify=0,
     .useFilter=lowpass,
-    .cutoff=.99,
+    .cutoff=.28,
     .resonance=.9,
     .useEffect=reverb,
     .delay=.0,

@@ -1,11 +1,12 @@
 #include "defines.h"
-#include "collection.h"
+// #include "collection.h"
 #include "vector2f.h"
 #include <math.h>
 #include "synth.h"
 // #include "iostream"
 #include "vector"
 #include SONG
+#include "guiWindow.h"
 
 
 int buffersize=44100/(74/2);
@@ -14,7 +15,7 @@ sf::Texture ball;
 sf::Texture ball8;
 sf::Texture basketball;
 sf::Sprite sprite;
-collection elements;
+guiWindow elements(sf::VideoMode(WIDTH,HEIGHT),"GUI");
 synth synthesizer{1,buffersize,44100};
 bool isPlaying=true;
 
@@ -279,8 +280,7 @@ int main()
     synthesizer.play();
     bool running=true;
     sf::Event event;
-    sf::RenderWindow window{sf::VideoMode(WIDTH,HEIGHT),"GUI"};
-    window.setVerticalSyncEnabled(true);
+    elements.setVerticalSyncEnabled(true);
     // window.setFramerateLimit(30);
     sf::RenderTexture *canvas;
     
@@ -297,17 +297,17 @@ int main()
 
     while(running)
     {
-        window.clear(sf::Color(128,128,128,255));
-        elements.drawAll(&window);
-        window.display();
-        while(window.pollEvent(event))
+        elements.clear(sf::Color(128,128,128,255));
+        elements.drawAll();
+        elements.display();
+        while(elements.pollEvent(event))
         {
             if(event.type==sf::Event::Closed)
             {
                 synthesizer.stop();
                 running=false;                
             }
-            elements.triggerEvents(&window,event);        
+            elements.triggerEvents(event);        
         }
     }
 }
