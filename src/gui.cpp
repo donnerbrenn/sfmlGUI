@@ -11,11 +11,7 @@
 
 int buffersize=44100/(74/2);
 vector2f pos;
-sf::Texture ball;
-sf::Texture ball8;
-sf::Texture basketball;
-sf::Sprite sprite;
-guiWindow elements(sf::VideoMode(WIDTH,HEIGHT),"GUI");
+guiWindow elements(sf::VideoMode(WIDTH,HEIGHT),"GUI",sf::Color(128,128,128));
 synth synthesizer{1,buffersize,44100};
 bool isPlaying=true;
 
@@ -65,8 +61,6 @@ void play(int id, float value)
 
  std::vector<sf::String> oscNames;
  std::vector<sf::String> fltNames;
-
- //noFilter,highpass,lowpass,bandpass
 
 void changeChannelSetting(int id,float value)
 {
@@ -131,14 +125,16 @@ void changeWaveform(int id, float fvalue)
             {
                 case changeform:
                     synthesizer.setWaveform(knobLayout[i].voice,osc(value));
+                    return;
                     break;
                 case changesform:
                     synthesizer.setSWaveform(knobLayout[i].voice,osc(value));
+                    return;
                     break;
                 case flt:
                     synthesizer.setFilter(knobLayout[i].voice,mode(value));
+                    return;
             }
-            
         }
     }
 }
@@ -269,8 +265,6 @@ int main()
     oscNames.emplace_back("RSaw");
     oscNames.emplace_back("Noise");
 
-     //noFilter,highpass,lowpass,bandpass
-
     fltNames.emplace_back("None");
     fltNames.emplace_back("High");
     fltNames.emplace_back("Low");
@@ -281,7 +275,7 @@ int main()
     bool running=true;
     sf::Event event;
     elements.setVerticalSyncEnabled(true);
-    // window.setFramerateLimit(30);
+    // elements.setFramerateLimit(5);
     sf::RenderTexture *canvas;
     
     int clicked=-1;
@@ -293,13 +287,11 @@ int main()
 
     int chanDisplayWidth=(WIDTH-20)/VOICES;
     createGUI(chanDisplayWidth,buttonImage,pressedImage);
-    sf::Clock runtime;
+
 
     while(running)
     {
-        elements.clear(sf::Color(128,128,128,255));
-        elements.drawAll();
-        elements.display();
+        elements.redraw();
         while(elements.pollEvent(event))
         {
             if(event.type==sf::Event::Closed)

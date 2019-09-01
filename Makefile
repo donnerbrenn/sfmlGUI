@@ -23,12 +23,12 @@ $(OBJ)/%.o: $(SRC)/%.cpp $(OBJ)/
 
 gui: $(TARGETS)
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ -o $@
-	# strip $@ -S --strip-unneeded -R .eh_frame -R .eh_frame_hdr -R .gnu.version -R .note.ABI-tag -R .note.gnu.gold-version  -R .comment -s
-	# sstrip -z $@
 	chmod +x $@
 	wc -c $@
 
 gui.lzma: gui
+	strip $< -S --strip-unneeded -R .eh_frame -R .eh_frame_hdr -R .gnu.version -R .note.ABI-tag -R .note.gnu.gold-version  -R .comment -s
+	sstrip -z $<
 	./opt_lzma.py $< -o $@
 
 gui.sh: gui.lzma

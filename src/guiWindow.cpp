@@ -28,12 +28,14 @@ int guiWindow::add(element *el)
     elements.emplace_back(el);
     return nextID-1;
 }
-void guiWindow::drawAll()
+void guiWindow::redraw()
 {
+    this->clear(bgColor);
     for(int i=0;i<elements.size();i++)
     {
         elements[i]->draw(this);
     }
+    this->display();
 }
 
 bool guiWindow::draw(int idx)

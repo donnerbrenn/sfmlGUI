@@ -18,9 +18,9 @@
 class guiWindow : public sf::RenderWindow
 {
 public:
-    guiWindow(sf::VideoMode mode, const sf::String &title, sf::Uint32 style=sf::Style::Default,const sf::ContextSettings &settings = sf::ContextSettings()):
+    guiWindow(sf::VideoMode mode, const sf::String &title, sf::Color bgColor=sf::Color::Black, sf::Uint32 style=sf::Style::Default,const sf::ContextSettings &settings = sf::ContextSettings()):
     sf::RenderWindow(mode,title,style,settings)
-    {    
+    {   this->bgColor=bgColor; 
         nextID=0;
         lastTick=runtime.getElapsedTime().asSeconds();
     }    
@@ -28,7 +28,7 @@ public:
 
     bool remove(int idx);
     int add(element *el);
-    void drawAll();
+    void redraw();
     bool draw(int idx);
     int find(int idx);
     int size();
@@ -44,6 +44,7 @@ private:
     float currentTick;
     float delta;
     sf::Clock runtime;
+    sf::Color bgColor;
 
     int triggerClickedElement();
     int triggerReleasedElement();
