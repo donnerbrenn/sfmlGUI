@@ -115,7 +115,7 @@ int guiWindow::triggerClickedElement()
 
     for(int i=0;i<elements.size();i++)
     {
-        if(elements[i]->isUnderPos(mousePos))
+        if(elements[i]->isUnderPos(mousePos)&&elements[i]->getType()!=frame_type)
         {
             elements[i]->pressAction();
             return i;

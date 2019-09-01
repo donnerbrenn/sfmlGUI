@@ -12,7 +12,7 @@ public:
         setValue(value);
         this->overlayFileName="bitmaps/tick.png";
         initOverlay(x,y);
-        initLabel(0,40,label,16);
+        initLabel(0,40,label,18);
         initDisplay(0,40,16);
     }
     void draw(sf::RenderWindow *window);
@@ -36,5 +36,5 @@ protected:
     int maximum=100;
     sf::Text display;
 
-    void initDisplay(int x, int y,  int charSize=20);
+    void initDisplay(int x, int y,  int charSize=18);
 };
