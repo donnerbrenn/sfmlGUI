@@ -5,7 +5,7 @@
 // #define DEBUG
 
 //GUI
-#define WIDTH 1800
+#define WIDTH 1920
 #define HEIGHT 880
 #define DUALFRAMED false // broken
 // #define SONG "bubble_bobble_sng.h" 

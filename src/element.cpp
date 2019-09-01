@@ -70,14 +70,14 @@ void element::moveAction(float delta, sf::RenderWindow *window)
     performAction(moveActionPtr);
 }
 
-void element::initLabel(int x, int y, sf::String label)
+void element::initLabel(int x, int y, sf::String label, int charSize)
 {
     this->label=label;
     font.loadFromFile("bitmaps/arial.ttf");
     text.setFont(font);
     text.setOutlineThickness(.5);
     text.setPosition(posX+width/2+x,posY+height/3+y);
-    text.setCharacterSize(20);
+    text.setCharacterSize(charSize);
     text.setString(label);
     sf::FloatRect textRect = text.getLocalBounds();
     text.setOrigin(textRect.width/2,textRect.height/2);

@@ -87,12 +87,12 @@ float knob::getRange()
     return maximum-minimum;
 }
 
-void knob::initDisplay(int x, int y)
+void knob::initDisplay(int x, int y, int charSize)
 {
     display.setFont(font);
     display.setOutlineThickness(.5);
     display.setPosition(posX+width/2+x,posY+height/3+y);
-    display.setCharacterSize(20);
+    display.setCharacterSize(charSize);
     sf::FloatRect textRect = display.getLocalBounds();
     display.setOrigin(textRect.width/2,textRect.height/2);
 }

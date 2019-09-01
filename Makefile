@@ -29,6 +29,7 @@ gui: $(TARGETS)
 gui.lzma: gui
 	strip $< -S --strip-unneeded -R .eh_frame -R .eh_frame_hdr -R .gnu.version -R .note.ABI-tag -R .note.gnu.gold-version  -R .comment -s
 	sstrip -z $<
+	wc -c $<
 	./opt_lzma.py $< -o $@
 
 gui.sh: gui.lzma
