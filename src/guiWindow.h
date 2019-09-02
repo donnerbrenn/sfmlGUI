@@ -2,18 +2,21 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <string>
+
+#include "vector2f.h"
+#include "defines.h"
+
+#include "element.h"
 #include "button.h"
+#include "lockbutton.h"
+#include "rotButton.h"
 #include "frame.h"
 #include "knob.h"
 #include "vu.h"
 #include "slider.h"
 #include "label.h"
 #include "oscilloscope.h"
-#include "lockbutton.h"
-#include "rotButton.h"
-#include "element.h"
-#include "vector2f.h"
-#include "defines.h"
+
 
 class guiWindow : public sf::RenderWindow
 {

@@ -161,5 +161,3 @@ int guiWindow::getElementCount()
 {
     return elements.size();
 }
-
-

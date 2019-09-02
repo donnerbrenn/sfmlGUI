@@ -1,7 +1,14 @@
 CXXFLAGS=-g -flto
+
 CXXFLAGS=-O3 -s -flto
-CXXFLAGS=-O3 -s -flto -fno-stack-limit -ffast-math -unsafe-math -fno-stack-protector -fno-stack-check -fno-asynchronous-unwind-tables -fno-exceptions  -funsafe-math-optimizations -fomit-frame-pointer -ffunction-sections -fdata-sections -fno-math-errno -fno-unroll-loops -fmerge-all-constants -fno-ident -mfpmath=387 -mfancy-math-387 -Bmydir -falign-functions=1 -falign-jumps=1 -falign-loops=1 -fomit-frame-pointer -fsingle-precision-constant
-LDFLAGS=-lsfml-system -lsfml-window -lsfml-graphics -lsfml-audio -Wl,--build-id=none -Wl,--hash-style=gnu -Wl,-z,norelro -fuse-ld=gold
+
+CXXFLAGS=-O3 -s -flto -fno-stack-limit -ffast-math -fno-stack-protector -fno-stack-check \
+		-fno-asynchronous-unwind-tables -fno-exceptions  -funsafe-math-optimizations -fomit-frame-pointer \
+		-ffunction-sections -fdata-sections -fno-math-errno -fno-unroll-loops -fmerge-all-constants \
+		-fno-ident -mfpmath=387 -mfancy-math-387 -Bmydir -fomit-frame-pointer -fsingle-precision-constant
+
+LDFLAGS=-lsfml-system -lsfml-window -lsfml-graphics -lsfml-audio -Wl,--build-id=none -Wl,--hash-style=gnu \
+		-Wl,-z,norelro -fuse-ld=gold
 
 SRC=src
 OBJ=obj
@@ -27,7 +34,8 @@ gui: $(TARGETS)
 	wc -c $@
 
 gui.lzma: gui
-	strip $< -S --strip-unneeded -R .eh_frame -R .eh_frame_hdr -R .gnu.version -R .note.ABI-tag -R .note.gnu.gold-version  -R .comment -s
+	strip $< -S --strip-unneeded -R .eh_frame -R .eh_frame_hdr -R .gnu.version -R .note.ABI-tag \
+	-R .note.gnu.gold-version  -R .comment
 	sstrip -z $<
 	wc -c $<
 	./opt_lzma.py $< -o $@

@@ -2,7 +2,6 @@
 
 enum effectType{noEffect=0,echo,reverb};
 
-
 class effect
 {
 public:
@@ -12,7 +11,6 @@ public:
     double getEffect(double value);
     void setStrength(double value);
     void setDelay(double value);
-    
 
 private:
     double delay;
@@ -24,5 +22,4 @@ private:
     int iterations;
     double getReverb(double value);
     int samplerate;
-    
 };
