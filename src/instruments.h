@@ -46,7 +46,7 @@ const description bassdrum
     .useFilter=lowpass,
     .cutoff=.28,
     .resonance=.9,
-    .useEffect=reverb,
+    .useEffect=echo,
     .delay=.0,
     .strength=.25
 };
@@ -67,7 +67,7 @@ const description hihat
     .useFilter=bandpass,
     .cutoff=.45,
     .resonance=.8,
-    .useEffect=reverb,
+    .useEffect=echo,
     .delay=.125,
     .strength=.125
 };
@@ -88,7 +88,7 @@ const description bass
     .useFilter=lowpass,
     .cutoff=.075,
     .resonance=.4,
-    .useEffect=reverb,
+    .useEffect=echo,
     .delay=.125,
     .strength=.5
 };
@@ -110,7 +110,7 @@ const description lowbass
     .useFilter=highstop,
     .cutoff=.05,
     .resonance=.0,
-    .useEffect=reverb,
+    .useEffect=echo,
     .delay=.125*.5,
     .strength=.6
 };
@@ -119,8 +119,8 @@ const description lowbass
 const description lead
 {
     .name="Lead Synth",
-    .waveform=saw,
-    .volume=.75,
+    .waveform=square,
+    .volume=.6,
     .modify=0,
     .a=.0,
     .d=2.0,
@@ -128,13 +128,13 @@ const description lead
     .r=.5,
     .sub_waveform=sine,
     .sub_volume=.15,
-    .sub_modify=0,
+    .sub_modify=-12,
     .useFilter=highpass,
     .cutoff=.05,
     .resonance=.3,
-    .useEffect=reverb,
+    .useEffect=echo,
     .delay=.125,
-    .strength=.6
+    .strength=.5
 };
 
 const description lead2
@@ -153,7 +153,7 @@ const description lead2
     .useFilter=highpass,
     .cutoff=.05,
     .resonance=.3,
-    .useEffect=reverb,
+    .useEffect=echo,
     .delay=.0,
     .strength=.60
 };
@@ -176,7 +176,7 @@ const description lowlead
     .useFilter=bandstop,
     .cutoff=.05,
     .resonance=.5,
-    .useEffect=reverb,
+    .useEffect=echo,
     .delay=.125
 };
 
@@ -196,6 +196,6 @@ const description lowlead2
     .useFilter=highpass,
     .cutoff=.05,
     .resonance=.5,
-    .useEffect=reverb,
+    .useEffect=echo,
     .delay=.125
 };

@@ -20,6 +20,7 @@ private:
     double *buffer;
     double strength;
     int iterations;
+    double getEcho(double value);
     double getReverb(double value);
     int samplerate;
 };

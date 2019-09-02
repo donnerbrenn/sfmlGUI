@@ -34,16 +34,17 @@ int effect::getRingbufferIDX(int IDX)
     }  
 }
 
-double effect::getReverb(double value)
+double effect::getEcho(double value)
 {
     if(buffersize==0)
         return value;
 
     currentIDX++;
     currentIDX=getRingbufferIDX(currentIDX);
-    buffer[currentIDX]=value;
+
     int reverbIDX=getRingbufferIDX(currentIDX+1);
-    return value+(buffer[reverbIDX]*strength);
+    buffer[currentIDX]=value+(buffer[reverbIDX]*strength);
+    return buffer[currentIDX];
 }
 
 
@@ -51,8 +52,8 @@ double effect::getEffect(double value)
 {
     switch (type)
     {
-    case reverb:
-        return getReverb(value);
+    case echo:
+        return getEcho(value);
     }
     return value;
 }
