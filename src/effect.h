@@ -11,6 +11,7 @@ public:
     double getEffect(double value);
     void setStrength(double value);
     void setDelay(double value);
+    void clear();
 
 private:
     double delay;

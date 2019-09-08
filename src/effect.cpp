@@ -66,4 +66,13 @@ void effect::setStrength(double value)
 void effect::setDelay(double value)
 {
     this->buffersize=value/(1.0/samplerate);
+    clear();
+}
+
+void effect::clear()
+{
+    for(int i=0;i<buffersize;i++)
+    {
+        buffer[i]=0;
+    }
 }
