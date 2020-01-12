@@ -171,12 +171,13 @@ void createGUI(double chanDisplayWidth, sf::String buttonImage, sf::String press
     for(int i=0;i<VOICES;i++)
     {
         
-
+        // sf::Color color;
         for(int x=0;x<5;x++)
         {
             for(int y=0;y<20;y++)
             {
-                id=elements.add(new noteLabel(80+x*chanDisplayWidth,700+y*30,""));
+                // color=(y==0)?sf::Color::Green:sf::Color::White;
+                id=elements.add(new noteLabel(80+x*chanDisplayWidth,700+y*30,"",(y==0)?sf::Color::Green:sf::Color::White));
                 noteLabels[x][y]=(noteLabel*)elements.getPtrbyID(id);
             }
         }

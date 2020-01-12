@@ -5,10 +5,10 @@
 class noteLabel : public label
 {
 public:
-    noteLabel(int x, int y, sf::String text="-",bool centered=true):
+    noteLabel(int x, int y, sf::String text="-",sf::Color color=sf::Color::White, bool centered=true):
     label(x,y,text,centered)
     {
-
+        this->text.setFillColor(color);
     }
     void setNote(int note);
 
