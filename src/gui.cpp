@@ -8,14 +8,16 @@
 #include "guiWindow.h"
 
 
-int buffersize=44100/(74/2);
+int buffersize=44100/(75/4);
 vector2f pos;
-guiWindow elements(sf::VideoMode(WIDTH,HEIGHT),"GUI",sf::Color(128,128,128));
-synth synthesizer{1,buffersize,44100};
+guiWindow elements(sf::VideoMode(WIDTH,HEIGHT),"sfmlGUI",sf::Color(128,128,128));
+synth synthesizer{1,buffersize,96000};
 bool isPlaying=true;
 
 int oscID=0;
 double counter=.0f;
+
+noteLabel *noteLabels[5][20];
 
 sf::String cat(sf::String string, int value)
 {
@@ -169,6 +171,17 @@ void createGUI(double chanDisplayWidth, sf::String buttonImage, sf::String press
     for(int i=0;i<VOICES;i++)
     {
         
+
+        for(int x=0;x<5;x++)
+        {
+            for(int y=0;y<20;y++)
+            {
+                id=elements.add(new noteLabel(80+x*chanDisplayWidth,700+y*30,""));
+                noteLabels[x][y]=(noteLabel*)elements.getPtrbyID(id);
+            }
+        }
+
+        
         id=elements.add(new oscilloscope(10+i*chanDisplayWidth,10,chanDisplayWidth-5,120,synthesizer.getChannelFloatBuffer(i),buffersize,DUALFRAMED,1.0,sf::Color::Black,sf::Color::White));
         id=elements.add(new label(10+i*chanDisplayWidth+5,10,descriptions[i].name));
 
@@ -287,13 +300,13 @@ void createGUI(double chanDisplayWidth, sf::String buttonImage, sf::String press
         currentKnob=elements.getPtrbyID(id);
         currentKnob->setClickActionPtr(changeWaveform);
     }
-    id = elements.add(new slider(58,690,"Volume"));
-    elements.getPtrbyID(id)->setMin(0);
-    elements.getPtrbyID(id)->setMax(1.0);
-    elements.getPtrbyID(id)->setValue(synthesizer.getVolume());
-    elements.getPtrbyID(id)->setMoveActionPtr(setVolume);
+    // id = elements.add(new slider(58,690,"Volume"));
+    // elements.getPtrbyID(id)->setMin(0);
+    // elements.getPtrbyID(id)->setMax(1.0);
+    // elements.getPtrbyID(id)->setValue(synthesizer.getVolume());
+    // elements.getPtrbyID(id)->setMoveActionPtr(setVolume);
 
-    // std::cout << elements.getElementCount() << "\n";
+    std::cout << elements.getElementCount() << "\n";
 }
 
 int main()
@@ -342,5 +355,15 @@ int main()
             }
             elements.triggerEvents(event);        
         }
+
+        for(int x=0;x<5;x++)
+        {
+            for(int y=0;y<20;y++)
+            {
+                int note=synthesizer.getCurrentNote(x,y);
+                noteLabels[x][y]->setNote(note);
+            }
+        }
     }
+
 }

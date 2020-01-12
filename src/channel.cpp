@@ -38,14 +38,27 @@ double channel::get(double time, int waveform, double hertz)
     return result;
 }
 
+double channel::approxsin(float x)
+{
+    double t=x*.15915;
+    t=t-(int)t;
+    if(t<.5)
+        return(-16.0*t*t)+(8.0*t);
+    else
+    {
+        return(16.0*t*t)-(16.0*t)-(8.0*t)+8.0;
+    }
+    
+}
+
 double  channel::getSine(double time, double hertz)
 {
-    return sin(hertz*M_PI*2*time);
+    return approxsin(hertz*M_PI*2*time);
 }
 
 double channel::getTriangle(double time, double hertz)
 {
-    return(asin(getSine(time,hertz)))*.75;
+    return(asinf32(getSine(time,hertz)))*.75;
 }
 
 double channel::getSquare(double time, double hertz)

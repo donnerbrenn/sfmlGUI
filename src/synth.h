@@ -41,6 +41,8 @@ public:
 
     void switchInstrumentFreqModulate(int channel);
 
+    int getCurrentNote(int channel, int offset=0);
+
 private:
     bool onGetData(Chunk& data);
     void onSeek(sf::Time timeOffset); 

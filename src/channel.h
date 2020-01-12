@@ -12,6 +12,7 @@ public:
     channel(int samplerate=44100, double volume=1.0);
     ~channel();
     double get(double time, int waveform, double hertz);
+    double approxsin(float t);
     double getSine(double time, double hertz);
     double getTriangle(double time, double hertz);
     double getSquare(double time, double hertz);

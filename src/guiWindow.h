@@ -16,6 +16,7 @@
 #include "slider.h"
 #include "label.h"
 #include "oscilloscope.h"
+#include "noteLabel.h"
 
 
 class guiWindow : public sf::RenderWindow

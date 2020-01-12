@@ -16,6 +16,7 @@ public:
     
     int getWaveform(int channel);
     double getFreq(int channel, double time, bool getSub=false);
+    int getNote(int channel, double time, int offset=0);
     bool isfreqModulated(int channel);
     bool isStriked(int channel);
     

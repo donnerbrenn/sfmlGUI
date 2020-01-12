@@ -33,6 +33,15 @@ int decode::getWaveform(int channel)
     return descriptions[channel].waveform;
 }
 
+int decode::getNote(int channel, double time, int offset)
+{
+    int pos = time*SPEED*5;
+    pos+=offset;
+    char note = cpatterns[channel][(pos/PATTERNLENGTH)%LENGTH][pos%PATTERNLENGTH];
+    return note;
+
+}
+
 double decode::getFreq(int channel, double time, bool getSub)
 {
     int pos = time*SPEED*5;

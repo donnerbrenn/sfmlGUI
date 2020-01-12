@@ -39,7 +39,7 @@ const description bassdrum
     .a=.01,
     .d=2.0,
     .s=.1,
-    .r=.4,
+    .r=.2,
     .sub_waveform=mute,
     .sub_volume=.15,
     .sub_modify=0,
@@ -75,22 +75,22 @@ const description hihat
 const description bass
 {
     .name="Bass",
-    .waveform=square,
-    .volume=.75,
+    .waveform=triangle,
+    .volume=.5,
     .modify=0,
     .a=.0,
     .d=2.0,
     .s=.025,
     .r=.5,
-    .sub_waveform=mute,
-    .sub_volume=.25,
-    .sub_modify=0,
+    .sub_waveform=square,
+    .sub_volume=.8,
+    .sub_modify=-12,
     .useFilter=lowpass,
-    .cutoff=.075,
-    .resonance=.4,
+    .cutoff=.17,
+    .resonance=.8,
     .useEffect=echo,
     .delay=.125,
-    .strength=.5
+    .strength=.12
 };
 
 

@@ -242,3 +242,8 @@ void synth::switchInstrumentFreqModulate(int channel)
 {
     freqModulates[channel]=freqModulates[channel]?false:true;
 }
+
+int synth::getCurrentNote(int channel, int offset)
+{
+    return decoder.getNote(channel,time,offset);
+}
